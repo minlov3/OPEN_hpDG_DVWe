@@ -1,0 +1,376 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2020 The MathWorks, Inc.
+                  R2020a (9.8.0.1323502) 64-bit (glnxa64)
+                             February 25, 2020
+
+[Warning: Name is nonexistent or not a directory: /tmp/Editor_vxdxq] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+
+ans = 
+
+ ProcessPool with properties: 
+
+            Connected: true
+           NumWorkers: 40
+              Cluster: local
+        AttachedFiles: {}
+    AutoAddClientPath: true
+          IdleTimeout: 30 minutes (30 minutes remaining)
+          SpmdEnabled: true
+
+4 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1435196365854101 
+the discete Energy (for No.2/4 step) is 1.5029941064006387 
+the discete Energy (for No.3/4 step) is 6.8384285616583469 
+the discete Energy (for No.4/4 step) is 20.7507642238810668 
+the L2_L2 norm error is 0.0124242571222047 
+the L2_gr norm error is 0.2504400511443952 
+the L2_H1 norm error is 0.2507480436259591 
+the L_inf_L2 norm error is 0.0277984676568699 
+the L_inf_gr norm error is 0.5599879621257561 
+the L_inf_H1 norm error is 0.5606775120600318 
+the H1_L2 norm error is 0.0321501836024241 
+the H1_gr norm error is 0.0020448585682712 
+the H1_H1 norm error is 0.0322151478691906 
+the W_1_inf_L2 norm error is 0.0556082870543798 
+the W_1_inf_gr norm error is 1.1199733972687838 
+the W_1_inf_H1 norm error is 1.1213530631245912 
+the Final_t_L2_L2 norm error is 0.0277984676568699 
+the Final_t_L2_gr norm error is 0.5599879621257561 
+the Final_t_L2_H1 norm error is 0.5606775120600318 
+the Final_t_H1_L2 norm error is 0.0556082870543798 
+the Final_t_H1_gr norm error is 1.1199733972687838 
+the Final_t_H1_H1 norm error is 1.1213530631245912 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000016 
+the jump dotu semi norm error is 0.0006178448685235 
+Energynorm_err is 0.5636639041125437 
+16 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448084473568124 
+the discete Energy (for No.2/4 step) is 1.5251998844826100 
+the discete Energy (for No.3/4 step) is 6.9478413001675490 
+the discete Energy (for No.4/4 step) is 21.0698971741253480 
+the L2_L2 norm error is 0.0006067115093806 
+the L2_gr norm error is 0.0238657095220694 
+the L2_H1 norm error is 0.0238734201539580 
+the L_inf_L2 norm error is 0.0013577469231076 
+the L_inf_gr norm error is 0.0533650899865762 
+the L_inf_H1 norm error is 0.0533823595018297 
+the H1_L2 norm error is 0.0015697004840668 
+the H1_gr norm error is 0.0001948644332179 
+the H1_H1 norm error is 0.0015817495873282 
+the W_1_inf_L2 norm error is 0.0027186552389735 
+the W_1_inf_gr norm error is 0.1067299671065169 
+the W_1_inf_H1 norm error is 0.1067645866608708 
+the Final_t_L2_L2 norm error is 0.0013577469231076 
+the Final_t_L2_gr norm error is 0.0533650899865762 
+the Final_t_L2_H1 norm error is 0.0533823595018297 
+the Final_t_H1_L2 norm error is 0.0027186552389735 
+the Final_t_H1_gr norm error is 0.1067299671065169 
+the Final_t_H1_H1 norm error is 0.1067645866608708 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000012 
+the jump dotu semi norm error is 0.0000345438654216 
+Energynorm_err is 0.0534577126392388 
+64 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448185725051602 
+the discete Energy (for No.2/4 step) is 1.5253969222247425 
+the discete Energy (for No.3/4 step) is 6.9488289938889460 
+the discete Energy (for No.4/4 step) is 21.0727588451271366 
+the L2_L2 norm error is 0.0000393819303936 
+the L2_gr norm error is 0.0030199745127444 
+the L2_H1 norm error is 0.0030202312815523 
+the L_inf_L2 norm error is 0.0000880928304900 
+the L_inf_gr norm error is 0.0067528650402002 
+the L_inf_H1 norm error is 0.0067534396123710 
+the H1_L2 norm error is 0.0001017653198543 
+the H1_gr norm error is 0.0000246580539102 
+the H1_H1 norm error is 0.0001047100756741 
+the W_1_inf_L2 norm error is 0.0001764408456678 
+the W_1_inf_gr norm error is 0.0135057367027783 
+the W_1_inf_H1 norm error is 0.0135068891776305 
+the Final_t_L2_L2 norm error is 0.0000880928304900 
+the Final_t_L2_gr norm error is 0.0067528650402002 
+the Final_t_L2_H1 norm error is 0.0067534396123710 
+the Final_t_H1_L2 norm error is 0.0001764408456678 
+the Final_t_H1_gr norm error is 0.0135057367027783 
+the Final_t_H1_H1 norm error is 0.0135068891776305 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000022 
+the jump dotu semi norm error is 0.0000018123483386 
+Energynorm_err is 0.0067559814318671 
+256 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448187276046707 
+the discete Energy (for No.2/4 step) is 1.5254000653463229 
+the discete Energy (for No.3/4 step) is 6.9488448154542377 
+the discete Energy (for No.4/4 step) is 21.0728045947452607 
+the L2_L2 norm error is 0.0000024877288045 
+the L2_gr norm error is 0.0003786195899580 
+the L2_H1 norm error is 0.0003786277627098 
+the L_inf_L2 norm error is 0.0000055634883151 
+the L_inf_gr norm error is 0.0008466191079731 
+the L_inf_H1 norm error is 0.0008466373877803 
+the H1_L2 norm error is 0.0000064250257481 
+the H1_gr norm error is 0.0000030914171156 
+the H1_H1 norm error is 0.0000071300642105 
+the W_1_inf_L2 norm error is 0.0000111360457050 
+the W_1_inf_gr norm error is 0.0016932386587320 
+the W_1_inf_H1 norm error is 0.0016932752779564 
+the Final_t_L2_L2 norm error is 0.0000055634883151 
+the Final_t_L2_gr norm error is 0.0008466191079731 
+the Final_t_L2_H1 norm error is 0.0008466373877803 
+the Final_t_H1_L2 norm error is 0.0000111360457050 
+the Final_t_H1_gr norm error is 0.0016932386587320 
+the Final_t_H1_H1 norm error is 0.0016932752779564 
+the jump u semi norm error is 0.0000000000000007 
+the jump gradu semi norm error is 0.0000000000000071 
+the jump dotu semi norm error is 0.0000000428525405 
+Energynorm_err is 0.0008467223660392 
+1024 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448187300138275 
+the discete Energy (for No.2/4 step) is 1.5254001146998131 
+the discete Energy (for No.3/4 step) is 6.9488450641601460 
+the discete Energy (for No.4/4 step) is 21.0728053135373479 
+the L2_L2 norm error is 0.0000001559085264 
+the L2_gr norm error is 0.0000473623132195 
+the L2_H1 norm error is 0.0000473625698307 
+the L_inf_L2 norm error is 0.0000003486354198 
+the L_inf_gr norm error is 0.0001059053516560 
+the L_inf_H1 norm error is 0.0001059059255002 
+the H1_L2 norm error is 0.0000004025839218 
+the H1_gr norm error is 0.0000003867116789 
+the H1_H1 norm error is 0.0000005582291076 
+the W_1_inf_L2 norm error is 0.0000006974423781 
+the W_1_inf_gr norm error is 0.0002118107087719 
+the W_1_inf_H1 norm error is 0.0002118118570249 
+the Final_t_L2_L2 norm error is 0.0000003486354198 
+the Final_t_L2_gr norm error is 0.0001059053516560 
+the Final_t_L2_H1 norm error is 0.0001059059255002 
+the Final_t_H1_L2 norm error is 0.0000006974423781 
+the Final_t_H1_gr norm error is 0.0002118107087719 
+the Final_t_H1_H1 norm error is 0.0002118118570249 
+the jump u semi norm error is 0.0000000000000027 
+the jump gradu semi norm error is 0.0000000000000245 
+the jump dotu semi norm error is 0.0000000007354353 
+Energynorm_err is 0.0001059091193219 
+4096 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448187300514114 
+the discete Energy (for No.2/4 step) is 1.5254001154718655 
+the discete Energy (for No.3/4 step) is 6.9488450680518730 
+the discete Energy (for No.4/4 step) is 21.0728053247837082 
+the L2_L2 norm error is 0.0000000097509829 
+the L2_gr norm error is 0.0000059213768964 
+the L2_H1 norm error is 0.0000059213849251 
+the L_inf_L2 norm error is 0.0000000218040758 
+the L_inf_gr norm error is 0.0000132406012586 
+the L_inf_H1 norm error is 0.0000132406192116 
+the H1_L2 norm error is 0.0000000251774071 
+the H1_gr norm error is 0.0000000483478400 
+the H1_H1 norm error is 0.0000000545106913 
+the W_1_inf_L2 norm error is 0.0000000436109579 
+the W_1_inf_gr norm error is 0.0000264812025647 
+the W_1_inf_H1 norm error is 0.0000264812384754 
+the Final_t_L2_L2 norm error is 0.0000000218040758 
+the Final_t_L2_gr norm error is 0.0000132406012586 
+the Final_t_L2_H1 norm error is 0.0000132406192116 
+the Final_t_H1_L2 norm error is 0.0000000436109579 
+the Final_t_H1_gr norm error is 0.0000264812025647 
+the Final_t_H1_H1 norm error is 0.0000264812384754 
+the jump u semi norm error is 0.0000000000000127 
+the jump gradu semi norm error is 0.0000000000001145 
+the jump dotu semi norm error is 0.0000000000117448 
+Energynorm_err is 0.0000132407852872 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2020 The MathWorks, Inc.
+                  R2020a (9.8.0.1323502) 64-bit (glnxa64)
+                             February 25, 2020
+
+[Warning: Name is nonexistent or not a directory: /tmp/Editor_vxdxq] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+
+ans = 
+
+ ProcessPool with properties: 
+
+            Connected: true
+           NumWorkers: 40
+              Cluster: local
+        AttachedFiles: {}
+    AutoAddClientPath: true
+          IdleTimeout: 30 minutes (30 minutes remaining)
+          SpmdEnabled: true
+
+4 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1435556008554142 
+the discete Energy (for No.2/4 step) is 1.5032865668489170 
+the discete Energy (for No.3/4 step) is 6.8394194701338096 
+the discete Energy (for No.4/4 step) is 20.7530800421350392 
+the L2_L2 norm error is 0.0124242544000060 
+the L2_gr norm error is 0.2504400486566560 
+the L2_H1 norm error is 0.2507480410063940 
+the L_inf_L2 norm error is 0.0277985081238099 
+the L_inf_gr norm error is 0.5599879527680698 
+the L_inf_H1 norm error is 0.5606775047202120 
+the H1_L2 norm error is 0.0321502317022891 
+the H1_gr norm error is 0.0064664097820013 
+the H1_H1 norm error is 0.0327940826061598 
+the W_1_inf_L2 norm error is 0.0556085461254087 
+the W_1_inf_gr norm error is 1.1199733418930171 
+the W_1_inf_H1 norm error is 1.1213530206644091 
+the Final_t_L2_L2 norm error is 0.0277985081238099 
+the Final_t_L2_gr norm error is 0.5599879527680698 
+the Final_t_L2_H1 norm error is 0.5606775047202120 
+the Final_t_H1_L2 norm error is 0.0556085461254087 
+the Final_t_H1_gr norm error is 1.1199733418930171 
+the Final_t_H1_H1 norm error is 1.1213530206644091 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000008 
+the jump dotu semi norm error is 0.0006162311521447 
+Energynorm_err is 0.5636973028517772 
+16 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448454482600904 
+the discete Energy (for No.2/4 step) is 1.5254959405872646 
+the discete Energy (for No.3/4 step) is 6.9488405348920024 
+the discete Energy (for No.4/4 step) is 21.0722653798418094 
+the L2_L2 norm error is 0.0006067116026401 
+the L2_gr norm error is 0.0238657094684555 
+the L2_H1 norm error is 0.0238734201027315 
+the L_inf_L2 norm error is 0.0013577471242151 
+the L_inf_gr norm error is 0.0533650899622458 
+the L_inf_H1 norm error is 0.0533823594826222 
+the H1_L2 norm error is 0.0015697001782364 
+the H1_gr norm error is 0.0006162153923277 
+the H1_H1 norm error is 0.0016863214578772 
+the W_1_inf_L2 norm error is 0.0027186448605095 
+the W_1_inf_gr norm error is 0.1067299671022798 
+the W_1_inf_H1 norm error is 0.1067645863923582 
+the Final_t_L2_L2 norm error is 0.0013577471242151 
+the Final_t_L2_gr norm error is 0.0533650899622458 
+the Final_t_L2_H1 norm error is 0.0533823594826222 
+the Final_t_H1_L2 norm error is 0.0027186448605095 
+the Final_t_H1_gr norm error is 0.1067299671022798 
+the Final_t_H1_H1 norm error is 0.1067645863923582 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000015 
+the jump dotu semi norm error is 0.0000343470657679 
+Energynorm_err is 0.0534609083007050 
+64 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448555833557616 
+the discete Energy (for No.2/4 step) is 1.5256930098511745 
+the discete Energy (for No.3/4 step) is 6.9498282903824933 
+the discete Energy (for No.4/4 step) is 21.0751275420849282 
+the L2_L2 norm error is 0.0000393819321401 
+the L2_gr norm error is 0.0030199745115963 
+the L2_H1 norm error is 0.0030202312804271 
+the L_inf_L2 norm error is 0.0000880926931732 
+the L_inf_gr norm error is 0.0067528650461603 
+the L_inf_H1 norm error is 0.0067534396165394 
+the H1_L2 norm error is 0.0001017650672277 
+the H1_gr norm error is 0.0000779756101466 
+the H1_H1 norm error is 0.0001282042303732 
+the W_1_inf_L2 norm error is 0.0001764373845083 
+the W_1_inf_gr norm error is 0.0135057363546224 
+the W_1_inf_H1 norm error is 0.0135068887842916 
+the Final_t_L2_L2 norm error is 0.0000880926931732 
+the Final_t_L2_gr norm error is 0.0067528650461603 
+the Final_t_L2_H1 norm error is 0.0067534396165394 
+the Final_t_H1_L2 norm error is 0.0001764373845083 
+the Final_t_H1_gr norm error is 0.0135057363546224 
+the Final_t_H1_H1 norm error is 0.0135068887842916 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000023 
+the jump dotu semi norm error is 0.0000017995397867 
+Energynorm_err is 0.0067563863155783 
+256 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448557386185525 
+the discete Energy (for No.2/4 step) is 1.5256961534704265 
+the discete Energy (for No.3/4 step) is 6.9498441128850912 
+the discete Energy (for No.4/4 step) is 21.0751732996738745 
+the L2_L2 norm error is 0.0000024877287723 
+the L2_gr norm error is 0.0003786195899397 
+the L2_H1 norm error is 0.0003786277626912 
+the L_inf_L2 norm error is 0.0000055634823141 
+the L_inf_gr norm error is 0.0008466191080726 
+the L_inf_H1 norm error is 0.0008466373878403 
+the H1_L2 norm error is 0.0000064250151833 
+the H1_gr norm error is 0.0000097759192216 
+the H1_H1 norm error is 0.0000116982655438 
+the W_1_inf_L2 norm error is 0.0000111359089757 
+the W_1_inf_gr norm error is 0.0016932386432587 
+the W_1_inf_H1 norm error is 0.0016932752615842 
+the Final_t_L2_L2 norm error is 0.0000055634823141 
+the Final_t_L2_gr norm error is 0.0008466191080726 
+the Final_t_L2_H1 norm error is 0.0008466373878403 
+the Final_t_H1_L2 norm error is 0.0000111359089757 
+the Final_t_H1_gr norm error is 0.0016932386432587 
+the Final_t_H1_H1 norm error is 0.0016932752615842 
+the jump u semi norm error is 0.0000000000000007 
+the jump gradu semi norm error is 0.0000000000000066 
+the jump dotu semi norm error is 0.0000000424947616 
+Energynorm_err is 0.0008467731537105 
+1024 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448557410302900 
+the discete Energy (for No.2/4 step) is 1.5256962028317183 
+the discete Energy (for No.3/4 step) is 6.9498443616055443 
+the discete Energy (for No.4/4 step) is 21.0751740185916354 
+the L2_L2 norm error is 0.0000001559085254 
+the L2_gr norm error is 0.0000473623132193 
+the L2_H1 norm error is 0.0000473625698305 
+the L_inf_L2 norm error is 0.0000003486353032 
+the L_inf_gr norm error is 0.0001059053516569 
+the L_inf_H1 norm error is 0.0001059059255006 
+the H1_L2 norm error is 0.0000004025837182 
+the H1_gr norm error is 0.0000012228897023 
+the H1_H1 norm error is 0.0000012874520862 
+the W_1_inf_L2 norm error is 0.0000006974397785 
+the W_1_inf_gr norm error is 0.0002118107085897 
+the W_1_inf_H1 norm error is 0.0002118118568341 
+the Final_t_L2_L2 norm error is 0.0000003486353032 
+the Final_t_L2_gr norm error is 0.0001059053516569 
+the Final_t_L2_H1 norm error is 0.0001059059255006 
+the Final_t_H1_L2 norm error is 0.0000006974397785 
+the Final_t_H1_gr norm error is 0.0002118107085897 
+the Final_t_H1_H1 norm error is 0.0002118118568341 
+the jump u semi norm error is 0.0000000000000027 
+the jump gradu semi norm error is 0.0000000000000251 
+the jump dotu semi norm error is 0.0000000007291134 
+Energynorm_err is 0.0001059154732096 
+4096 space elements, 4 time elements with space basis Q3 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 0.1448557410679128 
+the discete Energy (for No.2/4 step) is 1.5256962036038815 
+the discete Energy (for No.3/4 step) is 6.9498443654973956 
+the discete Energy (for No.4/4 step) is 21.0751740298398005 
+the L2_L2 norm error is 0.0000000097509829 
+the L2_gr norm error is 0.0000059213768964 
+the L2_H1 norm error is 0.0000059213849251 
+the L_inf_L2 norm error is 0.0000000218040738 
+the L_inf_gr norm error is 0.0000132406012586 
+the L_inf_H1 norm error is 0.0000132406192116 
+the H1_L2 norm error is 0.0000000251774038 
+the H1_gr norm error is 0.0000001528892943 
+the H1_H1 norm error is 0.0000001549485011 
+the W_1_inf_L2 norm error is 0.0000000436109152 
+the W_1_inf_gr norm error is 0.0000264812025632 
+the W_1_inf_H1 norm error is 0.0000264812384737 
+the Final_t_L2_L2 norm error is 0.0000000218040738 
+the Final_t_L2_gr norm error is 0.0000132406012586 
+the Final_t_L2_H1 norm error is 0.0000132406192116 
+the Final_t_H1_L2 norm error is 0.0000000436109152 
+the Final_t_H1_gr norm error is 0.0000264812025632 
+the Final_t_H1_H1 norm error is 0.0000264812384737 
+the jump u semi norm error is 0.0000000000000124 
+the jump gradu semi norm error is 0.0000000000001123 
+the jump dotu semi norm error is 0.0000000000116431 
+Energynorm_err is 0.0000132415796882 
