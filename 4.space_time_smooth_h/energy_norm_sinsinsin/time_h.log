@@ -1,0 +1,2750 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2020 The MathWorks, Inc.
+                  R2020a (9.8.0.1323502) 64-bit (glnxa64)
+                             February 25, 2020
+
+[Warning: Name is nonexistent or not a directory: /tmp/Editor_vxdxq] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+
+ans = 
+
+ ProcessPool with properties: 
+
+            Connected: true
+           NumWorkers: 40
+              Cluster: local
+        AttachedFiles: {}
+    AutoAddClientPath: true
+          IdleTimeout: 30 minutes (30 minutes remaining)
+          SpmdEnabled: true
+
+64 space elements, 2 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/2 step) is 13.0390901146027076 
+the discete Energy (for No.2/2 step) is 11.9752720623832811 
+the L2_L2 norm error is 0.1528923211859189 
+the L2_gr norm error is 0.6792826851723480 
+the L2_H1 norm error is 0.6962765458153632 
+the L_inf_L2 norm error is 0.3238582574620487 
+the L_inf_gr norm error is 1.4388643264598353 
+the L_inf_H1 norm error is 1.4748609157764914 
+the H1_L2 norm error is 1.2983677629461483 
+the H1_gr norm error is 5.7684959814482912 
+the H1_H1 norm error is 5.9128085319789321 
+the W_1_inf_L2 norm error is 8.7996903506701951 
+the W_1_inf_gr norm error is 39.0959941200694132 
+the W_1_inf_H1 norm error is 40.0740727466547995 
+the Final_t_L2_L2 norm error is 0.0611513516304328 
+the Final_t_L2_gr norm error is 0.2716882968041727 
+the Final_t_L2_H1 norm error is 0.2784852211995837 
+the Final_t_H1_L2 norm error is 0.0523886237623898 
+the Final_t_H1_gr norm error is 0.2327565226675196 
+the Final_t_H1_H1 norm error is 0.2385794767870716 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000003 
+the jump dotu semi norm error is 1.0175254002527296 
+Energynorm_err is 6.0060987150164635 
+64 space elements, 2 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/2 step) is 29.9851932208667513 
+the discete Energy (for No.2/2 step) is 29.1335897743667260 
+the L2_L2 norm error is 0.0717591494501530 
+the L2_gr norm error is 0.3188175007488410 
+the L2_H1 norm error is 0.3267934734867675 
+the L_inf_L2 norm error is 0.1612494326987362 
+the L_inf_gr norm error is 0.7164123533249307 
+the L_inf_H1 norm error is 0.7343351003065494 
+the H1_L2 norm error is 0.9932081394591844 
+the H1_gr norm error is 4.4127074968432263 
+the H1_H1 norm error is 4.5231017964428322 
+the W_1_inf_L2 norm error is 6.6009317978898041 
+the W_1_inf_gr norm error is 29.3271672607916258 
+the W_1_inf_H1 norm error is 30.0608556122882327 
+the Final_t_L2_L2 norm error is 0.0088431652079976 
+the Final_t_L2_gr norm error is 0.0392891478219283 
+the Final_t_L2_H1 norm error is 0.0402720586445400 
+the Final_t_H1_L2 norm error is 0.1207478791267482 
+the Final_t_H1_gr norm error is 0.5364686919910382 
+the Final_t_H1_H1 norm error is 0.5498897233083948 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000004 
+the jump dotu semi norm error is 0.7214823488584241 
+Energynorm_err is 4.5820421569589298 
+64 space elements, 2 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/2 step) is 42.7791910768380959 
+the discete Energy (for No.2/2 step) is 42.5912445441957956 
+the L2_L2 norm error is 0.0312173471225949 
+the L2_gr norm error is 0.1386950189055440 
+the L2_H1 norm error is 0.1421648023618427 
+the L_inf_L2 norm error is 0.0635483392465503 
+the L_inf_gr norm error is 0.2823378321867979 
+the L_inf_H1 norm error is 0.2894011798609935 
+the H1_L2 norm error is 0.6088248770903874 
+the H1_gr norm error is 2.7049376587512466 
+the H1_H1 norm error is 2.7726080625820160 
+the W_1_inf_L2 norm error is 4.1362268591822282 
+the W_1_inf_gr norm error is 18.3767717410130942 
+the W_1_inf_H1 norm error is 18.8365100868477739 
+the Final_t_L2_L2 norm error is 0.0014598679963778 
+the Final_t_L2_gr norm error is 0.0064860226130704 
+the Final_t_L2_H1 norm error is 0.0066482857868858 
+the Final_t_H1_L2 norm error is 0.0310543607311359 
+the Final_t_H1_gr norm error is 0.1379708894477790 
+the Final_t_H1_H1 norm error is 0.1414225570955028 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000002 
+the jump dotu semi norm error is 0.2324606613203407 
+Energynorm_err is 2.7825168228720645 
+64 space elements, 2 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/2 step) is 48.7989836400968500 
+the discete Energy (for No.2/2 step) is 48.7810047641708238 
+the L2_L2 norm error is 0.0123667588886329 
+the L2_gr norm error is 0.0549440620666255 
+the L2_H1 norm error is 0.0563186175415446 
+the L_inf_L2 norm error is 0.0292195733228925 
+the L_inf_gr norm error is 0.1298191437765464 
+the L_inf_H1 norm error is 0.1330668762541885 
+the H1_L2 norm error is 0.3086602527155045 
+the H1_gr norm error is 1.3713413704773643 
+the H1_H1 norm error is 1.4056487135800091 
+the W_1_inf_L2 norm error is 2.1863874485023063 
+the W_1_inf_gr norm error is 9.7138634911544948 
+the W_1_inf_H1 norm error is 9.9568787277817457 
+the Final_t_L2_L2 norm error is 0.0001698934885726 
+the Final_t_L2_gr norm error is 0.0007548168816835 
+the Final_t_L2_H1 norm error is 0.0007737004086427 
+the Final_t_H1_L2 norm error is 0.0033161355516725 
+the Final_t_H1_gr norm error is 0.0147332020631460 
+the Final_t_H1_H1 norm error is 0.0151017879084085 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000001 
+the jump dotu semi norm error is 0.0400649213735086 
+Energynorm_err is 1.4062236914578428 
+64 space elements, 4 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/4 step) is 20.3905144796078268 
+the discete Energy (for No.2/4 step) is 17.6321788617534487 
+the discete Energy (for No.3/4 step) is 17.5526012959693176 
+the discete Energy (for No.4/4 step) is 17.5481745454872247 
+the L2_L2 norm error is 0.0958421965186432 
+the L2_gr norm error is 0.4258156596683012 
+the L2_H1 norm error is 0.4364684440509629 
+the L_inf_L2 norm error is 0.2410294874350778 
+the L_inf_gr norm error is 1.0708657973183635 
+the L_inf_H1 norm error is 1.0976560343201831 
+the H1_L2 norm error is 1.2223067715098532 
+the H1_gr norm error is 5.4305659003365658 
+the H1_H1 norm error is 5.5664243317929980 
+the W_1_inf_L2 norm error is 8.0557796657627669 
+the W_1_inf_gr norm error is 35.7908860305805163 
+the W_1_inf_H1 norm error is 36.6862795725775328 
+the Final_t_L2_L2 norm error is 0.0290454824612120 
+the Final_t_L2_gr norm error is 0.1290456784574970 
+the Final_t_L2_H1 norm error is 0.1322740608734769 
+the Final_t_H1_L2 norm error is 0.0215317875231783 
+the Final_t_H1_gr norm error is 0.0956632114147803 
+the Final_t_H1_H1 norm error is 0.0980564525777485 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000005 
+the jump dotu semi norm error is 1.5391798213942338 
+Energynorm_err is 5.7767872359268013 
+64 space elements, 4 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 40.3940430643110915 
+the discete Energy (for No.2/4 step) is 39.9619736900145668 
+the discete Energy (for No.3/4 step) is 39.9588104214630278 
+the discete Energy (for No.4/4 step) is 39.9587952930059274 
+the L2_L2 norm error is 0.0289248923926326 
+the L2_gr norm error is 0.1285099108992941 
+the L2_H1 norm error is 0.1317248898244743 
+the L_inf_L2 norm error is 0.0864678051240655 
+the L_inf_gr norm error is 0.3841663360857134 
+the L_inf_H1 norm error is 0.3937771642750437 
+the H1_L2 norm error is 0.6642410297941738 
+the H1_gr norm error is 2.9511451380972789 
+the H1_H1 norm error is 3.0249750034962659 
+the W_1_inf_L2 norm error is 4.7190215259400441 
+the W_1_inf_gr norm error is 20.9660602224010830 
+the W_1_inf_H1 norm error is 21.4905757347641675 
+the Final_t_L2_L2 norm error is 0.0005193944946377 
+the Final_t_L2_gr norm error is 0.0023076089383992 
+the Final_t_L2_H1 norm error is 0.0023653392259124 
+the Final_t_H1_L2 norm error is 0.0009781795294033 
+the Final_t_H1_gr norm error is 0.0043459371416418 
+the Final_t_H1_H1 norm error is 0.0044546610231134 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000003 
+the jump dotu semi norm error is 0.3964148940475488 
+Energynorm_err is 3.0508400190593679 
+64 space elements, 4 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/4 step) is 49.1535129872804220 
+the discete Energy (for No.2/4 step) is 49.1161364368647142 
+the discete Energy (for No.3/4 step) is 49.1161102994338137 
+the discete Energy (for No.4/4 step) is 49.1161102835348657 
+the L2_L2 norm error is 0.0076187254106514 
+the L2_gr norm error is 0.0338491051374968 
+the L2_H1 norm error is 0.0346959204445165 
+the L_inf_L2 norm error is 0.0226858669265304 
+the L_inf_gr norm error is 0.1007906511052132 
+the L_inf_H1 norm error is 0.1033121672815989 
+the H1_L2 norm error is 0.2592609286563638 
+the H1_gr norm error is 1.1518659564584515 
+the H1_H1 norm error is 1.1806826037406086 
+the W_1_inf_L2 norm error is 2.0270133024562225 
+the W_1_inf_gr norm error is 9.0057828169027907 
+the W_1_inf_H1 norm error is 9.2310837431775088 
+the Final_t_L2_L2 norm error is 0.0000058421004390 
+the Final_t_L2_gr norm error is 0.0000259557683636 
+the Final_t_L2_H1 norm error is 0.0000266051132094 
+the Final_t_H1_L2 norm error is 0.0000012392686682 
+the Final_t_H1_gr norm error is 0.0000055059256216 
+the Final_t_H1_H1 norm error is 0.0000056436693544 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000001 
+the jump dotu semi norm error is 0.0537563002585288 
+Energynorm_err is 1.1819057285877022 
+64 space elements, 4 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/4 step) is 50.9494571623472936 
+the discete Energy (for No.2/4 step) is 50.9481967008258465 
+the discete Energy (for No.3/4 step) is 50.9481966698853341 
+the discete Energy (for No.4/4 step) is 50.9481966698844531 
+the L2_L2 norm error is 0.0017265447353365 
+the L2_gr norm error is 0.0076708361465938 
+the L2_H1 norm error is 0.0078627402291445 
+the L_inf_L2 norm error is 0.0053465684139504 
+the L_inf_gr norm error is 0.0237541775840367 
+the L_inf_H1 norm error is 0.0243484444369452 
+the H1_L2 norm error is 0.0777778984390712 
+the H1_gr norm error is 0.3455580979407634 
+the H1_H1 norm error is 0.3542030498711674 
+the W_1_inf_L2 norm error is 0.6689461262257038 
+the W_1_inf_gr norm error is 2.9720493307553100 
+the W_1_inf_H1 norm error is 3.0464021639034224 
+the Final_t_L2_L2 norm error is 0.0000000338239488 
+the Final_t_L2_gr norm error is 0.0000001502758449 
+the Final_t_L2_H1 norm error is 0.0000001540353501 
+the Final_t_H1_L2 norm error is 0.0000000143931932 
+the Final_t_H1_gr norm error is 0.0000000639472725 
+the Final_t_H1_H1 norm error is 0.0000000655470646 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000001 
+the jump dotu semi norm error is 0.0033128516018413 
+Energynorm_err is 0.3542185420383795 
+64 space elements, 8 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/8 step) is 31.8821981774745318 
+the discete Energy (for No.2/8 step) is 25.5348388308738947 
+the discete Energy (for No.3/8 step) is 24.9806370304865837 
+the discete Energy (for No.4/8 step) is 24.9362247437162736 
+the discete Energy (for No.5/8 step) is 24.9331538898809839 
+the discete Energy (for No.6/8 step) is 24.9325966593711108 
+the discete Energy (for No.7/8 step) is 24.9320503647392187 
+the discete Energy (for No.8/8 step) is 24.9315402054627135 
+the L2_L2 norm error is 0.0544361490795311 
+the L2_gr norm error is 0.2418534379644940 
+the L2_H1 norm error is 0.2479039729045387 
+the L_inf_L2 norm error is 0.1691711910986141 
+the L_inf_gr norm error is 0.7516077985599610 
+the L_inf_H1 norm error is 0.7704110427258132 
+the H1_L2 norm error is 0.9419208101165976 
+the H1_gr norm error is 4.1848438963633381 
+the H1_H1 norm error is 4.2895376498476150 
+the W_1_inf_L2 norm error is 6.9060469243793428 
+the W_1_inf_gr norm error is 30.6827580504460329 
+the W_1_inf_H1 norm error is 31.4503597070675909 
+the Final_t_L2_L2 norm error is 0.0137127888260030 
+the Final_t_L2_gr norm error is 0.0609243155096175 
+the Final_t_L2_H1 norm error is 0.0624484811480790 
+the Final_t_H1_L2 norm error is 0.0140263997054760 
+the Final_t_H1_gr norm error is 0.0623176519352487 
+the Final_t_H1_H1 norm error is 0.0638766751750635 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000008 
+the jump dotu semi norm error is 2.1888894929932237 
+Energynorm_err is 4.8161477317567130 
+64 space elements, 8 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/8 step) is 47.6306451320462472 
+the discete Energy (for No.2/8 step) is 47.5124733051799808 
+the discete Energy (for No.3/8 step) is 47.5122119868944637 
+the discete Energy (for No.4/8 step) is 47.5122111144119827 
+the discete Energy (for No.5/8 step) is 47.5122110643374427 
+the discete Energy (for No.6/8 step) is 47.5122110345792876 
+the discete Energy (for No.7/8 step) is 47.5122110117466008 
+the discete Energy (for No.8/8 step) is 47.5122109939784565 
+the L2_L2 norm error is 0.0078054513518909 
+the L2_gr norm error is 0.0346787066359411 
+the L2_H1 norm error is 0.0355462763837283 
+the L_inf_L2 norm error is 0.0309166703582258 
+the L_inf_gr norm error is 0.1373591472392278 
+the L_inf_H1 norm error is 0.1407955107108428 
+the H1_L2 norm error is 0.3163458779576174 
+the H1_gr norm error is 1.4054877037346267 
+the H1_H1 norm error is 1.4406492980076757 
+the W_1_inf_L2 norm error is 2.7025327341625309 
+the W_1_inf_gr norm error is 12.0070365744251895 
+the W_1_inf_H1 norm error is 12.3074209515561837 
+the Final_t_L2_L2 norm error is 0.0000776699401379 
+the Final_t_L2_gr norm error is 0.0003450784518466 
+the Final_t_L2_H1 norm error is 0.0003537114042972 
+the Final_t_H1_L2 norm error is 0.0000776139390006 
+the Final_t_H1_gr norm error is 0.0003448296453491 
+the Final_t_H1_H1 norm error is 0.0003534563733175 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000002 
+the jump dotu semi norm error is 0.1256510743326870 
+Energynorm_err is 1.4461185004812120 
+64 space elements, 8 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/8 step) is 51.3357463222290917 
+the discete Energy (for No.2/8 step) is 50.9475342464358292 
+the discete Energy (for No.3/8 step) is 50.9445797079850351 
+the discete Energy (for No.4/8 step) is 50.9445572267412459 
+the discete Energy (for No.5/8 step) is 50.9445570560382706 
+the discete Energy (for No.6/8 step) is 50.9445570547693976 
+the discete Energy (for No.7/8 step) is 50.9445570547618587 
+the discete Energy (for No.8/8 step) is 50.9445570547617876 
+the L2_L2 norm error is 0.0010723204400573 
+the L2_gr norm error is 0.0047641941873688 
+the L2_H1 norm error is 0.0048833817566440 
+the L_inf_L2 norm error is 0.0045275945741319 
+the L_inf_gr norm error is 0.0201155726843090 
+the L_inf_H1 norm error is 0.0206188112422959 
+the H1_L2 norm error is 0.0668942460150567 
+the H1_gr norm error is 0.2972033042812636 
+the H1_H1 norm error is 0.3046385468479396 
+the W_1_inf_L2 norm error is 0.6718019728964314 
+the W_1_inf_gr norm error is 2.9847375232026860 
+the W_1_inf_H1 norm error is 3.0594077814507896 
+the Final_t_L2_L2 norm error is 0.0000002533265133 
+the Final_t_L2_gr norm error is 0.0000011255000436 
+the Final_t_L2_H1 norm error is 0.0000011536570853 
+the Final_t_H1_L2 norm error is 0.0000002469560881 
+the Final_t_H1_gr norm error is 0.0000010971969901 
+the Final_t_H1_H1 norm error is 0.0000011246459641 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000004 
+the jump dotu semi norm error is 0.0588322550718934 
+Energynorm_err is 0.3102674305559582 
+64 space elements, 8 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/8 step) is 51.5321225187895422 
+the discete Energy (for No.2/8 step) is 51.1673609513416210 
+the discete Energy (for No.3/8 step) is 51.1647424437822309 
+the discete Energy (for No.4/8 step) is 51.1647236463404482 
+the discete Energy (for No.5/8 step) is 51.1647235113990178 
+the discete Energy (for No.6/8 step) is 51.1647235104302780 
+the discete Energy (for No.7/8 step) is 51.1647235104233218 
+the discete Energy (for No.8/8 step) is 51.1647235104232649 
+the L2_L2 norm error is 0.0001219675259809 
+the L2_gr norm error is 0.0005418874401898 
+the L2_H1 norm error is 0.0005554440342909 
+the L_inf_L2 norm error is 0.0005639510169165 
+the L_inf_gr norm error is 0.0025055683510153 
+the L_inf_H1 norm error is 0.0025682510607592 
+the H1_L2 norm error is 0.0104760672315275 
+the H1_gr norm error is 0.0465439403619533 
+the H1_H1 norm error is 0.0477083469537203 
+the W_1_inf_L2 norm error is 0.1197602142611693 
+the W_1_inf_gr norm error is 0.5320806126111409 
+the W_1_inf_H1 norm error is 0.5453918657594079 
+the Final_t_L2_L2 norm error is 0.0000000003926428 
+the Final_t_L2_gr norm error is 0.0000000017444658 
+the Final_t_L2_H1 norm error is 0.0000000017881078 
+the Final_t_H1_L2 norm error is 0.0000000002091084 
+the Final_t_H1_gr norm error is 0.0000000009290442 
+the Final_t_H1_H1 norm error is 0.0000000009522864 
+the jump u semi norm error is 0.0000000000000001 
+the jump gradu semi norm error is 0.0000000000000004 
+the jump dotu semi norm error is 0.0101835544183711 
+Energynorm_err is 0.0487831031162275 
+64 space elements, 16 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/16 step) is 47.2709256297455838 
+the discete Energy (for No.2/16 step) is 35.8671467174730054 
+the discete Energy (for No.3/16 step) is 33.5161957475477621 
+the discete Energy (for No.4/16 step) is 33.0359215276072717 
+the discete Energy (for No.5/16 step) is 32.9396288224520220 
+the discete Energy (for No.6/16 step) is 32.9210521884307354 
+the discete Energy (for No.7/16 step) is 32.9177347094605111 
+the discete Energy (for No.8/16 step) is 32.9172131517047291 
+the discete Energy (for No.9/16 step) is 32.9171191965029593 
+the discete Energy (for No.10/16 step) is 32.9170550763556093 
+the discete Energy (for No.11/16 step) is 32.9169778364893162 
+the discete Energy (for No.12/16 step) is 32.9168948679317666 
+the discete Energy (for No.13/16 step) is 32.9168140775352214 
+the discete Energy (for No.14/16 step) is 32.9167392897421252 
+the discete Energy (for No.15/16 step) is 32.9166717501766115 
+the discete Energy (for No.16/16 step) is 32.9166114842064701 
+the L2_L2 norm error is 0.0292322693736023 
+the L2_gr norm error is 0.1298755508436271 
+the L2_H1 norm error is 0.1331246944772698 
+the L_inf_L2 norm error is 0.0912516630313244 
+the L_inf_gr norm error is 0.4054204567604478 
+the L_inf_H1 norm error is 0.4155630069746734 
+the H1_L2 norm error is 0.6215597515824917 
+the H1_gr norm error is 2.7615172153518044 
+the H1_H1 norm error is 2.8306030904158348 
+the W_1_inf_L2 norm error is 5.3781436056246035 
+the W_1_inf_gr norm error is 23.8944624643950618 
+the W_1_inf_H1 norm error is 24.4922388748988347 
+the Final_t_L2_L2 norm error is 0.0066166048985819 
+the Final_t_L2_gr norm error is 0.0293968010124446 
+the Final_t_L2_H1 norm error is 0.0301322314166940 
+the Final_t_H1_L2 norm error is 0.0068095926062621 
+the Final_t_H1_gr norm error is 0.0302542228061713 
+the Final_t_H1_H1 norm error is 0.0310111036415783 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000014 
+the jump dotu semi norm error is 2.7544785650219454 
+Energynorm_err is 3.9497312013728556 
+64 space elements, 16 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/16 step) is 54.5603316570034735 
+the discete Energy (for No.2/16 step) is 50.7282169598278188 
+the discete Energy (for No.3/16 step) is 50.4208761824876603 
+the discete Energy (for No.4/16 step) is 50.3962229504816577 
+the discete Energy (for No.5/16 step) is 50.3942443127614297 
+the discete Energy (for No.6/16 step) is 50.3940852201886429 
+the discete Energy (for No.7/16 step) is 50.3940723510462547 
+the discete Energy (for No.8/16 step) is 50.3940712892663072 
+the discete Energy (for No.9/16 step) is 50.3940711959385652 
+the discete Energy (for No.10/16 step) is 50.3940711860418844 
+the discete Energy (for No.11/16 step) is 50.3940711843975819 
+the discete Energy (for No.12/16 step) is 50.3940711838550683 
+the discete Energy (for No.13/16 step) is 50.3940711835396300 
+the discete Energy (for No.14/16 step) is 50.3940711832984078 
+the discete Energy (for No.15/16 step) is 50.3940711830949155 
+the discete Energy (for No.16/16 step) is 50.3940711829177914 
+the L2_L2 norm error is 0.0014401756831752 
+the L2_gr norm error is 0.0063985319707298 
+the L2_H1 norm error is 0.0065586063594990 
+the L_inf_L2 norm error is 0.0082998846907230 
+the L_inf_gr norm error is 0.0368754160810949 
+the L_inf_H1 norm error is 0.0377979417036585 
+the H1_L2 norm error is 0.1107054238359353 
+the H1_gr norm error is 0.4918512387222676 
+the H1_H1 norm error is 0.5041560590723105 
+the W_1_inf_L2 norm error is 1.1962384652084648 
+the W_1_inf_gr norm error is 5.3147474670434356 
+the W_1_inf_H1 norm error is 5.4477084268606850 
+the Final_t_L2_L2 norm error is 0.0000112921683943 
+the Final_t_L2_gr norm error is 0.0000501697822940 
+the Final_t_L2_H1 norm error is 0.0000514248978850 
+the Final_t_H1_L2 norm error is 0.0000112824735597 
+the Final_t_H1_gr norm error is 0.0000501267092788 
+the Final_t_H1_H1 norm error is 0.0000513807472965 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000011 
+the jump dotu semi norm error is 0.3532200528174699 
+Energynorm_err is 0.6155791908893612 
+64 space elements, 16 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/16 step) is 55.5036713030717834 
+the discete Energy (for No.2/16 step) is 51.5278289070626485 
+the discete Energy (for No.3/16 step) is 51.1903556520502576 
+the discete Energy (for No.4/16 step) is 51.1617106071436467 
+the discete Energy (for No.5/16 step) is 51.1592791899477106 
+the discete Energy (for No.6/16 step) is 51.1590728093289115 
+the discete Energy (for No.7/16 step) is 51.1590552916499419 
+the discete Energy (for No.8/16 step) is 51.1590538047611219 
+the discete Energy (for No.9/16 step) is 51.1590536785603547 
+the discete Energy (for No.10/16 step) is 51.1590536678504293 
+the discete Energy (for No.11/16 step) is 51.1590536669419507 
+the discete Energy (for No.12/16 step) is 51.1590536668649918 
+the discete Energy (for No.13/16 step) is 51.1590536668585045 
+the discete Energy (for No.14/16 step) is 51.1590536668579716 
+the discete Energy (for No.15/16 step) is 51.1590536668579290 
+the discete Energy (for No.16/16 step) is 51.1590536668579219 
+the L2_L2 norm error is 0.0000971228833442 
+the L2_gr norm error is 0.0004315056013146 
+the L2_H1 norm error is 0.0004423007330255 
+the L_inf_L2 norm error is 0.0005714256304866 
+the L_inf_gr norm error is 0.0025387771841153 
+the L_inf_H1 norm error is 0.0026022906912491 
+the H1_L2 norm error is 0.0116266833710593 
+the H1_gr norm error is 0.0516559931766488 
+the H1_H1 norm error is 0.0529482898427972 
+the W_1_inf_L2 norm error is 0.1536137009240216 
+the W_1_inf_gr norm error is 0.6824876909026965 
+the W_1_inf_H1 norm error is 0.6995617323333728 
+the Final_t_L2_L2 norm error is 0.0000000091671983 
+the Final_t_L2_gr norm error is 0.0000000407287887 
+the Final_t_L2_H1 norm error is 0.0000000417477156 
+the Final_t_H1_L2 norm error is 0.0000000089869804 
+the Final_t_H1_gr norm error is 0.0000000399281018 
+the Final_t_H1_H1 norm error is 0.0000000409269976 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000013 
+the jump dotu semi norm error is 0.0467838831155760 
+Energynorm_err is 0.0706558781464818 
+64 space elements, 16 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/16 step) is 55.5114553351569171 
+the discete Energy (for No.2/16 step) is 51.5398603308751504 
+the discete Energy (for No.3/16 step) is 51.2030517514848924 
+the discete Energy (for No.4/16 step) is 51.1744889148829358 
+the discete Energy (for No.5/16 step) is 51.1720666617551956 
+the discete Energy (for No.6/16 step) is 51.1718612441245995 
+the discete Energy (for No.7/16 step) is 51.1718438238135036 
+the discete Energy (for No.8/16 step) is 51.1718423464951329 
+the discete Energy (for No.9/16 step) is 51.1718422212120956 
+the discete Energy (for No.10/16 step) is 51.1718422105875490 
+the discete Energy (for No.11/16 step) is 51.1718422096865382 
+the discete Energy (for No.12/16 step) is 51.1718422096101335 
+the discete Energy (for No.13/16 step) is 51.1718422096036534 
+the discete Energy (for No.14/16 step) is 51.1718422096031134 
+the discete Energy (for No.15/16 step) is 51.1718422096030565 
+the discete Energy (for No.16/16 step) is 51.1718422096030565 
+the L2_L2 norm error is 0.0000053644739627 
+the L2_gr norm error is 0.0000238337298412 
+the L2_H1 norm error is 0.0000244299868817 
+the L_inf_L2 norm error is 0.0000346800040571 
+the L_inf_gr norm error is 0.0001540791983205 
+the L_inf_H1 norm error is 0.0001579338533579 
+the H1_L2 norm error is 0.0009058975756241 
+the H1_gr norm error is 0.0040247968824593 
+the H1_H1 norm error is 0.0041254866819050 
+the W_1_inf_L2 norm error is 0.0138241415339222 
+the W_1_inf_gr norm error is 0.0614190425557464 
+the W_1_inf_H1 norm error is 0.0629555849596722 
+the Final_t_L2_L2 norm error is 0.0000000000036089 
+the Final_t_L2_gr norm error is 0.0000000000160339 
+the Final_t_L2_H1 norm error is 0.0000000000164351 
+the Final_t_H1_L2 norm error is 0.0000000000021648 
+the Final_t_H1_gr norm error is 0.0000000000096178 
+the Final_t_H1_H1 norm error is 0.0000000000098584 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000013 
+the jump dotu semi norm error is 0.0042081411216756 
+Energynorm_err is 0.0058930545613046 
+64 space elements, 32 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/32 step) is 64.0009691685098687 
+the discete Energy (for No.2/32 step) is 49.1631077238969851 
+the discete Energy (for No.3/32 step) is 43.4245054857489023 
+the discete Energy (for No.4/32 step) is 41.2070785765715684 
+the discete Energy (for No.5/32 step) is 40.3514567802316009 
+the discete Energy (for No.6/32 step) is 40.0220280763077270 
+the discete Energy (for No.7/32 step) is 39.8956265472978089 
+the discete Energy (for No.8/32 step) is 39.8473858590673871 
+the discete Energy (for No.9/32 step) is 39.8291292741629448 
+the discete Energy (for No.10/32 step) is 39.8223110655545582 
+the discete Energy (for No.11/32 step) is 39.8198175252957185 
+the discete Energy (for No.12/32 step) is 39.8189354707400867 
+the discete Energy (for No.13/32 step) is 39.8186395007232790 
+the discete Energy (for No.14/32 step) is 39.8185478376287065 
+the discete Energy (for No.15/32 step) is 39.8185218856195107 
+the discete Energy (for No.16/32 step) is 39.8185135468608067 
+the discete Energy (for No.17/32 step) is 39.8185075462589566 
+the discete Energy (for No.18/32 step) is 39.8184999767220447 
+the discete Energy (for No.19/32 step) is 39.8184905233270285 
+the discete Energy (for No.20/32 step) is 39.8184797739722782 
+the discete Energy (for No.21/32 step) is 39.8184683722817709 
+the discete Energy (for No.22/32 step) is 39.8184568068597784 
+the discete Energy (for No.23/32 step) is 39.8184454004275992 
+the discete Energy (for No.24/32 step) is 39.8184343482666137 
+the discete Energy (for No.25/32 step) is 39.8184237587988790 
+the discete Energy (for No.26/32 step) is 39.8184136847655807 
+the discete Energy (for No.27/32 step) is 39.8184041445947017 
+the discete Energy (for No.28/32 step) is 39.8183951362490163 
+the discete Energy (for No.29/32 step) is 39.8183866459196736 
+the discete Energy (for No.30/32 step) is 39.8183786533729318 
+the discete Energy (for No.31/32 step) is 39.8183711351876113 
+the discete Energy (for No.32/32 step) is 39.8183640666868541 
+the L2_L2 norm error is 0.0153042219447386 
+the L2_gr norm error is 0.0679948665600680 
+the L2_H1 norm error is 0.0696959187316967 
+the L_inf_L2 norm error is 0.0502617505408298 
+the L_inf_gr norm error is 0.2233070739198247 
+the L_inf_H1 norm error is 0.2288936277620297 
+the H1_L2 norm error is 0.3657998912013778 
+the H1_gr norm error is 1.6252060953987884 
+the H1_H1 norm error is 1.6658644641519658 
+the W_1_inf_L2 norm error is 3.7298971031899875 
+the W_1_inf_gr norm error is 16.5714962008491078 
+the W_1_inf_H1 norm error is 16.9860713154967549 
+the Final_t_L2_L2 norm error is 0.0032480059881147 
+the Final_t_L2_gr norm error is 0.0144305103876310 
+the Final_t_L2_H1 norm error is 0.0147915236857585 
+the Final_t_H1_L2 norm error is 0.0033000261455374 
+the Final_t_H1_gr norm error is 0.0146616298574845 
+the Final_t_H1_H1 norm error is 0.0150284251549892 
+the jump u semi norm error is 0.0000000000000003 
+the jump gradu semi norm error is 0.0000000000000023 
+the jump dotu semi norm error is 2.9656789830062213 
+Energynorm_err is 3.4015548463859484 
+64 space elements, 32 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/32 step) is 65.9295559772902209 
+the discete Energy (for No.2/32 step) is 55.3644251059668377 
+the discete Energy (for No.3/32 step) is 52.2990921557593893 
+the discete Energy (for No.4/32 step) is 51.4097252417902766 
+the discete Energy (for No.5/32 step) is 51.1516862948761286 
+the discete Energy (for No.6/32 step) is 51.0768191432984295 
+the discete Energy (for No.7/32 step) is 51.0550971076751878 
+the discete Energy (for No.8/32 step) is 51.0487945703994441 
+the discete Energy (for No.9/32 step) is 51.0469658784103899 
+the discete Energy (for No.10/32 step) is 51.0464352577898666 
+the discete Energy (for No.11/32 step) is 51.0462812790263314 
+the discete Energy (for No.12/32 step) is 51.0462365903839768 
+the discete Energy (for No.13/32 step) is 51.0462236173739470 
+the discete Energy (for No.14/32 step) is 51.0462198496659454 
+the discete Energy (for No.15/32 step) is 51.0462187545491517 
+the discete Energy (for No.16/32 step) is 51.0462184357873028 
+the discete Energy (for No.17/32 step) is 51.0462183427646039 
+the discete Energy (for No.18/32 step) is 51.0462183154931424 
+the discete Energy (for No.19/32 step) is 51.0462183074322553 
+the discete Energy (for No.20/32 step) is 51.0462183050149818 
+the discete Energy (for No.21/32 step) is 51.0462183042716688 
+the discete Energy (for No.22/32 step) is 51.0462183040331823 
+the discete Energy (for No.23/32 step) is 51.0462183039512141 
+the discete Energy (for No.24/32 step) is 51.0462183039199644 
+the discete Energy (for No.25/32 step) is 51.0462183039062367 
+the discete Energy (for No.26/32 step) is 51.0462183038991100 
+the discete Energy (for No.27/32 step) is 51.0462183038947259 
+the discete Energy (for No.28/32 step) is 51.0462183038916208 
+the discete Energy (for No.29/32 step) is 51.0462183038891837 
+the discete Energy (for No.30/32 step) is 51.0462183038871160 
+the discete Energy (for No.31/32 step) is 51.0462183038852757 
+the discete Energy (for No.32/32 step) is 51.0462183038836130 
+the L2_L2 norm error is 0.0002127139355571 
+the L2_gr norm error is 0.0009450631149950 
+the L2_H1 norm error is 0.0009687061007882 
+the L_inf_L2 norm error is 0.0016917990640127 
+the L_inf_gr norm error is 0.0075164651962943 
+the L_inf_H1 norm error is 0.0077045073249429 
+the H1_L2 norm error is 0.0321583257542732 
+the H1_gr norm error is 0.1428756768133989 
+the H1_H1 norm error is 0.1464500493007933 
+the W_1_inf_L2 norm error is 0.4224925171257171 
+the W_1_inf_gr norm error is 1.8770847958374286 
+the W_1_inf_H1 norm error is 1.9240445051482733 
+the Final_t_L2_L2 norm error is 0.0000015432558255 
+the Final_t_L2_gr norm error is 0.0000068565049765 
+the Final_t_L2_H1 norm error is 0.0000070280366416 
+the Final_t_H1_L2 norm error is 0.0000015418012139 
+the Final_t_H1_gr norm error is 0.0000068500423071 
+the Final_t_H1_H1 norm error is 0.0000070214122933 
+the jump u semi norm error is 0.0000000000000003 
+the jump gradu semi norm error is 0.0000000000000025 
+the jump dotu semi norm error is 0.2701049792243537 
+Energynorm_err is 0.3072528548140473 
+64 space elements, 32 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/32 step) is 66.0737372872297044 
+the discete Energy (for No.2/32 step) is 55.5112429940299990 
+the discete Energy (for No.3/32 step) is 52.4352626800613209 
+the discete Energy (for No.4/32 step) is 51.5394842183701556 
+the discete Energy (for No.5/32 step) is 51.2786180975989510 
+the discete Energy (for No.6/32 step) is 51.2026493890150576 
+the discete Energy (for No.7/32 step) is 51.1805259923141733 
+the discete Energy (for No.8/32 step) is 51.1740832780776245 
+the discete Energy (for No.9/32 step) is 51.1722070487126928 
+the discete Energy (for No.10/32 step) is 51.1716606584070988 
+the discete Energy (for No.11/32 step) is 51.1715015401419251 
+the discete Energy (for No.12/32 step) is 51.1714552021645162 
+the discete Energy (for No.13/32 step) is 51.1714417077486274 
+the discete Energy (for No.14/32 step) is 51.1714377779429981 
+the discete Energy (for No.15/32 step) is 51.1714366335162936 
+the discete Energy (for No.16/32 step) is 51.1714363002397263 
+the discete Energy (for No.17/32 step) is 51.1714362031839585 
+the discete Energy (for No.18/32 step) is 51.1714361749197053 
+the discete Energy (for No.19/32 step) is 51.1714361666887001 
+the discete Energy (for No.20/32 step) is 51.1714361642917055 
+the discete Energy (for No.21/32 step) is 51.1714361635936683 
+the discete Energy (for No.22/32 step) is 51.1714361633903891 
+the discete Energy (for No.23/32 step) is 51.1714361633311938 
+the discete Energy (for No.24/32 step) is 51.1714361633139561 
+the discete Energy (for No.25/32 step) is 51.1714361633089325 
+the discete Energy (for No.26/32 step) is 51.1714361633074759 
+the discete Energy (for No.27/32 step) is 51.1714361633070496 
+the discete Energy (for No.28/32 step) is 51.1714361633069359 
+the discete Energy (for No.29/32 step) is 51.1714361633068933 
+the discete Energy (for No.30/32 step) is 51.1714361633068791 
+the discete Energy (for No.31/32 step) is 51.1714361633068719 
+the discete Energy (for No.32/32 step) is 51.1714361633068719 
+the L2_L2 norm error is 0.0000069853473456 
+the L2_gr norm error is 0.0000310350805391 
+the L2_H1 norm error is 0.0000318114963748 
+the L_inf_L2 norm error is 0.0000525954128247 
+the L_inf_gr norm error is 0.0002336752622644 
+the L_inf_H1 norm error is 0.0002395212008247 
+the H1_L2 norm error is 0.0016500511545899 
+the H1_gr norm error is 0.0073309841218160 
+the H1_H1 norm error is 0.0075143860033327 
+the W_1_inf_L2 norm error is 0.0268998504481058 
+the W_1_inf_gr norm error is 0.1195128865949009 
+the W_1_inf_H1 norm error is 0.1225027837086819 
+the Final_t_L2_L2 norm error is 0.0000000003074676 
+the Final_t_L2_gr norm error is 0.0000000013660427 
+the Final_t_L2_H1 norm error is 0.0000000014002175 
+the Final_t_H1_L2 norm error is 0.0000000003015513 
+the Final_t_H1_gr norm error is 0.0000000013397573 
+the Final_t_H1_H1 norm error is 0.0000000013732745 
+the jump u semi norm error is 0.0000000000000004 
+the jump gradu semi norm error is 0.0000000000000025 
+the jump dotu semi norm error is 0.0172425630021939 
+Energynorm_err is 0.0188088270737894 
+64 space elements, 32 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/32 step) is 66.0738781302751192 
+the discete Energy (for No.2/32 step) is 55.5115809534341906 
+the discete Energy (for No.3/32 step) is 52.4357035011867509 
+the discete Energy (for No.4/32 step) is 51.5399682323487482 
+the discete Energy (for No.5/32 step) is 51.2791185449679716 
+the discete Energy (for No.6/32 step) is 51.2031557446029524 
+the discete Energy (for No.7/32 step) is 51.1810343953414772 
+the discete Energy (for No.8/32 step) is 51.1745923725250904 
+the discete Energy (for No.9/32 step) is 51.1727163722198455 
+the discete Energy (for No.10/32 step) is 51.1721700566842372 
+the discete Energy (for No.11/32 step) is 51.1720109625393107 
+the discete Energy (for No.12/32 step) is 51.1719646322680717 
+the discete Energy (for No.13/32 step) is 51.1719511402942757 
+the discete Energy (for No.14/32 step) is 51.1719472112571268 
+the discete Energy (for No.15/32 step) is 51.1719460670707420 
+the discete Energy (for No.16/32 step) is 51.1719457338688670 
+the discete Energy (for No.17/32 step) is 51.1719456368361847 
+the discete Energy (for No.18/32 step) is 51.1719456085790085 
+the discete Energy (for No.19/32 step) is 51.1719456003501563 
+the discete Energy (for No.20/32 step) is 51.1719455979538083 
+the discete Energy (for No.21/32 step) is 51.1719455972559629 
+the discete Energy (for No.22/32 step) is 51.1719455970527406 
+the discete Energy (for No.23/32 step) is 51.1719455969935595 
+the discete Energy (for No.24/32 step) is 51.1719455969763288 
+the discete Energy (for No.25/32 step) is 51.1719455969713053 
+the discete Energy (for No.26/32 step) is 51.1719455969698487 
+the discete Energy (for No.27/32 step) is 51.1719455969694224 
+the discete Energy (for No.28/32 step) is 51.1719455969693087 
+the discete Energy (for No.29/32 step) is 51.1719455969692660 
+the discete Energy (for No.30/32 step) is 51.1719455969692518 
+the discete Energy (for No.31/32 step) is 51.1719455969692447 
+the discete Energy (for No.32/32 step) is 51.1719455969692447 
+the L2_L2 norm error is 0.0000001891819761 
+the L2_gr norm error is 0.0000008405133738 
+the L2_H1 norm error is 0.0000008615408009 
+the L_inf_L2 norm error is 0.0000015268543472 
+the L_inf_gr norm error is 0.0000067836351285 
+the L_inf_H1 norm error is 0.0000069533437822 
+the H1_L2 norm error is 0.0000635828742042 
+the H1_gr norm error is 0.0002824912669607 
+the H1_H1 norm error is 0.0002895584531682 
+the W_1_inf_L2 norm error is 0.0012026457709534 
+the W_1_inf_gr norm error is 0.0053432143764148 
+the W_1_inf_H1 norm error is 0.0054768875032008 
+the Final_t_L2_L2 norm error is 0.0000000000000307 
+the Final_t_L2_gr norm error is 0.0000000000001364 
+the Final_t_L2_H1 norm error is 0.0000000000001398 
+the Final_t_H1_L2 norm error is 0.0000000000000189 
+the Final_t_H1_gr norm error is 0.0000000000000843 
+the Final_t_H1_H1 norm error is 0.0000000000000864 
+the jump u semi norm error is 0.0000000000000004 
+the jump gradu semi norm error is 0.0000000000000028 
+the jump dotu semi norm error is 0.0007708771215130 
+Energynorm_err is 0.0008234656242207 
+64 space elements, 64 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/64 step) is 78.4898672392264132 
+the discete Energy (for No.2/64 step) is 64.5056241845881573 
+the discete Energy (for No.3/64 step) is 56.3080727502799618 
+the discete Energy (for No.4/64 step) is 51.5031316096388068 
+the discete Energy (for No.5/64 step) is 48.6870909232694871 
+the discete Energy (for No.6/64 step) is 47.0369481438845725 
+the discete Energy (for No.7/64 step) is 46.0701933737301417 
+the discete Energy (for No.8/64 step) is 45.5039564700856971 
+the discete Energy (for No.9/64 step) is 45.1724174327431029 
+the discete Energy (for No.10/64 step) is 44.9783806340538277 
+the discete Energy (for No.11/64 step) is 44.8648814679466525 
+the discete Energy (for No.12/64 step) is 44.7985390947943287 
+the discete Energy (for No.13/64 step) is 44.7597964272855364 
+the discete Energy (for No.14/64 step) is 44.7371983013070391 
+the discete Energy (for No.15/64 step) is 44.7240372736160765 
+the discete Energy (for No.16/64 step) is 44.7163875247884448 
+the discete Energy (for No.17/64 step) is 44.7119525450977306 
+the discete Energy (for No.18/64 step) is 44.7093898718002478 
+the discete Energy (for No.19/64 step) is 44.7079154564093670 
+the discete Energy (for No.20/64 step) is 44.7070719223156487 
+the discete Energy (for No.21/64 step) is 44.7065928641451293 
+the discete Energy (for No.22/64 step) is 44.7063234182389948 
+the discete Energy (for No.23/64 step) is 44.7061737946136049 
+the discete Energy (for No.24/64 step) is 44.7060921105201530 
+the discete Energy (for No.25/64 step) is 44.7060485221312760 
+the discete Energy (for No.26/64 step) is 44.7060259661410697 
+the discete Energy (for No.27/64 step) is 44.7060147658890656 
+the discete Energy (for No.28/64 step) is 44.7060094949560352 
+the discete Energy (for No.29/64 step) is 44.7060071579975684 
+the discete Energy (for No.30/64 step) is 44.7060061390749226 
+the discete Energy (for No.31/64 step) is 44.7060055963303995 
+the discete Energy (for No.32/64 step) is 44.7060051155984155 
+the discete Energy (for No.33/64 step) is 44.7060045137456115 
+the discete Energy (for No.34/64 step) is 44.7060037282209279 
+the discete Energy (for No.35/64 step) is 44.7060027559599362 
+the discete Energy (for No.36/64 step) is 44.7060016203263118 
+the discete Energy (for No.37/64 step) is 44.7060003538129109 
+the discete Energy (for No.38/64 step) is 44.7059989894704515 
+the discete Energy (for No.39/64 step) is 44.7059975570667945 
+the discete Energy (for No.40/64 step) is 44.7059960817283653 
+the discete Energy (for No.41/64 step) is 44.7059945838168744 
+the discete Energy (for No.42/64 step) is 44.7059930793646885 
+the discete Energy (for No.43/64 step) is 44.7059915807125776 
+the discete Energy (for No.44/64 step) is 44.7059900971719486 
+the discete Energy (for No.45/64 step) is 44.7059886356302982 
+the discete Energy (for No.46/64 step) is 44.7059872010698172 
+the discete Energy (for No.47/64 step) is 44.7059857969946890 
+the discete Energy (for No.48/64 step) is 44.7059844257743961 
+the discete Energy (for No.49/64 step) is 44.7059830889148486 
+the discete Energy (for No.50/64 step) is 44.7059817872698346 
+the discete Energy (for No.51/64 step) is 44.7059805212044878 
+the discete Energy (for No.52/64 step) is 44.7059792907208262 
+the discete Energy (for No.53/64 step) is 44.7059780955535189 
+the discete Energy (for No.54/64 step) is 44.7059769352428020 
+the discete Energy (for No.55/64 step) is 44.7059758091896384 
+the discete Energy (for No.56/64 step) is 44.7059747166973480 
+the discete Energy (for No.57/64 step) is 44.7059736570029926 
+the discete Energy (for No.58/64 step) is 44.7059726293008310 
+the discete Energy (for No.59/64 step) is 44.7059716327598835 
+the discete Energy (for No.60/64 step) is 44.7059706665369703 
+the discete Energy (for No.61/64 step) is 44.7059697297863679 
+the discete Energy (for No.62/64 step) is 44.7059688216668789 
+the discete Energy (for No.63/64 step) is 44.7059679413469695 
+the discete Energy (for No.64/64 step) is 44.7059670880084994 
+the L2_L2 norm error is 0.0078819149941550 
+the L2_gr norm error is 0.0350184256475457 
+the L2_H1 norm error is 0.0358944942687283 
+the L_inf_L2 norm error is 0.0259312661237267 
+the L_inf_gr norm error is 0.1152095798259495 
+the L_inf_H1 norm error is 0.1180918195577127 
+the H1_L2 norm error is 0.2002090317073962 
+the H1_gr norm error is 0.8895052910379975 
+the H1_H1 norm error is 0.9117583666530326 
+the W_1_inf_L2 norm error is 2.3127846179916993 
+the W_1_inf_gr norm error is 10.2754313189104298 
+the W_1_inf_H1 norm error is 10.5324955010132513 
+the Final_t_L2_L2 norm error is 0.0016091461153587 
+the Final_t_L2_gr norm error is 0.0071492478209312 
+the Final_t_L2_H1 norm error is 0.0073281031396715 
+the Final_t_H1_L2 norm error is 0.0016221715731849 
+the Final_t_H1_gr norm error is 0.0072071184052689 
+the Final_t_H1_H1 norm error is 0.0073874214933504 
+the jump u semi norm error is 0.0000000000000005 
+the jump gradu semi norm error is 0.0000000000000037 
+the jump dotu semi norm error is 2.7537320335002242 
+Energynorm_err is 2.9007580344923816 
+64 space elements, 64 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/64 step) is 78.7715100414171445 
+the discete Energy (for No.2/64 step) is 66.0539962089541746 
+the discete Energy (for No.3/64 step) is 59.1927824256177004 
+the discete Energy (for No.4/64 step) is 55.4910954344356426 
+the discete Energy (for No.5/64 step) is 53.4940017164084907 
+the discete Energy (for No.6/64 step) is 52.4165514970586202 
+the discete Energy (for No.7/64 step) is 51.8352572793118043 
+the discete Energy (for No.8/64 step) is 51.5216437284163860 
+the discete Energy (for No.9/64 step) is 51.3524463327840195 
+the discete Energy (for No.10/64 step) is 51.2611627709057203 
+the discete Energy (for No.11/64 step) is 51.2119144363100176 
+the discete Energy (for No.12/64 step) is 51.1853444941283868 
+the discete Energy (for No.13/64 step) is 51.1710097551223839 
+the discete Energy (for No.14/64 step) is 51.1632760228776107 
+the discete Energy (for No.15/64 step) is 51.1591035964284302 
+the discete Energy (for No.16/64 step) is 51.1568525288294964 
+the discete Energy (for No.17/64 step) is 51.1556380532904384 
+the discete Energy (for No.18/64 step) is 51.1549828296972322 
+the discete Energy (for No.19/64 step) is 51.1546293284267861 
+the discete Energy (for No.20/64 step) is 51.1544386096885475 
+the discete Energy (for No.21/64 step) is 51.1543357140414514 
+the discete Energy (for No.22/64 step) is 51.1542802000673476 
+the discete Energy (for No.23/64 step) is 51.1542502491669069 
+the discete Energy (for No.24/64 step) is 51.1542340899443460 
+the discete Energy (for No.25/64 step) is 51.1542253715786472 
+the discete Energy (for No.26/64 step) is 51.1542206677107529 
+the discete Energy (for No.27/64 step) is 51.1542181297645584 
+the discete Energy (for No.28/64 step) is 51.1542167603989171 
+the discete Energy (for No.29/64 step) is 51.1542160215264516 
+the discete Energy (for No.30/64 step) is 51.1542156228349256 
+the discete Energy (for No.31/64 step) is 51.1542154076915665 
+the discete Energy (for No.32/64 step) is 51.1542152915867447 
+the discete Energy (for No.33/64 step) is 51.1542152289232561 
+the discete Energy (for No.34/64 step) is 51.1542151950984376 
+the discete Energy (for No.35/64 step) is 51.1542151768371625 
+the discete Energy (for No.36/64 step) is 51.1542151669759875 
+the discete Energy (for No.37/64 step) is 51.1542151616492475 
+the discete Energy (for No.38/64 step) is 51.1542151587706968 
+the discete Energy (for No.39/64 step) is 51.1542151572142672 
+the discete Energy (for No.40/64 step) is 51.1542151563720751 
+the discete Energy (for No.41/64 step) is 51.1542151559158995 
+the discete Energy (for No.42/64 step) is 51.1542151556684885 
+the discete Energy (for No.43/64 step) is 51.1542151555340681 
+the discete Energy (for No.44/64 step) is 51.1542151554608537 
+the discete Energy (for No.45/64 step) is 51.1542151554208573 
+the discete Energy (for No.46/64 step) is 51.1542151553989086 
+the discete Energy (for No.47/64 step) is 51.1542151553868081 
+the discete Energy (for No.48/64 step) is 51.1542151553800863 
+the discete Energy (for No.49/64 step) is 51.1542151553763205 
+the discete Energy (for No.50/64 step) is 51.1542151553741817 
+the discete Energy (for No.51/64 step) is 51.1542151553729454 
+the discete Energy (for No.52/64 step) is 51.1542151553722206 
+the discete Energy (for No.53/64 step) is 51.1542151553717872 
+the discete Energy (for No.54/64 step) is 51.1542151553715101 
+the discete Energy (for No.55/64 step) is 51.1542151553713396 
+the discete Energy (for No.56/64 step) is 51.1542151553712259 
+the discete Energy (for No.57/64 step) is 51.1542151553711548 
+the discete Energy (for No.58/64 step) is 51.1542151553710909 
+the discete Energy (for No.59/64 step) is 51.1542151553710482 
+the discete Energy (for No.60/64 step) is 51.1542151553710198 
+the discete Energy (for No.61/64 step) is 51.1542151553709914 
+the discete Energy (for No.62/64 step) is 51.1542151553709630 
+the discete Energy (for No.63/64 step) is 51.1542151553709488 
+the discete Energy (for No.64/64 step) is 51.1542151553709274 
+the L2_L2 norm error is 0.0000285220331643 
+the L2_gr norm error is 0.0001267200545072 
+the L2_H1 norm error is 0.0001298902559476 
+the L_inf_L2 norm error is 0.0002750533825004 
+the L_inf_gr norm error is 0.0012220299801936 
+the L_inf_H1 norm error is 0.0012526019462370 
+the H1_L2 norm error is 0.0085853189721274 
+the H1_gr norm error is 0.0381435671799120 
+the H1_H1 norm error is 0.0390978185972265 
+the W_1_inf_L2 norm error is 0.1277902838534589 
+the W_1_inf_gr norm error is 0.5677572717949427 
+the W_1_inf_H1 norm error is 0.5819610608308634 
+the Final_t_L2_L2 norm error is 0.0000002025761482 
+the Final_t_L2_gr norm error is 0.0000009000221127 
+the Final_t_L2_H1 norm error is 0.0000009225382914 
+the Final_t_H1_L2 norm error is 0.0000002023797815 
+the Final_t_H1_gr norm error is 0.0000008991496781 
+the Final_t_H1_H1 norm error is 0.0000009216440308 
+the jump u semi norm error is 0.0000000000000005 
+the jump gradu semi norm error is 0.0000000000000039 
+the jump dotu semi norm error is 0.1383205232724841 
+Energynorm_err is 0.1437400660160083 
+64 space elements, 64 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/64 step) is 78.7864504798014167 
+the discete Energy (for No.2/64 step) is 66.0738740205086685 
+the discete Energy (for No.3/64 step) is 59.2136387260520181 
+the discete Energy (for No.4/64 step) is 55.5115702707735608 
+the discete Energy (for No.5/64 step) is 53.5137800698129240 
+the discete Energy (for No.6/64 step) is 52.4356893388441918 
+the discete Energy (for No.7/64 step) is 51.8539067154040154 
+the discete Energy (for No.8/64 step) is 51.5399526007705191 
+the discete Energy (for No.9/64 step) is 51.3705298952382492 
+the discete Energy (for No.10/64 step) is 51.2791023527669054 
+the discete Energy (for No.11/64 step) is 51.2297642460708431 
+the discete Energy (for No.12/64 step) is 51.2031393504810879 
+the discete Energy (for No.13/64 step) is 51.1887714488199492 
+the discete Energy (for No.14/64 step) is 51.1810179311603335 
+the discete Energy (for No.15/64 step) is 51.1768338103670288 
+the discete Energy (for No.16/64 step) is 51.1745758846640157 
+the discete Energy (for No.17/64 step) is 51.1733574139907503 
+the discete Energy (for No.18/64 step) is 51.1726998765086378 
+the discete Energy (for No.19/64 step) is 51.1723450419198187 
+the discete Energy (for No.20/64 step) is 51.1721535584092422 
+the discete Energy (for No.21/64 step) is 51.1720502259383494 
+the discete Energy (for No.22/64 step) is 51.1719944634369028 
+the discete Energy (for No.23/64 step) is 51.1719643716705761 
+the discete Energy (for No.24/64 step) is 51.1719481329012140 
+the discete Energy (for No.25/64 step) is 51.1719393697854983 
+the discete Energy (for No.26/64 step) is 51.1719346408435882 
+the discete Energy (for No.27/64 step) is 51.1719320889097418 
+the discete Energy (for No.28/64 step) is 51.1719307117800497 
+the discete Energy (for No.29/64 step) is 51.1719299686235587 
+the discete Energy (for No.30/64 step) is 51.1719295675854084 
+the discete Energy (for No.31/64 step) is 51.1719293511685294 
+the discete Energy (for No.32/64 step) is 51.1719292343809826 
+the discete Energy (for No.33/64 step) is 51.1719291713575544 
+the discete Energy (for No.34/64 step) is 51.1719291373474903 
+the discete Energy (for No.35/64 step) is 51.1719291189942496 
+the discete Energy (for No.36/64 step) is 51.1719291090900725 
+the discete Energy (for No.37/64 step) is 51.1719291037453630 
+the discete Energy (for No.38/64 step) is 51.1719291008611421 
+the discete Energy (for No.39/64 step) is 51.1719290993046911 
+the discete Energy (for No.40/64 step) is 51.1719290984647799 
+the discete Energy (for No.41/64 step) is 51.1719290980115176 
+the discete Energy (for No.42/64 step) is 51.1719290977669132 
+the discete Energy (for No.43/64 step) is 51.1719290976349299 
+the discete Energy (for No.44/64 step) is 51.1719290975636909 
+the discete Energy (for No.45/64 step) is 51.1719290975252576 
+the discete Energy (for No.46/64 step) is 51.1719290975045169 
+the discete Energy (for No.47/64 step) is 51.1719290974933187 
+the discete Energy (for No.48/64 step) is 51.1719290974872791 
+the discete Energy (for No.49/64 step) is 51.1719290974840249 
+the discete Energy (for No.50/64 step) is 51.1719290974822627 
+the discete Energy (for No.51/64 step) is 51.1719290974813106 
+the discete Energy (for No.52/64 step) is 51.1719290974807990 
+the discete Energy (for No.53/64 step) is 51.1719290974805219 
+the discete Energy (for No.54/64 step) is 51.1719290974803727 
+the discete Energy (for No.55/64 step) is 51.1719290974802945 
+the discete Energy (for No.56/64 step) is 51.1719290974802590 
+the discete Energy (for No.57/64 step) is 51.1719290974802234 
+the discete Energy (for No.58/64 step) is 51.1719290974802163 
+the discete Energy (for No.59/64 step) is 51.1719290974802092 
+the discete Energy (for No.60/64 step) is 51.1719290974802021 
+the discete Energy (for No.61/64 step) is 51.1719290974802021 
+the discete Energy (for No.62/64 step) is 51.1719290974801950 
+the discete Energy (for No.63/64 step) is 51.1719290974801950 
+the discete Energy (for No.64/64 step) is 51.1719290974801950 
+the L2_L2 norm error is 0.0000004600549075 
+the L2_gr norm error is 0.0000020439700989 
+the L2_H1 norm error is 0.0000020951048382 
+the L_inf_L2 norm error is 0.0000040262612246 
+the L_inf_gr norm error is 0.0000178882072993 
+the L_inf_H1 norm error is 0.0000183357230518 
+the H1_L2 norm error is 0.0002165792948633 
+the H1_gr norm error is 0.0009622364539068 
+the H1_H1 norm error is 0.0009863090713314 
+the W_1_inf_L2 norm error is 0.0040163126580268 
+the W_1_inf_gr norm error is 0.0178440069826553 
+the W_1_inf_H1 norm error is 0.0182904169598202 
+the Final_t_L2_L2 norm error is 0.0000000000099418 
+the Final_t_L2_gr norm error is 0.0000000000441702 
+the Final_t_L2_H1 norm error is 0.0000000000452753 
+the Final_t_H1_L2 norm error is 0.0000000000097494 
+the Final_t_H1_gr norm error is 0.0000000000433155 
+the Final_t_H1_H1 norm error is 0.0000000000443991 
+the jump u semi norm error is 0.0000000000000006 
+the jump gradu semi norm error is 0.0000000000000049 
+the jump dotu semi norm error is 0.0043484271831233 
+Energynorm_err is 0.0044588815358917 
+64 space elements, 64 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/64 step) is 78.7864519146958457 
+the discete Energy (for No.2/64 step) is 66.0738792803197725 
+the discete Energy (for No.3/64 step) is 59.2136476961662623 
+the discete Energy (for No.4/64 step) is 55.5115821314861790 
+the discete Energy (for No.5/64 step) is 53.5137939698084040 
+the discete Energy (for No.6/64 step) is 52.4357045980214949 
+the discete Energy (for No.7/64 step) is 51.8539228476562357 
+the discete Energy (for No.8/64 step) is 51.5399692795053355 
+the discete Energy (for No.9/64 step) is 51.3705469095310221 
+the discete Energy (for No.10/64 step) is 51.2791195700783433 
+the discete Energy (for No.11/64 step) is 51.2297815847776832 
+the discete Energy (for No.12/64 step) is 51.2031567610859994 
+the discete Energy (for No.13/64 step) is 51.1887889016711100 
+the discete Energy (for No.14/64 step) is 51.1810354086693735 
+the discete Energy (for No.15/64 step) is 51.1768513021861438 
+the discete Energy (for No.16/64 step) is 51.1745933847469843 
+the discete Energy (for No.17/64 step) is 51.1733749188254095 
+the discete Energy (for No.18/64 step) is 51.1727173840651588 
+the discete Energy (for No.19/64 step) is 51.1723625510301972 
+the discete Energy (for No.20/64 step) is 51.1721710684040190 
+the discete Energy (for No.21/64 step) is 51.1720677364351317 
+the discete Energy (for No.22/64 step) is 51.1720119742179094 
+the discete Energy (for No.23/64 step) is 51.1719818826121653 
+the discete Energy (for No.24/64 step) is 51.1719656439333335 
+the discete Energy (for No.25/64 step) is 51.1719568808685636 
+the discete Energy (for No.26/64 step) is 51.1719521519552600 
+the discete Energy (for No.27/64 step) is 51.1719496000374647 
+the discete Energy (for No.28/64 step) is 51.1719482229167539 
+the discete Energy (for No.29/64 step) is 51.1719474797652865 
+the discete Energy (for No.30/64 step) is 51.1719470787299286 
+the discete Energy (for No.31/64 step) is 51.1719468623146057 
+the discete Energy (for No.32/64 step) is 51.1719467455279187 
+the discete Energy (for No.33/64 step) is 51.1719466825049807 
+the discete Energy (for No.34/64 step) is 51.1719466484951795 
+the discete Energy (for No.35/64 step) is 51.1719466301420809 
+the discete Energy (for No.36/64 step) is 51.1719466202379891 
+the discete Energy (for No.37/64 step) is 51.1719466148933364 
+the discete Energy (for No.38/64 step) is 51.1719466120091298 
+the discete Energy (for No.39/64 step) is 51.1719466104527001 
+the discete Energy (for No.40/64 step) is 51.1719466096127888 
+the discete Energy (for No.41/64 step) is 51.1719466091595336 
+the discete Energy (for No.42/64 step) is 51.1719466089149435 
+the discete Energy (for No.43/64 step) is 51.1719466087829531 
+the discete Energy (for No.44/64 step) is 51.1719466087117212 
+the discete Energy (for No.45/64 step) is 51.1719466086732879 
+the discete Energy (for No.46/64 step) is 51.1719466086525472 
+the discete Energy (for No.47/64 step) is 51.1719466086413490 
+the discete Energy (for No.48/64 step) is 51.1719466086353094 
+the discete Energy (for No.49/64 step) is 51.1719466086320551 
+the discete Energy (for No.50/64 step) is 51.1719466086302930 
+the discete Energy (for No.51/64 step) is 51.1719466086293409 
+the discete Energy (for No.52/64 step) is 51.1719466086288293 
+the discete Energy (for No.53/64 step) is 51.1719466086285522 
+the discete Energy (for No.54/64 step) is 51.1719466086284029 
+the discete Energy (for No.55/64 step) is 51.1719466086283248 
+the discete Energy (for No.56/64 step) is 51.1719466086282893 
+the discete Energy (for No.57/64 step) is 51.1719466086282537 
+the discete Energy (for No.58/64 step) is 51.1719466086282466 
+the discete Energy (for No.59/64 step) is 51.1719466086282395 
+the discete Energy (for No.60/64 step) is 51.1719466086282324 
+the discete Energy (for No.61/64 step) is 51.1719466086282324 
+the discete Energy (for No.62/64 step) is 51.1719466086282253 
+the discete Energy (for No.63/64 step) is 51.1719466086282253 
+the discete Energy (for No.64/64 step) is 51.1719466086282253 
+the L2_L2 norm error is 0.0000000061690565 
+the L2_gr norm error is 0.0000000274083959 
+the L2_H1 norm error is 0.0000000280940817 
+the L_inf_L2 norm error is 0.0000000565838637 
+the L_inf_gr norm error is 0.0000002513954826 
+the L_inf_H1 norm error is 0.0000002576847343 
+the H1_L2 norm error is 0.0000041418856685 
+the H1_gr norm error is 0.0000184019131685 
+the H1_H1 norm error is 0.0000188622804865 
+the W_1_inf_L2 norm error is 0.0000892179454792 
+the W_1_inf_gr norm error is 0.0003963848877439 
+the W_1_inf_H1 norm error is 0.0004063013918598 
+the Final_t_L2_L2 norm error is 0.0000000000000003 
+the Final_t_L2_gr norm error is 0.0000000000000054 
+the Final_t_L2_H1 norm error is 0.0000000000000054 
+the Final_t_H1_L2 norm error is 0.0000000000000002 
+the Final_t_H1_gr norm error is 0.0000000000000054 
+the Final_t_H1_H1 norm error is 0.0000000000000054 
+the jump u semi norm error is 0.0000000000000007 
+the jump gradu semi norm error is 0.0000000000000050 
+the jump dotu semi norm error is 0.0000965954773082 
+Energynorm_err is 0.0000984198753380 
+64 space elements, 128 time elements with space basis Q8 order, time basis 1 order 
+the discete Energy (for No.1/128 step) is 88.7573603164708942 
+the discete Energy (for No.2/128 step) is 78.5482760024880520 
+the discete Energy (for No.3/128 step) is 70.8771187612382931 
+the discete Energy (for No.4/128 step) is 65.1130342150191979 
+the discete Energy (for No.5/128 step) is 60.7819713057639675 
+the discete Energy (for No.6/128 step) is 57.5277089248985760 
+the discete Energy (for No.7/128 step) is 55.0825691822699781 
+the discete Energy (for No.8/128 step) is 53.2454097713100154 
+the discete Energy (for No.9/128 step) is 51.8650862613522889 
+the discete Energy (for No.10/128 step) is 50.8280248016615985 
+the discete Energy (for No.11/128 step) is 50.0488836181717929 
+the discete Energy (for No.12/128 step) is 49.4635355993118679 
+the discete Energy (for No.13/128 step) is 49.0237950743021429 
+the discete Energy (for No.14/128 step) is 48.6934552709006709 
+the discete Energy (for No.15/128 step) is 48.4453106864107852 
+the discete Energy (for No.16/128 step) is 48.2589195730062031 
+the discete Energy (for No.17/128 step) is 48.1189225819103186 
+the discete Energy (for No.18/128 step) is 48.0137793322595101 
+the discete Energy (for No.19/128 step) is 47.9348190280733206 
+the discete Energy (for No.20/128 step) is 47.8755270649964402 
+the discete Energy (for No.21/128 step) is 47.8310089697530927 
+the discete Energy (for No.22/128 step) is 47.7975875944497233 
+the discete Energy (for No.23/128 step) is 47.7725004434667753 
+the discete Energy (for No.24/128 step) is 47.7536722433133605 
+the discete Energy (for No.25/128 step) is 47.7395440522545513 
+the discete Energy (for No.26/128 step) is 47.7289448553303970 
+the discete Energy (for No.27/128 step) is 47.7209950837361419 
+the discete Energy (for No.28/128 step) is 47.7150341226090262 
+the discete Energy (for No.29/128 step) is 47.7105658438732902 
+the discete Energy (for No.30/128 step) is 47.7072176831023995 
+the discete Energy (for No.31/128 step) is 47.7047098932268483 
+the discete Energy (for No.32/128 step) is 47.7028324449241978 
+the discete Energy (for No.33/128 step) is 47.7014276724872985 
+the discete Energy (for No.34/128 step) is 47.7003772365890768 
+the discete Energy (for No.35/128 step) is 47.6995923305058582 
+the discete Energy (for No.36/128 step) is 47.6990063232251416 
+the discete Energy (for No.37/128 step) is 47.6985692333921989 
+the discete Energy (for No.38/128 step) is 47.6982435787292260 
+the discete Energy (for No.39/128 step) is 47.6980012587841529 
+the discete Energy (for No.40/128 step) is 47.6978212139412605 
+the discete Energy (for No.41/128 step) is 47.6976876675521595 
+the discete Energy (for No.42/128 step) is 47.6975888060776185 
+the discete Energy (for No.43/128 step) is 47.6975157882221339 
+the discete Energy (for No.44/128 step) is 47.6974620011596144 
+the discete Energy (for No.45/128 step) is 47.6974225023234837 
+the discete Energy (for No.46/128 step) is 47.6973936005420569 
+the discete Energy (for No.47/128 step) is 47.6973725418014638 
+the discete Energy (for No.48/128 step) is 47.6973572735587510 
+the discete Energy (for No.49/128 step) is 47.6973462680194515 
+the discete Energy (for No.50/128 step) is 47.6973383896705556 
+the discete Energy (for No.51/128 step) is 47.6973327960229696 
+the discete Energy (for No.52/128 step) is 47.6973288632697177 
+the discete Energy (for No.53/128 step) is 47.6973261306327743 
+the discete Energy (for No.54/128 step) is 47.6973242587240023 
+the discete Energy (for No.55/128 step) is 47.6973229984118561 
+the discete Energy (for No.56/128 step) is 47.6973221675606212 
+the discete Energy (for No.57/128 step) is 47.6973216336667818 
+the discete Energy (for No.58/128 step) is 47.6973213009107226 
+the discete Energy (for No.59/128 step) is 47.6973211005121982 
+the discete Energy (for No.60/128 step) is 47.6973209835567715 
+the discete Energy (for No.61/128 step) is 47.6973209156684987 
+the discete Energy (for No.62/128 step) is 47.6973208730612583 
+the discete Energy (for No.63/128 step) is 47.6973208396184134 
+the discete Energy (for No.64/128 step) is 47.6973208047386947 
+the discete Energy (for No.65/128 step) is 47.6973207617520885 
+the discete Energy (for No.66/128 step) is 47.6973207067594345 
+the discete Energy (for No.67/128 step) is 47.6973206377860066 
+the discete Energy (for No.68/128 step) is 47.6973205541676037 
+the discete Energy (for No.69/128 step) is 47.6973204561082156 
+the discete Energy (for No.70/128 step) is 47.6973203443639733 
+the discete Energy (for No.71/128 step) is 47.6973202200196980 
+the discete Energy (for No.72/128 step) is 47.6973200843330787 
+the discete Energy (for No.73/128 step) is 47.6973199386279418 
+the discete Energy (for No.74/128 step) is 47.6973197842231116 
+the discete Energy (for No.75/128 step) is 47.6973196223864448 
+the discete Energy (for No.76/128 step) is 47.6973194543070989 
+the discete Energy (for No.77/128 step) is 47.6973192810802900 
+the discete Energy (for No.78/128 step) is 47.6973191037007069 
+the discete Energy (for No.79/128 step) is 47.6973189230618360 
+the discete Energy (for No.80/128 step) is 47.6973187399590373 
+the discete Energy (for No.81/128 step) is 47.6973185550949594 
+the discete Energy (for No.82/128 step) is 47.6973183690863252 
+the discete Energy (for No.83/128 step) is 47.6973181824713066 
+the discete Energy (for No.84/128 step) is 47.6973179957170217 
+the discete Energy (for No.85/128 step) is 47.6973178092269521 
+the discete Energy (for No.86/128 step) is 47.6973176233478426 
+the discete Energy (for No.87/128 step) is 47.6973174383763237 
+the discete Energy (for No.88/128 step) is 47.6973172545648012 
+the discete Energy (for No.89/128 step) is 47.6973170721269284 
+the discete Energy (for No.90/128 step) is 47.6973168912424654 
+the discete Energy (for No.91/128 step) is 47.6973167120615926 
+the discete Energy (for No.92/128 step) is 47.6973165347088823 
+the discete Energy (for No.93/128 step) is 47.6973163592865603 
+the discete Energy (for No.94/128 step) is 47.6973161858776109 
+the discete Energy (for No.95/128 step) is 47.6973160145483916 
+the discete Energy (for No.96/128 step) is 47.6973158453508717 
+the discete Energy (for No.97/128 step) is 47.6973156783247063 
+the discete Energy (for No.98/128 step) is 47.6973155134989355 
+the discete Energy (for No.99/128 step) is 47.6973153508935184 
+the discete Energy (for No.100/128 step) is 47.6973151905206620 
+the discete Energy (for No.101/128 step) is 47.6973150323859301 
+the discete Energy (for No.102/128 step) is 47.6973148764892159 
+the discete Energy (for No.103/128 step) is 47.6973147228256380 
+the discete Energy (for No.104/128 step) is 47.6973145713862579 
+the discete Energy (for No.105/128 step) is 47.6973144221587049 
+the discete Energy (for No.106/128 step) is 47.6973142751277095 
+the discete Energy (for No.107/128 step) is 47.6973141302756076 
+the discete Energy (for No.108/128 step) is 47.6973139875827172 
+the discete Energy (for No.109/128 step) is 47.6973138470277078 
+the discete Energy (for No.110/128 step) is 47.6973137085878776 
+the discete Energy (for No.111/128 step) is 47.6973135722394019 
+the discete Energy (for No.112/128 step) is 47.6973134379576109 
+the discete Energy (for No.113/128 step) is 47.6973133057170955 
+the discete Energy (for No.114/128 step) is 47.6973131754919564 
+the discete Energy (for No.115/128 step) is 47.6973130472558537 
+the discete Energy (for No.116/128 step) is 47.6973129209821991 
+the discete Energy (for No.117/128 step) is 47.6973127966441908 
+the discete Energy (for No.118/128 step) is 47.6973126742149631 
+the discete Energy (for No.119/128 step) is 47.6973125536676150 
+the discete Energy (for No.120/128 step) is 47.6973124349752879 
+the discete Energy (for No.121/128 step) is 47.6973123181112086 
+the discete Energy (for No.122/128 step) is 47.6973122030487602 
+the discete Energy (for No.123/128 step) is 47.6973120897614677 
+the discete Energy (for No.124/128 step) is 47.6973119782230839 
+the discete Energy (for No.125/128 step) is 47.6973118684075814 
+the discete Energy (for No.126/128 step) is 47.6973117602891818 
+the discete Energy (for No.127/128 step) is 47.6973116538423838 
+the discete Energy (for No.128/128 step) is 47.6973115490419630 
+the L2_L2 norm error is 0.0040104348434591 
+the L2_gr norm error is 0.0178178925406004 
+the L2_H1 norm error is 0.0182636492033223 
+the L_inf_L2 norm error is 0.0133394101238328 
+the L_inf_gr norm error is 0.0592654376442737 
+the L_inf_H1 norm error is 0.0607481025351336 
+the H1_L2 norm error is 0.1050425641367778 
+the H1_gr norm error is 0.4666918159836961 
+the H1_H1 norm error is 0.4783672139544987 
+the W_1_inf_L2 norm error is 1.3142321826605199 
+the W_1_inf_gr norm error is 5.8389797411210544 
+the W_1_inf_H1 norm error is 5.9850556093626004 
+the Final_t_L2_L2 norm error is 0.0008008954959924 
+the Final_t_L2_gr norm error is 0.0035582849343923 
+the Final_t_L2_H1 norm error is 0.0036473038356880 
+the Final_t_H1_L2 norm error is 0.0008041232949148 
+the Final_t_H1_gr norm error is 0.0035726256671526 
+the Final_t_H1_H1 norm error is 0.0036620033357470 
+the jump u semi norm error is 0.0000000000000008 
+the jump gradu semi norm error is 0.0000000000000054 
+the jump dotu semi norm error is 2.2851864725757793 
+Energynorm_err is 2.3347217636874569 
+64 space elements, 128 time elements with space basis Q8 order, time basis 2 order 
+the discete Energy (for No.1/128 step) is 88.7617885494757530 
+the discete Energy (for No.2/128 step) is 78.7844931077542867 
+the discete Energy (for No.3/128 step) is 71.4552590400173244 
+the discete Energy (for No.4/128 step) is 66.0712677212092814 
+the discete Energy (for No.5/128 step) is 62.1162347303227875 
+the discete Energy (for No.6/128 step) is 59.2109020427272270 
+the discete Energy (for No.7/128 step) is 57.0766700272551901 
+the discete Energy (for No.8/128 step) is 55.5088818290469916 
+the discete Energy (for No.9/128 step) is 54.3571983106289309 
+the discete Energy (for No.10/128 step) is 53.5111816551122885 
+the discete Energy (for No.11/128 step) is 52.8897052070720690 
+the discete Energy (for No.12/128 step) is 52.4331740341917936 
+the discete Energy (for No.13/128 step) is 52.0978102198225841 
+the discete Energy (for No.14/128 step) is 51.8514548888304958 
+the discete Energy (for No.15/128 step) is 51.6704844124640914 
+the discete Energy (for No.16/128 step) is 51.5375450793948673 
+the discete Energy (for No.17/128 step) is 51.4398890048565391 
+the discete Energy (for No.18/128 step) is 51.3681517040383184 
+the discete Energy (for No.19/128 step) is 51.3154541081800488 
+the discete Energy (for No.20/128 step) is 51.2767429134412112 
+the discete Energy (for No.21/128 step) is 51.2483060069432881 
+the discete Energy (for No.22/128 step) is 51.2274165029739521 
+the discete Energy (for No.23/128 step) is 51.2120712550922690 
+the discete Energy (for No.24/128 step) is 51.2007987694056368 
+the discete Energy (for No.25/128 step) is 51.1925180993408446 
+the discete Energy (for No.26/128 step) is 51.1864351909755655 
+the discete Energy (for No.27/128 step) is 51.1819667392240589 
+the discete Energy (for No.28/128 step) is 51.1786842532563568 
+the discete Energy (for No.29/128 step) is 51.1762729674436514 
+the discete Energy (for No.30/128 step) is 51.1745016576975118 
+the discete Energy (for No.31/128 step) is 51.1732004688162760 
+the discete Energy (for No.32/128 step) is 51.1722446266472417 
+the discete Energy (for No.33/128 step) is 51.1715424731832300 
+the discete Energy (for No.34/128 step) is 51.1710266772489177 
+the discete Energy (for No.35/128 step) is 51.1706477779477211 
+the discete Energy (for No.36/128 step) is 51.1703694417341737 
+the discete Energy (for No.37/128 step) is 51.1701649783007042 
+the discete Energy (for No.38/128 step) is 51.1700147811783879 
+the discete Energy (for No.39/128 step) is 51.1699044476246385 
+the discete Energy (for No.40/128 step) is 51.1698233975090275 
+the discete Energy (for No.41/128 step) is 51.1697638587588273 
+the discete Energy (for No.42/128 step) is 51.1697201220761926 
+the discete Energy (for No.43/128 step) is 51.1696879934598456 
+the discete Energy (for No.44/128 step) is 51.1696643920322742 
+the discete Energy (for No.45/128 step) is 51.1696470546070685 
+the discete Energy (for No.46/128 step) is 51.1696343186666596 
+the discete Energy (for No.47/128 step) is 51.1696249629396647 
+the discete Energy (for No.48/128 step) is 51.1696180902903777 
+the discete Energy (for No.49/128 step) is 51.1696130416903614 
+the discete Energy (for No.50/128 step) is 51.1696093330227839 
+the discete Energy (for No.51/128 step) is 51.1696066086593930 
+the discete Energy (for No.52/128 step) is 51.1696046073585222 
+the discete Energy (for No.53/128 step) is 51.1696031372141746 
+the discete Energy (for No.54/128 step) is 51.1696020572536909 
+the discete Energy (for No.55/128 step) is 51.1696012639196383 
+the discete Energy (for No.56/128 step) is 51.1696006811395563 
+the discete Energy (for No.57/128 step) is 51.1696002530311489 
+the discete Energy (for No.58/128 step) is 51.1695999385436835 
+the discete Energy (for No.59/128 step) is 51.1695997075215843 
+the discete Energy (for No.60/128 step) is 51.1695995378127577 
+the discete Energy (for No.61/128 step) is 51.1695994131444394 
+the discete Energy (for No.62/128 step) is 51.1695993215627425 
+the discete Energy (for No.63/128 step) is 51.1695992542863891 
+the discete Energy (for No.64/128 step) is 51.1695992048647241 
+the discete Energy (for No.65/128 step) is 51.1695991685591025 
+the discete Energy (for No.66/128 step) is 51.1695991418885612 
+the discete Energy (for No.67/128 step) is 51.1695991222959634 
+the discete Energy (for No.68/128 step) is 51.1695991079028687 
+the discete Energy (for No.69/128 step) is 51.1695990973293604 
+the discete Energy (for No.70/128 step) is 51.1695990895617570 
+the discete Energy (for No.71/128 step) is 51.1695990838554096 
+the discete Energy (for No.72/128 step) is 51.1695990796632856 
+the discete Energy (for No.73/128 step) is 51.1695990765835447 
+the discete Energy (for No.74/128 step) is 51.1695990743209848 
+the discete Energy (for No.75/128 step) is 51.1695990726587553 
+the discete Energy (for No.76/128 step) is 51.1695990714375455 
+the discete Energy (for No.77/128 step) is 51.1695990705403290 
+the discete Energy (for No.78/128 step) is 51.1695990698811300 
+the discete Energy (for No.79/128 step) is 51.1695990693967957 
+the discete Energy (for No.80/128 step) is 51.1695990690409275 
+the discete Energy (for No.81/128 step) is 51.1695990687794477 
+the discete Energy (for No.82/128 step) is 51.1695990685873099 
+the discete Energy (for No.83/128 step) is 51.1695990684461179 
+the discete Energy (for No.84/128 step) is 51.1695990683423574 
+the discete Energy (for No.85/128 step) is 51.1695990682661019 
+the discete Energy (for No.86/128 step) is 51.1695990682100543 
+the discete Energy (for No.87/128 step) is 51.1695990681688571 
+the discete Energy (for No.88/128 step) is 51.1695990681385737 
+the discete Energy (for No.89/128 step) is 51.1695990681163053 
+the discete Energy (for No.90/128 step) is 51.1695990680999344 
+the discete Energy (for No.91/128 step) is 51.1695990680878978 
+the discete Energy (for No.92/128 step) is 51.1695990680790516 
+the discete Energy (for No.93/128 step) is 51.1695990680725288 
+the discete Energy (for No.94/128 step) is 51.1695990680677468 
+the discete Energy (for No.95/128 step) is 51.1695990680642154 
+the discete Energy (for No.96/128 step) is 51.1695990680616219 
+the discete Energy (for No.97/128 step) is 51.1695990680597106 
+the discete Energy (for No.98/128 step) is 51.1695990680583037 
+the discete Energy (for No.99/128 step) is 51.1695990680572592 
+the discete Energy (for No.100/128 step) is 51.1695990680564989 
+the discete Energy (for No.101/128 step) is 51.1695990680559376 
+the discete Energy (for No.102/128 step) is 51.1695990680555184 
+the discete Energy (for No.103/128 step) is 51.1695990680552057 
+the discete Energy (for No.104/128 step) is 51.1695990680549784 
+the discete Energy (for No.105/128 step) is 51.1695990680548149 
+the discete Energy (for No.106/128 step) is 51.1695990680546942 
+the discete Energy (for No.107/128 step) is 51.1695990680546018 
+the discete Energy (for No.108/128 step) is 51.1695990680545236 
+the discete Energy (for No.109/128 step) is 51.1695990680544668 
+the discete Energy (for No.110/128 step) is 51.1695990680544242 
+the discete Energy (for No.111/128 step) is 51.1695990680543957 
+the discete Energy (for No.112/128 step) is 51.1695990680543744 
+the discete Energy (for No.113/128 step) is 51.1695990680543531 
+the discete Energy (for No.114/128 step) is 51.1695990680543460 
+the discete Energy (for No.115/128 step) is 51.1695990680543318 
+the discete Energy (for No.116/128 step) is 51.1695990680543247 
+the discete Energy (for No.117/128 step) is 51.1695990680543247 
+the discete Energy (for No.118/128 step) is 51.1695990680543176 
+the discete Energy (for No.119/128 step) is 51.1695990680543176 
+the discete Energy (for No.120/128 step) is 51.1695990680543105 
+the discete Energy (for No.121/128 step) is 51.1695990680543105 
+the discete Energy (for No.122/128 step) is 51.1695990680543034 
+the discete Energy (for No.123/128 step) is 51.1695990680542963 
+the discete Energy (for No.124/128 step) is 51.1695990680542963 
+the discete Energy (for No.125/128 step) is 51.1695990680542963 
+the discete Energy (for No.126/128 step) is 51.1695990680542963 
+the discete Energy (for No.127/128 step) is 51.1695990680542891 
+the discete Energy (for No.128/128 step) is 51.1695990680542891 
+the L2_L2 norm error is 0.0000036772753159 
+the L2_gr norm error is 0.0000163377037599 
+the L2_H1 norm error is 0.0000167464300045 
+the L_inf_L2 norm error is 0.0000393953958999 
+the L_inf_gr norm error is 0.0001750291322856 
+the L_inf_H1 norm error is 0.0001794078993990 
+the H1_L2 norm error is 0.0022113848598710 
+the H1_gr norm error is 0.0098249240636227 
+the H1_H1 norm error is 0.0100707177427639 
+the W_1_inf_L2 norm error is 0.0353004270865128 
+the W_1_inf_gr norm error is 0.1568356652123716 
+the W_1_inf_H1 norm error is 0.1607592797791073 
+the Final_t_L2_L2 norm error is 0.0000000259804864 
+the Final_t_L2_gr norm error is 0.0000001154282597 
+the Final_t_L2_H1 norm error is 0.0000001183159703 
+the Final_t_H1_L2 norm error is 0.0000000259549829 
+the Final_t_H1_gr norm error is 0.0000001153149505 
+the Final_t_H1_H1 norm error is 0.0000001181998264 
+the jump u semi norm error is 0.0000000000000008 
+the jump gradu semi norm error is 0.0000000000000058 
+the jump dotu semi norm error is 0.0587280025685961 
+Energynorm_err is 0.0595852132795163 
+64 space elements, 128 time elements with space basis Q8 order, time basis 3 order 
+the discete Energy (for No.1/128 step) is 88.7630092623454487 
+the discete Energy (for No.2/128 step) is 78.7864518715094988 
+the discete Energy (for No.3/128 step) is 71.4576434098237030 
+the discete Energy (for No.4/128 step) is 66.0738791147961138 
+the discete Energy (for No.5/128 step) is 62.1189499969258918 
+the discete Energy (for No.6/128 step) is 59.2136474111823929 
+the discete Energy (for No.7/128 step) is 57.0794035693424888 
+the discete Energy (for No.8/128 step) is 55.5115817531973903 
+the discete Energy (for No.9/128 step) is 54.3598552264564177 
+the discete Energy (for No.10/128 step) is 53.5137935256055783 
+the discete Energy (for No.11/128 step) is 52.8922741066927031 
+the discete Energy (for No.12/128 step) is 52.4357041098504624 
+the discete Energy (for No.13/128 step) is 52.1003064445914674 
+the discete Energy (for No.14/128 step) is 51.8539223312261228 
+the discete Energy (for No.15/128 step) is 51.6729278354178660 
+the discete Energy (for No.16/128 step) is 51.5399687453798165 
+the discete Energy (for No.17/128 step) is 51.4422966059879627 
+the discete Energy (for No.18/128 step) is 51.3705463645366009 
+the discete Energy (for No.19/128 step) is 51.3178384257079614 
+the discete Energy (for No.20/128 step) is 51.2791190185064352 
+the discete Energy (for No.21/128 step) is 51.2506756278644318 
+the discete Energy (for No.22/128 step) is 51.2297810292719902 
+the discete Energy (for No.23/128 step) is 51.2144317955665400 
+the discete Energy (for No.24/128 step) is 51.2031562032500815 
+the discete Energy (for No.25/128 step) is 51.1948731199035976 
+the discete Energy (for No.26/128 step) is 51.1887883424658128 
+the discete Energy (for No.27/128 step) is 51.1843184470272803 
+the discete Energy (for No.28/128 step) is 51.1810348486647158 
+the discete Energy (for No.29/128 step) is 51.1786227076303248 
+the discete Energy (for No.30/128 step) is 51.1768507417175371 
+the discete Energy (for No.31/128 step) is 51.1755490503357535 
+the discete Energy (for No.32/128 step) is 51.1745928240104320 
+the discete Energy (for No.33/128 step) is 51.1738903773337057 
+the discete Energy (for No.34/128 step) is 51.1733743579347760 
+the discete Energy (for No.35/128 step) is 51.1729952885635413 
+the discete Energy (for No.36/128 step) is 51.1727168230862475 
+the discete Energy (for No.37/128 step) is 51.1725122615259593 
+the discete Energy (for No.38/128 step) is 51.1723619900009012 
+the discete Energy (for No.39/128 step) is 51.1722516000957199 
+the discete Energy (for No.40/128 step) is 51.1721705073460384 
+the discete Energy (for No.41/128 step) is 51.1721109363731230 
+the discete Energy (for No.42/128 step) is 51.1720671753608585 
+the discete Energy (for No.43/128 step) is 51.1720350283922869 
+the discete Energy (for No.44/128 step) is 51.1720114131344275 
+the discete Energy (for No.45/128 step) is 51.1719940652964098 
+the discete Energy (for No.46/128 step) is 51.1719813215234751 
+the discete Energy (for No.47/128 step) is 51.1719719599103087 
+the discete Energy (for No.48/128 step) is 51.1719650828416945 
+the discete Energy (for No.49/128 step) is 51.1719600309268188 
+the discete Energy (for No.50/128 step) is 51.1719563197752620 
+the discete Energy (for No.51/128 step) is 51.1719535935524021 
+the discete Energy (for No.52/128 step) is 51.1719515908610489 
+the discete Energy (for No.53/128 step) is 51.1719501196780797 
+the discete Energy (for No.54/128 step) is 51.1719490389427207 
+the discete Energy (for No.55/128 step) is 51.1719482450313592 
+the discete Energy (for No.56/128 step) is 51.1719476618217257 
+the discete Energy (for No.57/128 step) is 51.1719472333942065 
+the discete Energy (for No.58/128 step) is 51.1719469186700948 
+the discete Energy (for No.59/128 step) is 51.1719466874728326 
+the discete Energy (for No.60/128 step) is 51.1719465176346446 
+the discete Energy (for No.61/128 step) is 51.1719463928710070 
+the discete Energy (for No.62/128 step) is 51.1719463012192719 
+the discete Energy (for No.63/128 step) is 51.1719462338916458 
+the discete Energy (for No.64/128 step) is 51.1719461844325565 
+the discete Energy (for No.65/128 step) is 51.1719461480997708 
+the discete Energy (for No.66/128 step) is 51.1719461214095972 
+the discete Energy (for No.67/128 step) is 51.1719461018029165 
+the discete Energy (for No.68/128 step) is 51.1719460873997889 
+the discete Energy (for No.69/128 step) is 51.1719460768192036 
+the discete Energy (for No.70/128 step) is 51.1719460690466903 
+the discete Energy (for No.71/128 step) is 51.1719460633369678 
+the discete Energy (for No.72/128 step) is 51.1719460591425914 
+the discete Energy (for No.73/128 step) is 51.1719460560613868 
+the discete Energy (for No.74/128 step) is 51.1719460537979316 
+the discete Energy (for No.75/128 step) is 51.1719460521351834 
+the discete Energy (for No.76/128 step) is 51.1719460509137249 
+the discete Energy (for No.77/128 step) is 51.1719460500164445 
+the discete Energy (for No.78/128 step) is 51.1719460493572953 
+the discete Energy (for No.79/128 step) is 51.1719460488730817 
+the discete Energy (for No.80/128 step) is 51.1719460485173840 
+the discete Energy (for No.81/128 step) is 51.1719460482560820 
+the discete Energy (for No.82/128 step) is 51.1719460480641288 
+the discete Energy (for No.83/128 step) is 51.1719460479231216 
+the discete Energy (for No.84/128 step) is 51.1719460478195316 
+the discete Energy (for No.85/128 step) is 51.1719460477434396 
+the discete Energy (for No.86/128 step) is 51.1719460476875341 
+the discete Energy (for No.87/128 step) is 51.1719460476464789 
+the discete Energy (for No.88/128 step) is 51.1719460476163164 
+the discete Energy (for No.89/128 step) is 51.1719460475941474 
+the discete Energy (for No.90/128 step) is 51.1719460475778760 
+the discete Energy (for No.91/128 step) is 51.1719460475659176 
+the discete Energy (for No.92/128 step) is 51.1719460475571353 
+the discete Energy (for No.93/128 step) is 51.1719460475506764 
+the discete Energy (for No.94/128 step) is 51.1719460475459371 
+the discete Energy (for No.95/128 step) is 51.1719460475424555 
+the discete Energy (for No.96/128 step) is 51.1719460475398975 
+the discete Energy (for No.97/128 step) is 51.1719460475380288 
+the discete Energy (for No.98/128 step) is 51.1719460475366432 
+the discete Energy (for No.99/128 step) is 51.1719460475356271 
+the discete Energy (for No.100/128 step) is 51.1719460475348811 
+the discete Energy (for No.101/128 step) is 51.1719460475343411 
+the discete Energy (for No.102/128 step) is 51.1719460475339361 
+the discete Energy (for No.103/128 step) is 51.1719460475336447 
+the discete Energy (for No.104/128 step) is 51.1719460475334245 
+the discete Energy (for No.105/128 step) is 51.1719460475332610 
+the discete Energy (for No.106/128 step) is 51.1719460475331474 
+the discete Energy (for No.107/128 step) is 51.1719460475330692 
+the discete Energy (for No.108/128 step) is 51.1719460475329981 
+the discete Energy (for No.109/128 step) is 51.1719460475329484 
+the discete Energy (for No.110/128 step) is 51.1719460475329129 
+the discete Energy (for No.111/128 step) is 51.1719460475328916 
+the discete Energy (for No.112/128 step) is 51.1719460475328702 
+the discete Energy (for No.113/128 step) is 51.1719460475328560 
+the discete Energy (for No.114/128 step) is 51.1719460475328347 
+the discete Energy (for No.115/128 step) is 51.1719460475328276 
+the discete Energy (for No.116/128 step) is 51.1719460475328276 
+the discete Energy (for No.117/128 step) is 51.1719460475328276 
+the discete Energy (for No.118/128 step) is 51.1719460475328205 
+the discete Energy (for No.119/128 step) is 51.1719460475328205 
+the discete Energy (for No.120/128 step) is 51.1719460475328134 
+the discete Energy (for No.121/128 step) is 51.1719460475328134 
+the discete Energy (for No.122/128 step) is 51.1719460475328134 
+the discete Energy (for No.123/128 step) is 51.1719460475328063 
+the discete Energy (for No.124/128 step) is 51.1719460475328063 
+the discete Energy (for No.125/128 step) is 51.1719460475328063 
+the discete Energy (for No.126/128 step) is 51.1719460475328063 
+the discete Energy (for No.127/128 step) is 51.1719460475328063 
+the discete Energy (for No.128/128 step) is 51.1719460475328063 
+the L2_L2 norm error is 0.0000000293657482 
+the L2_gr norm error is 0.0000001304685819 
+the L2_H1 norm error is 0.0000001337325616 
+the L_inf_L2 norm error is 0.0000002791345020 
+the L_inf_gr norm error is 0.0000012401619165 
+the L_inf_H1 norm error is 0.0000012711874958 
+the H1_L2 norm error is 0.0000276261813784 
+the H1_gr norm error is 0.0001227398898926 
+the H1_H1 norm error is 0.0001258105181152 
+the W_1_inf_L2 norm error is 0.0005499226560354 
+the W_1_inf_gr norm error is 0.0024432419858060 
+the W_1_inf_H1 norm error is 0.0025043654543269 
+the Final_t_L2_L2 norm error is 0.0000000000003156 
+the Final_t_L2_gr norm error is 0.0000000000014023 
+the Final_t_L2_H1 norm error is 0.0000000000014374 
+the Final_t_H1_L2 norm error is 0.0000000000003095 
+the Final_t_H1_gr norm error is 0.0000000000013750 
+the Final_t_H1_H1 norm error is 0.0000000000014094 
+the jump u semi norm error is 0.0000000000000009 
+the jump gradu semi norm error is 0.0000000000000068 
+the jump dotu semi norm error is 0.0009149132087527 
+Energynorm_err is 0.0009235228562513 
+64 space elements, 128 time elements with space basis Q8 order, time basis 4 order 
+the discete Energy (for No.1/128 step) is 88.7630092693141250 
+the discete Energy (for No.2/128 step) is 78.7864519218732084 
+the discete Energy (for No.3/128 step) is 71.4576435201830691 
+the discete Energy (for No.4/128 step) is 66.0738792898836351 
+the discete Energy (for No.5/128 step) is 62.1189502347363103 
+the discete Energy (for No.6/128 step) is 59.2136477062155961 
+the discete Energy (for No.7/128 step) is 57.0794039145998724 
+the discete Energy (for No.8/128 step) is 55.5115821413645705 
+the discete Energy (for No.9/128 step) is 54.3598556505639294 
+the discete Energy (for No.10/128 step) is 53.5137939793608908 
+the discete Energy (for No.11/128 step) is 52.8922745846118119 
+the discete Energy (for No.12/128 step) is 52.4357046072720152 
+the discete Energy (for No.13/128 step) is 52.1003069576262945 
+the discete Energy (for No.14/128 step) is 51.8539228566757586 
+the discete Energy (for No.15/128 step) is 51.6729283706818237 
+the discete Energy (for No.16/128 step) is 51.5399692883634870 
+the discete Energy (for No.17/128 step) is 51.4422971550172576 
+the discete Energy (for No.18/128 step) is 51.3705469182822867 
+the discete Energy (for No.19/128 step) is 51.3178389831205166 
+the discete Energy (for No.20/128 step) is 51.2791195787612324 
+the discete Energy (for No.21/128 step) is 51.2506761903162626 
+the discete Energy (for No.22/128 step) is 51.2297815934179042 
+the discete Energy (for No.23/128 step) is 51.2144323610158239 
+the discete Energy (for No.24/128 step) is 51.2031567697000654 
+the discete Energy (for No.25/128 step) is 51.1948736871204844 
+the discete Energy (for No.26/128 step) is 51.1887889102693947 
+the discete Energy (for No.27/128 step) is 51.1843190152790086 
+the discete Energy (for No.28/128 step) is 51.1810354172582365 
+the discete Energy (for No.29/128 step) is 51.1786232764841884 
+the discete Energy (for No.30/128 step) is 51.1768513107694289 
+the discete Energy (for No.31/128 step) is 51.1755496195381241 
+the discete Energy (for No.32/128 step) is 51.1745933933270081 
+the discete Energy (for No.33/128 step) is 51.1738909467368686 
+the discete Energy (for No.34/128 step) is 51.1733749274035148 
+the discete Energy (for No.35/128 step) is 51.1729958580819115 
+the discete Energy (for No.36/128 step) is 51.1727173926421628 
+the discete Energy (for No.37/128 step) is 51.1725128311102182 
+the discete Energy (for No.38/128 step) is 51.1723625596065617 
+the discete Energy (for No.39/128 step) is 51.1722521697175239 
+the discete Energy (for No.40/128 step) is 51.1721710769800140 
+the discete Energy (for No.41/128 step) is 51.1721115060162788 
+the discete Energy (for No.42/128 step) is 51.1720677450109207 
+the discete Energy (for No.43/128 step) is 51.1720355980475432 
+the discete Energy (for No.44/128 step) is 51.1720119827935847 
+the discete Energy (for No.45/128 step) is 51.1719946349585015 
+the discete Energy (for No.46/128 step) is 51.1719818911877695 
+the discete Energy (for No.47/128 step) is 51.1719725295762657 
+the discete Energy (for No.48/128 step) is 51.1719656525088951 
+the discete Energy (for No.49/128 step) is 51.1719606005949572 
+the discete Energy (for No.50/128 step) is 51.1719568894441110 
+the discete Energy (for No.51/128 step) is 51.1719541632217698 
+the discete Energy (for No.52/128 step) is 51.1719521605308003 
+the discete Energy (for No.53/128 step) is 51.1719506893481224 
+the discete Energy (for No.54/128 step) is 51.1719496086129979 
+the discete Energy (for No.55/128 step) is 51.1719488147017927 
+the discete Energy (for No.56/128 step) is 51.1719482314922871 
+the discete Energy (for No.57/128 step) is 51.1719478030648673 
+the discete Energy (for No.58/128 step) is 51.1719474883408196 
+the discete Energy (for No.59/128 step) is 51.1719472571436143 
+the discete Energy (for No.60/128 step) is 51.1719470873054618 
+the discete Energy (for No.61/128 step) is 51.1719469625418526 
+the discete Energy (for No.62/128 step) is 51.1719468708901388 
+the discete Energy (for No.63/128 step) is 51.1719468035625269 
+the discete Energy (for No.64/128 step) is 51.1719467541034660 
+the discete Energy (for No.65/128 step) is 51.1719467177706804 
+the discete Energy (for No.66/128 step) is 51.1719466910805210 
+the discete Energy (for No.67/128 step) is 51.1719466714738473 
+the discete Energy (for No.68/128 step) is 51.1719466570707198 
+the discete Energy (for No.69/128 step) is 51.1719466464901416 
+the discete Energy (for No.70/128 step) is 51.1719466387176212 
+the discete Energy (for No.71/128 step) is 51.1719466330079058 
+the discete Energy (for No.72/128 step) is 51.1719466288135223 
+the discete Energy (for No.73/128 step) is 51.1719466257323248 
+the discete Energy (for No.74/128 step) is 51.1719466234688696 
+the discete Energy (for No.75/128 step) is 51.1719466218061214 
+the discete Energy (for No.76/128 step) is 51.1719466205846629 
+the discete Energy (for No.77/128 step) is 51.1719466196873825 
+the discete Energy (for No.78/128 step) is 51.1719466190282333 
+the discete Energy (for No.79/128 step) is 51.1719466185440197 
+the discete Energy (for No.80/128 step) is 51.1719466181883220 
+the discete Energy (for No.81/128 step) is 51.1719466179270199 
+the discete Energy (for No.82/128 step) is 51.1719466177350668 
+the discete Energy (for No.83/128 step) is 51.1719466175940596 
+the discete Energy (for No.84/128 step) is 51.1719466174904696 
+the discete Energy (for No.85/128 step) is 51.1719466174143776 
+the discete Energy (for No.86/128 step) is 51.1719466173584721 
+the discete Energy (for No.87/128 step) is 51.1719466173174169 
+the discete Energy (for No.88/128 step) is 51.1719466172872544 
+the discete Energy (for No.89/128 step) is 51.1719466172650854 
+the discete Energy (for No.90/128 step) is 51.1719466172488140 
+the discete Energy (for No.91/128 step) is 51.1719466172368556 
+the discete Energy (for No.92/128 step) is 51.1719466172280733 
+the discete Energy (for No.93/128 step) is 51.1719466172216144 
+the discete Energy (for No.94/128 step) is 51.1719466172168751 
+the discete Energy (for No.95/128 step) is 51.1719466172133934 
+the discete Energy (for No.96/128 step) is 51.1719466172108355 
+the discete Energy (for No.97/128 step) is 51.1719466172089668 
+the discete Energy (for No.98/128 step) is 51.1719466172075812 
+the discete Energy (for No.99/128 step) is 51.1719466172065651 
+the discete Energy (for No.100/128 step) is 51.1719466172058191 
+the discete Energy (for No.101/128 step) is 51.1719466172052790 
+the discete Energy (for No.102/128 step) is 51.1719466172048740 
+the discete Energy (for No.103/128 step) is 51.1719466172045827 
+the discete Energy (for No.104/128 step) is 51.1719466172043624 
+the discete Energy (for No.105/128 step) is 51.1719466172041990 
+the discete Energy (for No.106/128 step) is 51.1719466172040853 
+the discete Energy (for No.107/128 step) is 51.1719466172040072 
+the discete Energy (for No.108/128 step) is 51.1719466172039361 
+the discete Energy (for No.109/128 step) is 51.1719466172038864 
+the discete Energy (for No.110/128 step) is 51.1719466172038508 
+the discete Energy (for No.111/128 step) is 51.1719466172038295 
+the discete Energy (for No.112/128 step) is 51.1719466172038082 
+the discete Energy (for No.113/128 step) is 51.1719466172037940 
+the discete Energy (for No.114/128 step) is 51.1719466172037727 
+the discete Energy (for No.115/128 step) is 51.1719466172037656 
+the discete Energy (for No.116/128 step) is 51.1719466172037656 
+the discete Energy (for No.117/128 step) is 51.1719466172037656 
+the discete Energy (for No.118/128 step) is 51.1719466172037585 
+the discete Energy (for No.119/128 step) is 51.1719466172037585 
+the discete Energy (for No.120/128 step) is 51.1719466172037514 
+the discete Energy (for No.121/128 step) is 51.1719466172037514 
+the discete Energy (for No.122/128 step) is 51.1719466172037514 
+the discete Energy (for No.123/128 step) is 51.1719466172037443 
+the discete Energy (for No.124/128 step) is 51.1719466172037443 
+the discete Energy (for No.125/128 step) is 51.1719466172037443 
+the discete Energy (for No.126/128 step) is 51.1719466172037443 
+the discete Energy (for No.127/128 step) is 51.1719466172037443 
+the discete Energy (for No.128/128 step) is 51.1719466172037443 
+the L2_L2 norm error is 0.0000000001959569 
+the L2_gr norm error is 0.0000000008706137 
+the L2_H1 norm error is 0.0000000008923942 
+the L_inf_L2 norm error is 0.0000000019244357 
+the L_inf_gr norm error is 0.0000000085500429 
+the L_inf_H1 norm error is 0.0000000087639424 
+the H1_L2 norm error is 0.0000002630670010 
+the H1_gr norm error is 0.0000011687758903 
+the H1_H1 norm error is 0.0000011980155795 
+the W_1_inf_L2 norm error is 0.0000060841603290 
+the W_1_inf_gr norm error is 0.0000270312121178 
+the W_1_inf_H1 norm error is 0.0000277074617290 
+the Final_t_L2_L2 norm error is 0.0000000000000003 
+the Final_t_L2_gr norm error is 0.0000000000000064 
+the Final_t_L2_H1 norm error is 0.0000000000000065 
+the Final_t_H1_L2 norm error is 0.0000000000000003 
+the Final_t_H1_gr norm error is 0.0000000000000064 
+the Final_t_H1_H1 norm error is 0.0000000000000065 
+the jump u semi norm error is 0.0000000000000010 
+the jump gradu semi norm error is 0.0000000000000072 
+the jump dotu semi norm error is 0.0000101222936431 
+Energynorm_err is 0.0000101929421624 
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2020 The MathWorks, Inc.
+                  R2020a (9.8.0.1323502) 64-bit (glnxa64)
+                             February 25, 2020
+
+[Warning: Name is nonexistent or not a directory: /tmp/Editor_vxdxq] 
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 40).
+
+ans = 
+
+ ProcessPool with properties: 
+
+            Connected: true
+           NumWorkers: 40
+              Cluster: local
+        AttachedFiles: {}
+    AutoAddClientPath: true
+          IdleTimeout: 30 minutes (30 minutes remaining)
+          SpmdEnabled: true
+
+4 space elements, 2 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/2 step) is 12.6978753195033072 
+the discete Energy (for No.2/2 step) is 16.1527876830325212 
+the L2_L2 norm error is 0.1315852308638036 
+the L2_gr norm error is 0.7604972073676405 
+the L2_H1 norm error is 0.7717970428781522 
+the L_inf_L2 norm error is 0.1716222574969977 
+the L_inf_gr norm error is 0.9964987463336189 
+the L_inf_H1 norm error is 1.0040899101629521 
+the H1_L2 norm error is 0.5492889144906381 
+the H1_gr norm error is 2.9333659138248538 
+the H1_H1 norm error is 2.9843515034211072 
+the W_1_inf_L2 norm error is 0.8224405319987785 
+the W_1_inf_gr norm error is 3.9844549674101892 
+the W_1_inf_H1 norm error is 4.0684505424048316 
+the Final_t_L2_L2 norm error is 0.0184572953226685 
+the Final_t_L2_gr norm error is 0.0904219111447930 
+the Final_t_L2_H1 norm error is 0.0922864766133427 
+the Final_t_H1_L2 norm error is 0.8224405319987785 
+the Final_t_H1_gr norm error is 3.9844549674101892 
+the Final_t_H1_H1 norm error is 4.0684505424048316 
+the jump u semi norm error is 0.0000000000000000 
+the jump gradu semi norm error is 0.0000000000000002 
+the jump dotu semi norm error is 1.5769913462764673 
+Energynorm_err is 3.4753187124193659 
+4 space elements, 2 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/2 step) is 17.3329695143972984 
+the discete Energy (for No.2/2 step) is 27.4841322024530150 
+the L2_L2 norm error is 0.0152429568274709 
+the L2_gr norm error is 0.1501203608698659 
+the L2_H1 norm error is 0.1508922479140095 
+the L_inf_L2 norm error is 0.0223462646507054 
+the L_inf_gr norm error is 0.2051995851182050 
+the L_inf_H1 norm error is 0.2064127546362454 
+the H1_L2 norm error is 0.1087030672120313 
+the H1_gr norm error is 0.6386100750457271 
+the H1_H1 norm error is 0.6477956350356280 
+the W_1_inf_L2 norm error is 0.2625208163014586 
+the W_1_inf_gr norm error is 1.3642869163395970 
+the W_1_inf_H1 norm error is 1.3893149279724128 
+the Final_t_L2_L2 norm error is 0.0089860580616081 
+the Final_t_L2_gr norm error is 0.0401162785934136 
+the Final_t_L2_H1 norm error is 0.0411104007237946 
+the Final_t_H1_L2 norm error is 0.1905989390189302 
+the Final_t_H1_gr norm error is 1.0850362988298601 
+the Final_t_H1_H1 norm error is 1.1016495474212946 
+the jump u semi norm error is 0.0000000000000013 
+the jump gradu semi norm error is 0.0000000000000106 
+the jump dotu semi norm error is 0.2991086303019527 
+Energynorm_err is 0.7396231667921503 
+4 space elements, 2 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/2 step) is 17.7314690154136336 
+the discete Energy (for No.2/2 step) is 28.0402794192472982 
+the L2_L2 norm error is 0.0013801234911121 
+the L2_gr norm error is 0.0193694041731916 
+the L2_H1 norm error is 0.0194185107275293 
+the L_inf_L2 norm error is 0.0019481569468200 
+the L_inf_gr norm error is 0.0269907189325596 
+the L_inf_H1 norm error is 0.0270609353863808 
+the H1_L2 norm error is 0.0150403091380879 
+the H1_gr norm error is 0.0882781549357878 
+the H1_H1 norm error is 0.0895502291333541 
+the W_1_inf_L2 norm error is 0.0388288694908396 
+the W_1_inf_gr norm error is 0.1918132220722488 
+the W_1_inf_H1 norm error is 0.1957038407075204 
+the Final_t_L2_L2 norm error is 0.0007420992928637 
+the Final_t_L2_gr norm error is 0.0033016678394149 
+the Final_t_L2_H1 norm error is 0.0033840392849812 
+the Final_t_H1_L2 norm error is 0.0153744918725366 
+the Final_t_H1_gr norm error is 0.1070507527014271 
+the Final_t_H1_H1 norm error is 0.1081491500395671 
+the jump u semi norm error is 0.0000000000000008 
+the jump gradu semi norm error is 0.0000000000000118 
+the jump dotu semi norm error is 0.0519171783448671 
+Energynorm_err is 0.1046991545142055 
+4 space elements, 2 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/2 step) is 17.7281251151608146 
+the discete Energy (for No.2/2 step) is 28.0533231150520947 
+the L2_L2 norm error is 0.0001040078995109 
+the L2_gr norm error is 0.0018934514616679 
+the L2_H1 norm error is 0.0018963059038175 
+the L_inf_L2 norm error is 0.0001397442564062 
+the L_inf_gr norm error is 0.0026449656375467 
+the L_inf_H1 norm error is 0.0026473723979240 
+the H1_L2 norm error is 0.0015406742815776 
+the H1_gr norm error is 0.0089522259433669 
+the H1_H1 norm error is 0.0090838332538090 
+the W_1_inf_L2 norm error is 0.0052799278638503 
+the W_1_inf_gr norm error is 0.0248313890238945 
+the W_1_inf_H1 norm error is 0.0253865223908958 
+the Final_t_L2_L2 norm error is 0.0000522394323569 
+the Final_t_L2_gr norm error is 0.0002322957271778 
+the Final_t_L2_H1 norm error is 0.0002380971716717 
+the Final_t_H1_L2 norm error is 0.0010822521315790 
+the Final_t_H1_gr norm error is 0.0094649281082407 
+the Final_t_H1_H1 norm error is 0.0095266013756466 
+the jump u semi norm error is 0.0000000000000069 
+the jump gradu semi norm error is 0.0000000000001511 
+the jump dotu semi norm error is 0.0049894610876412 
+Energynorm_err is 0.0104228585095100 
+16 space elements, 4 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/4 step) is 13.4760463527876215 
+the discete Energy (for No.2/4 step) is 15.7138197393950438 
+the discete Energy (for No.3/4 step) is 15.0828969338384944 
+the discete Energy (for No.4/4 step) is 23.1850943020711746 
+the L2_L2 norm error is 0.0441052686701402 
+the L2_gr norm error is 0.3727375041107096 
+the L2_H1 norm error is 0.3753378767126315 
+the L_inf_L2 norm error is 0.0684086113889203 
+the L_inf_gr norm error is 0.5199446799404157 
+the L_inf_H1 norm error is 0.5238450202343242 
+the H1_L2 norm error is 0.2671404646636965 
+the H1_gr norm error is 1.5592911187993115 
+the H1_H1 norm error is 1.5820091090215456 
+the W_1_inf_L2 norm error is 0.5823601462440411 
+the W_1_inf_gr norm error is 2.6426798354743148 
+the W_1_inf_H1 norm error is 2.7060857437923014 
+the Final_t_L2_L2 norm error is 0.0072273539735876 
+the Final_t_L2_gr norm error is 0.0329406303114502 
+the Final_t_L2_H1 norm error is 0.0337241719064407 
+the Final_t_H1_L2 norm error is 0.2908593636766464 
+the Final_t_H1_gr norm error is 1.8371852063001350 
+the Final_t_H1_H1 norm error is 1.8600668406502101 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000014 
+the jump dotu semi norm error is 1.5225673827943358 
+Energynorm_err is 2.2150955985555196 
+16 space elements, 4 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/4 step) is 14.1322269397808356 
+the discete Energy (for No.2/4 step) is 17.6946834913839446 
+the discete Energy (for No.3/4 step) is 18.7938761104349226 
+the discete Energy (for No.4/4 step) is 28.0031345882705267 
+the L2_L2 norm error is 0.0019433020935768 
+the L2_gr norm error is 0.0365301648980021 
+the L2_H1 norm error is 0.0365818174849491 
+the L_inf_L2 norm error is 0.0026461446273983 
+the L_inf_gr norm error is 0.0510147472572856 
+the L_inf_H1 norm error is 0.0510554970261022 
+the H1_L2 norm error is 0.0300279173237861 
+the H1_gr norm error is 0.1737355883527818 
+the H1_H1 norm error is 0.1763114587288398 
+the W_1_inf_L2 norm error is 0.1019719920480595 
+the W_1_inf_gr norm error is 0.4691694952283026 
+the W_1_inf_H1 norm error is 0.4801232158675831 
+the Final_t_L2_L2 norm error is 0.0018314036271070 
+the Final_t_L2_gr norm error is 0.0081391255938924 
+the Final_t_L2_H1 norm error is 0.0083426257664201 
+the Final_t_H1_L2 norm error is 0.0372114558869528 
+the Final_t_H1_gr norm error is 0.2312099035740307 
+the Final_t_H1_H1 norm error is 0.2341852086702728 
+the jump u semi norm error is 0.0000000000000002 
+the jump gradu semi norm error is 0.0000000000000016 
+the jump dotu semi norm error is 0.0952479331123379 
+Energynorm_err is 0.2039824430090088 
+16 space elements, 4 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/4 step) is 14.1699355914771665 
+the discete Energy (for No.2/4 step) is 17.7282989932725243 
+the discete Energy (for No.3/4 step) is 18.8185673397835345 
+the discete Energy (for No.4/4 step) is 28.0530349162686470 
+the L2_L2 norm error is 0.0000960786786449 
+the L2_gr norm error is 0.0024094906660810 
+the L2_H1 norm error is 0.0024114054786414 
+the L_inf_L2 norm error is 0.0001764953353976 
+the L_inf_gr norm error is 0.0034293772397584 
+the L_inf_H1 norm error is 0.0034339159651904 
+the H1_L2 norm error is 0.0020878654595460 
+the H1_gr norm error is 0.0118973970420445 
+the H1_H1 norm error is 0.0120792068677216 
+the W_1_inf_L2 norm error is 0.0075925821493469 
+the W_1_inf_gr norm error is 0.0345568052194535 
+the W_1_inf_H1 norm error is 0.0353810696654274 
+the Final_t_L2_L2 norm error is 0.0000246125476884 
+the Final_t_L2_gr norm error is 0.0001095626322832 
+the Final_t_L2_H1 norm error is 0.0001122931337907 
+the Final_t_H1_L2 norm error is 0.0005616423181150 
+the Final_t_H1_gr norm error is 0.0108304688738137 
+the Final_t_H1_H1 norm error is 0.0108450218128017 
+the jump u semi norm error is 0.0000000000000004 
+the jump gradu semi norm error is 0.0000000000000023 
+the jump dotu semi norm error is 0.0124091854054882 
+Energynorm_err is 0.0173269318416414 
+16 space elements, 4 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/4 step) is 14.1697379469107876 
+the discete Energy (for No.2/4 step) is 17.7277926573150779 
+the discete Energy (for No.3/4 step) is 18.8184438317867802 
+the discete Energy (for No.4/4 step) is 28.0533753696355639 
+the L2_L2 norm error is 0.0000034719416420 
+the L2_gr norm error is 0.0001186260471483 
+the L2_H1 norm error is 0.0001186768445856 
+the L_inf_L2 norm error is 0.0000056143278214 
+the L_inf_gr norm error is 0.0001670145221286 
+the L_inf_H1 norm error is 0.0001670487094886 
+the H1_L2 norm error is 0.0001068065413324 
+the H1_gr norm error is 0.0006014308014439 
+the H1_H1 norm error is 0.0006108409336291 
+the W_1_inf_L2 norm error is 0.0004969141045868 
+the W_1_inf_gr norm error is 0.0022506700816062 
+the W_1_inf_H1 norm error is 0.0023039755532182 
+the Final_t_L2_L2 norm error is 0.0000012198211910 
+the Final_t_L2_gr norm error is 0.0000054221287884 
+the Final_t_L2_H1 norm error is 0.0000055576473742 
+the Final_t_H1_L2 norm error is 0.0000262781732176 
+the Final_t_H1_gr norm error is 0.0005354420606705 
+the Final_t_H1_H1 norm error is 0.0005360865067531 
+the jump u semi norm error is 0.0000000000000005 
+the jump gradu semi norm error is 0.0000000000000032 
+the jump dotu semi norm error is 0.0005641588402757 
+Energynorm_err is 0.0008319385705245 
+64 space elements, 8 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/8 step) is 8.8192571698883668 
+the discete Energy (for No.2/8 step) is 13.9221009055351566 
+the discete Energy (for No.3/8 step) is 16.5200547102541933 
+the discete Energy (for No.4/8 step) is 16.8156469894999425 
+the discete Energy (for No.5/8 step) is 16.3589454406425503 
+the discete Energy (for No.6/8 step) is 17.1414780140308771 
+the discete Energy (for No.7/8 step) is 20.4297535350951591 
+the discete Energy (for No.8/8 step) is 26.0232365047017140 
+the L2_L2 norm error is 0.0152271192790248 
+the L2_gr norm error is 0.1839548502768321 
+the L2_H1 norm error is 0.1845839974155651 
+the L_inf_L2 norm error is 0.0246890978481065 
+the L_inf_gr norm error is 0.2604026088804721 
+the L_inf_H1 norm error is 0.2613972813229505 
+the H1_L2 norm error is 0.1316334104340982 
+the H1_gr norm error is 0.7948182361264756 
+the H1_H1 norm error is 0.8056447003622090 
+the W_1_inf_L2 norm error is 0.3089301270468937 
+the W_1_inf_gr norm error is 1.3804478127214461 
+the W_1_inf_H1 norm error is 1.4145932231721721 
+the Final_t_L2_L2 norm error is 0.0036660844546217 
+the Final_t_L2_gr norm error is 0.0163928347635544 
+the Final_t_L2_H1 norm error is 0.0167977738648196 
+the Final_t_H1_L2 norm error is 0.0995796040280074 
+the Final_t_H1_gr norm error is 0.8649704124632724 
+the Final_t_H1_H1 norm error is 0.8706835888974011 
+the jump u semi norm error is 0.0000000000000010 
+the jump gradu semi norm error is 0.0000000000000050 
+the jump dotu semi norm error is 1.1765652825501480 
+Energynorm_err is 1.4295293176056179 
+64 space elements, 8 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/8 step) is 8.9035709983432625 
+the discete Energy (for No.2/8 step) is 14.1653025126174921 
+the discete Energy (for No.3/8 step) is 17.0430826950432319 
+the discete Energy (for No.4/8 step) is 17.7241875158338935 
+the discete Energy (for No.5/8 step) is 17.6827328107426318 
+the discete Energy (for No.6/8 step) is 18.8161042514582419 
+the discete Energy (for No.7/8 step) is 22.3334904131624441 
+the discete Energy (for No.8/8 step) is 28.0475562184864415 
+the L2_L2 norm error is 0.0002472744855438 
+the L2_gr norm error is 0.0090570883849167 
+the L2_H1 norm error is 0.0090604632709037 
+the L_inf_L2 norm error is 0.0004081854823887 
+the L_inf_gr norm error is 0.0127639210430488 
+the L_inf_H1 norm error is 0.0127664330243624 
+the H1_L2 norm error is 0.0084628233667296 
+the H1_gr norm error is 0.0470196242588345 
+the H1_H1 norm error is 0.0477751446337783 
+the W_1_inf_L2 norm error is 0.0326960929509975 
+the W_1_inf_gr norm error is 0.1500869770247705 
+the W_1_inf_H1 norm error is 0.1536070804575566 
+the Final_t_L2_L2 norm error is 0.0003007545927825 
+the Final_t_L2_gr norm error is 0.0013362414778049 
+the Final_t_L2_H1 norm error is 0.0013696695265961 
+the Final_t_H1_L2 norm error is 0.0060418957076108 
+the Final_t_H1_gr norm error is 0.0482558651316735 
+the Final_t_H1_H1 norm error is 0.0486326333170219 
+the jump u semi norm error is 0.0000000000000006 
+the jump gradu semi norm error is 0.0000000000000047 
+the jump dotu semi norm error is 0.0489666110946281 
+Energynorm_err is 0.0686912184482096 
+64 space elements, 8 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/8 step) is 8.9064270116858211 
+the discete Energy (for No.2/8 step) is 14.1697419398469613 
+the discete Energy (for No.3/8 step) is 17.0476558733792238 
+the discete Energy (for No.4/8 step) is 17.7278145324593233 
+the discete Energy (for No.5/8 step) is 17.6852790416829357 
+the discete Energy (for No.6/8 step) is 18.8184549833852159 
+the discete Energy (for No.7/8 step) is 22.3370321309402584 
+the discete Energy (for No.8/8 step) is 28.0533645830457559 
+the L2_L2 norm error is 0.0000063932903227 
+the L2_gr norm error is 0.0003001612156104 
+the L2_H1 norm error is 0.0003002292949028 
+the L_inf_L2 norm error is 0.0000128801065299 
+the L_inf_gr norm error is 0.0004259493737809 
+the L_inf_H1 norm error is 0.0004261440673863 
+the H1_L2 norm error is 0.0002862809373353 
+the H1_gr norm error is 0.0015808296497213 
+the H1_H1 norm error is 0.0016065426096184 
+the W_1_inf_L2 norm error is 0.0011990336050193 
+the W_1_inf_gr norm error is 0.0053514334504086 
+the W_1_inf_H1 norm error is 0.0054841153853760 
+the Final_t_L2_L2 norm error is 0.0000006337920679 
+the Final_t_L2_gr norm error is 0.0000028247211235 
+the Final_t_L2_H1 norm error is 0.0000028949510895 
+the Final_t_H1_L2 norm error is 0.0000215422435957 
+the Final_t_H1_gr norm error is 0.0013310527534312 
+the Final_t_H1_H1 norm error is 0.0013312270657840 
+the jump u semi norm error is 0.0000000000000010 
+the jump gradu semi norm error is 0.0000000000000065 
+the jump dotu semi norm error is 0.0025428830774362 
+Energynorm_err is 0.0030079404165208 
+64 space elements, 8 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/8 step) is 8.9064240136286941 
+the discete Energy (for No.2/8 step) is 14.1697292032953062 
+the discete Energy (for No.3/8 step) is 17.0476334007810522 
+the discete Energy (for No.4/8 step) is 17.7277888823390981 
+the discete Energy (for No.5/8 step) is 17.6852593112602676 
+the discete Energy (for No.6/8 step) is 18.8184474527436869 
+the discete Energy (for No.7/8 step) is 22.3370365814267231 
+the discete Energy (for No.8/8 step) is 28.0533744253375410 
+the L2_L2 norm error is 0.0000001144301353 
+the L2_gr norm error is 0.0000074141035091 
+the L2_H1 norm error is 0.0000074149865205 
+the L_inf_L2 norm error is 0.0000002074648368 
+the L_inf_gr norm error is 0.0000104709229413 
+the L_inf_H1 norm error is 0.0000104714534672 
+the H1_L2 norm error is 0.0000071941945784 
+the H1_gr norm error is 0.0000395171216897 
+the H1_H1 norm error is 0.0000401666446479 
+the W_1_inf_L2 norm error is 0.0000371282688153 
+the W_1_inf_gr norm error is 0.0001677271732578 
+the W_1_inf_H1 norm error is 0.0001717874063902 
+the Final_t_L2_L2 norm error is 0.0000000153481566 
+the Final_t_L2_gr norm error is 0.0000000682438912 
+the Final_t_L2_H1 norm error is 0.0000000699485139 
+the Final_t_H1_L2 norm error is 0.0000004487085983 
+the Final_t_H1_gr norm error is 0.0000329228643522 
+the Final_t_H1_H1 norm error is 0.0000329259219546 
+the jump u semi norm error is 0.0000000000000014 
+the jump gradu semi norm error is 0.0000000000000084 
+the jump dotu semi norm error is 0.0000655618523218 
+Energynorm_err is 0.0000768890227456 
+256 space elements, 16 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/16 step) is 5.7081210244502607 
+the discete Energy (for No.2/16 step) is 8.8783892850397113 
+the discete Energy (for No.3/16 step) is 11.7310042297865049 
+the discete Energy (for No.4/16 step) is 14.0669492016569855 
+the discete Energy (for No.5/16 step) is 15.7656813768484145 
+the discete Energy (for No.6/16 step) is 16.8035702829678577 
+the discete Energy (for No.7/16 step) is 17.2575499459625199 
+the discete Energy (for No.8/16 step) is 17.2934337356590824 
+the discete Energy (for No.9/16 step) is 17.1406843049190130 
+the discete Energy (for No.10/16 step) is 17.0574873571136116 
+the discete Energy (for No.11/16 step) is 17.2914498447812228 
+the discete Energy (for No.12/16 step) is 18.0419072494966386 
+the discete Energy (for No.13/16 step) is 19.4295787639765862 
+the discete Energy (for No.14/16 step) is 21.4781902429155522 
+the discete Energy (for No.15/16 step) is 24.1108627248954441 
+the discete Energy (for No.16/16 step) is 27.1618164015587134 
+the L2_L2 norm error is 0.0057682441077612 
+the L2_gr norm error is 0.0913343312433910 
+the L2_H1 norm error is 0.0915162974762648 
+the L_inf_L2 norm error is 0.0092842310044234 
+the L_inf_gr norm error is 0.1297911874211645 
+the L_inf_H1 norm error is 0.1301228238148072 
+the H1_L2 norm error is 0.0652997141446274 
+the H1_gr norm error is 0.3998626572816440 
+the H1_H1 norm error is 0.4051594715117833 
+the W_1_inf_L2 norm error is 0.1562665667066560 
+the W_1_inf_gr norm error is 0.6961303370822619 
+the W_1_inf_H1 norm error is 0.7130961540593707 
+the Final_t_L2_L2 norm error is 0.0018974788971516 
+the Final_t_L2_gr norm error is 0.0084438253006526 
+the Final_t_L2_H1 norm error is 0.0086543984119681 
+the Final_t_H1_L2 norm error is 0.0363951622984837 
+the Final_t_H1_gr norm error is 0.4191345912621204 
+the Final_t_H1_H1 norm error is 0.4207117937866703 
+the jump u semi norm error is 0.0000000000000042 
+the jump gradu semi norm error is 0.0000000000000192 
+the jump dotu semi norm error is 0.8563406265729394 
+Energynorm_err is 0.9480872175593776 
+256 space elements, 16 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/16 step) is 5.7185744963090350 
+the discete Energy (for No.2/16 step) is 8.9060463653100328 
+the discete Energy (for No.3/16 step) is 11.7880056840434211 
+the discete Energy (for No.4/16 step) is 14.1691379662398305 
+the discete Energy (for No.5/16 step) is 15.9303779565012533 
+the discete Energy (for No.6/16 step) is 17.0470361826571413 
+the discete Energy (for No.7/16 step) is 17.5925562315339050 
+the discete Energy (for No.8/16 step) is 17.7273328136989292 
+the discete Energy (for No.9/16 step) is 17.6742927878262321 
+the discete Energy (for No.10/16 step) is 17.6849564463671065 
+the discete Energy (for No.11/16 step) is 18.0011457905542471 
+the discete Energy (for No.12/16 step) is 18.8181693098855902 
+the discete Energy (for No.13/16 step) is 20.2550880310247017 
+the discete Energy (for No.14/16 step) is 22.3365895545091036 
+the discete Energy (for No.15/16 step) is 24.9892295909573470 
+the discete Energy (for No.16/16 step) is 28.0526131882438747 
+the L2_L2 norm error is 0.0000315846471218 
+the L2_gr norm error is 0.0022589594770710 
+the L2_H1 norm error is 0.0022591802736795 
+the L_inf_L2 norm error is 0.0000658391786318 
+the L_inf_gr norm error is 0.0031915747390706 
+the L_inf_H1 norm error is 0.0031917312258215 
+the H1_L2 norm error is 0.0023148940696549 
+the H1_gr norm error is 0.0124876330619041 
+the H1_H1 norm error is 0.0127003824368593 
+the W_1_inf_L2 norm error is 0.0090825755541975 
+the W_1_inf_gr norm error is 0.0415453253206935 
+the W_1_inf_H1 norm error is 0.0425265474109992 
+the Final_t_L2_L2 norm error is 0.0000442552265462 
+the Final_t_L2_gr norm error is 0.0001966210079484 
+the Final_t_L2_H1 norm error is 0.0002015399361002 
+the Final_t_H1_L2 norm error is 0.0008854573150904 
+the Final_t_H1_gr norm error is 0.0107670948874429 
+the Final_t_H1_H1 norm error is 0.0108034423667665 
+the jump u semi norm error is 0.0000000000000022 
+the jump gradu semi norm error is 0.0000000000000166 
+the jump dotu semi norm error is 0.0219522115214639 
+Energynorm_err is 0.0253775885222215 
+256 space elements, 16 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/16 step) is 5.7187725888422767 
+the discete Energy (for No.2/16 step) is 8.9064240806503410 
+the discete Energy (for No.3/16 step) is 11.7885165644990426 
+the discete Energy (for No.4/16 step) is 14.1697296114022553 
+the discete Energy (for No.5/16 step) is 15.9309971471413512 
+the discete Energy (for No.6/16 step) is 17.0476341828920468 
+the discete Energy (for No.7/16 step) is 17.5930948804319094 
+the discete Energy (for No.8/16 step) is 17.7277898215329728 
+the discete Energy (for No.9/16 step) is 17.6746649508663971 
+the discete Energy (for No.10/16 step) is 17.6852600768816046 
+the discete Energy (for No.11/16 step) is 18.0014142161649957 
+the discete Energy (for No.12/16 step) is 18.8184477954344729 
+the discete Energy (for No.13/16 step) is 20.2554268871538490 
+the discete Energy (for No.14/16 step) is 22.3370364793361738 
+the discete Energy (for No.15/16 step) is 24.9898224098885500 
+the discete Energy (for No.16/16 step) is 28.0533740969270369 
+the L2_L2 norm error is 0.0000004132065189 
+the L2_gr norm error is 0.0000374721702372 
+the L2_H1 norm error is 0.0000374744483871 
+the L_inf_L2 norm error is 0.0000008536875752 
+the L_inf_gr norm error is 0.0000530499154094 
+the L_inf_H1 norm error is 0.0000530567838021 
+the H1_L2 norm error is 0.0000381354774116 
+the H1_gr norm error is 0.0002062336157833 
+the H1_H1 norm error is 0.0002097298713023 
+the W_1_inf_L2 norm error is 0.0001727145241089 
+the W_1_inf_gr norm error is 0.0007680366056479 
+the W_1_inf_H1 norm error is 0.0007872169551358 
+the Final_t_L2_L2 norm error is 0.0000000186070098 
+the Final_t_L2_gr norm error is 0.0000000829701441 
+the Final_t_L2_H1 norm error is 0.0000000850309686 
+the Final_t_H1_L2 norm error is 0.0000011560265051 
+the Final_t_H1_gr norm error is 0.0001663638880913 
+the Final_t_H1_H1 norm error is 0.0001663679045313 
+the jump u semi norm error is 0.0000000000000064 
+the jump gradu semi norm error is 0.0000000000000327 
+the jump dotu semi norm error is 0.0004967322182237 
+Energynorm_err is 0.0005391946390861 
+256 space elements, 16 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/16 step) is 5.7187725593679133 
+the discete Energy (for No.2/16 step) is 8.9064239439953834 
+the discete Energy (for No.3/16 step) is 11.7885162581231810 
+the discete Energy (for No.4/16 step) is 14.1697291043557918 
+the discete Energy (for No.5/16 step) is 15.9309964437936227 
+the discete Energy (for No.6/16 step) is 17.0476333211177824 
+the discete Energy (for No.7/16 step) is 17.5930939252722318 
+the discete Energy (for No.8/16 step) is 17.7277888550633840 
+the discete Energy (for No.9/16 step) is 17.6746640596188129 
+the discete Energy (for No.10/16 step) is 17.6852593386429184 
+the discete Energy (for No.11/16 step) is 18.0014136881261102 
+the discete Energy (for No.12/16 step) is 18.8184475054812239 
+the discete Energy (for No.13/16 step) is 20.2554268296213067 
+the discete Energy (for No.14/16 step) is 22.3370366158713978 
+the discete Energy (for No.15/16 step) is 24.9898226752899504 
+the discete Energy (for No.16/16 step) is 28.0533744090713775 
+the L2_L2 norm error is 0.0000000036760795 
+the L2_gr norm error is 0.0000004632927029 
+the L2_H1 norm error is 0.0000004633072870 
+the L_inf_L2 norm error is 0.0000000068623355 
+the L_inf_gr norm error is 0.0000006549514729 
+the L_inf_H1 norm error is 0.0000006549597752 
+the H1_L2 norm error is 0.0000004707871938 
+the H1_gr norm error is 0.0000025477030291 
+the H1_H1 norm error is 0.0000025908360246 
+the W_1_inf_L2 norm error is 0.0000025342670232 
+the W_1_inf_gr norm error is 0.0000114387825562 
+the W_1_inf_H1 norm error is 0.0000117161536228 
+the Final_t_L2_L2 norm error is 0.0000000001433822 
+the Final_t_L2_gr norm error is 0.0000000006384589 
+the Final_t_L2_H1 norm error is 0.0000000006543609 
+the Final_t_H1_L2 norm error is 0.0000000107396188 
+the Final_t_H1_gr norm error is 0.0000020576291252 
+the Final_t_H1_H1 norm error is 0.0000020576571522 
+the jump u semi norm error is 0.0000000000000044 
+the jump gradu semi norm error is 0.0000000000000260 
+the jump dotu semi norm error is 0.0000067354869619 
+Energynorm_err is 0.0000072166011159 
+1024 space elements, 32 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/32 step) is 4.0838057093150013 
+the discete Energy (for No.2/32 step) is 5.7156190798208941 
+the discete Energy (for No.3/32 step) is 7.3303258664847704 
+the discete Energy (for No.4/32 step) is 8.8961064315439131 
+the discete Energy (for No.5/32 step) is 10.3830334262053352 
+the discete Energy (for No.6/32 step) is 11.7642115461291965 
+the discete Energy (for No.7/32 step) is 13.0168073253101504 
+the discete Energy (for No.8/32 step) is 14.1229256032590076 
+the discete Energy (for No.9/32 step) is 15.0702973174843748 
+the discete Energy (for No.10/32 step) is 15.8527514632502911 
+the discete Energy (for No.11/32 step) is 16.4704527778514098 
+the discete Energy (for No.12/32 step) is 16.9298958984405452 
+the discete Energy (for No.13/32 step) is 17.2436561838084472 
+the discete Energy (for No.14/32 step) is 17.4299067758949491 
+the discete Energy (for No.15/32 step) is 17.5117204720945239 
+the discete Energy (for No.16/32 step) is 17.5161832513869413 
+the discete Energy (for No.17/32 step) is 17.4733535339265842 
+the discete Energy (for No.18/32 step) is 17.4151071795203549 
+the discete Energy (for No.19/32 step) is 17.3739126188277631 
+the discete Energy (for No.20/32 step) is 17.3815831938960557 
+the discete Energy (for No.21/32 step) is 17.4680546587975734 
+the discete Energy (for No.22/32 step) is 17.6602348230211028 
+the discete Energy (for No.23/32 step) is 17.9809695470083639 
+the discete Energy (for No.24/32 step) is 18.4481648273027687 
+the discete Energy (for No.25/32 step) is 19.0740987099662753 
+the discete Energy (for No.26/32 step) is 19.8649494756935034 
+the discete Energy (for No.27/32 step) is 20.8205582287145070 
+the discete Energy (for No.28/32 step) is 21.9344350134970654 
+the discete Energy (for No.29/32 step) is 23.1940082245880177 
+the discete Energy (for No.30/32 step) is 24.5811077253045269 
+the discete Energy (for No.31/32 step) is 26.0726631096893513 
+the discete Energy (for No.32/32 step) is 27.6415902743200732 
+the L2_L2 norm error is 0.0024140742757538 
+the L2_gr norm error is 0.0455070016990178 
+the L2_H1 norm error is 0.0455709881201107 
+the L_inf_L2 norm error is 0.0037985597321800 
+the L_inf_gr norm error is 0.0646554051709171 
+the L_inf_H1 norm error is 0.0647668933472526 
+the H1_L2 norm error is 0.0325171428817852 
+the H1_gr norm error is 0.2003562980492540 
+the H1_H1 norm error is 0.2029778577805864 
+the W_1_inf_L2 norm error is 0.0786215270154639 
+the W_1_inf_gr norm error is 0.3507843367891104 
+the W_1_inf_H1 norm error is 0.3594005687162990 
+the Final_t_L2_L2 norm error is 0.0009681300411271 
+the Final_t_L2_gr norm error is 0.0043030160260545 
+the Final_t_L2_H1 norm error is 0.0044105807664087 
+the Final_t_H1_L2 norm error is 0.0146419235600957 
+the Final_t_H1_gr norm error is 0.2064905314086892 
+the Final_t_H1_H1 norm error is 0.2070089985652378 
+the jump u semi norm error is 0.0000000000000454 
+the jump gradu semi norm error is 0.0000000000002023 
+the jump dotu semi norm error is 0.6119578478023516 
+Energynorm_err is 0.6449227241371962 
+1024 space elements, 32 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/32 step) is 4.0850890775628068 
+the discete Energy (for No.2/32 step) is 5.7187462099486197 
+the discete Energy (for No.3/32 step) is 7.3363195768833895 
+the discete Energy (for No.4/32 step) is 8.9063735351128130 
+the discete Energy (for No.5/32 step) is 10.3992983065188813 
+the discete Energy (for No.6/32 step) is 11.7884480811589700 
+the discete Energy (for No.7/32 step) is 13.0511650772554564 
+the discete Energy (for No.8/32 step) is 14.1696502863530913 
+the discete Energy (for No.9/32 step) is 15.1316474777440764 
+the discete Energy (for No.10/32 step) is 15.9309141913400065 
+the discete Energy (for No.11/32 step) is 16.5674616246228652 
+the discete Energy (for No.12/32 step) is 17.0475541966058231 
+the discete Energy (for No.13/32 step) is 17.3834688056987474 
+the discete Energy (for No.14/32 step) is 17.5930230327332993 
+the discete Energy (for No.15/32 step) is 17.6988904196456396 
+the discete Energy (for No.16/32 step) is 17.7277291369458609 
+the discete Energy (for No.17/32 step) is 17.7091575245582256 
+the discete Energy (for No.18/32 step) is 17.6746158752646600 
+the discete Energy (for No.19/32 step) is 17.6561582016743621 
+the discete Energy (for No.20/32 step) is 17.6852204183745165 
+the discete Energy (for No.21/32 step) is 17.7914122772935386 
+the discete Energy (for No.22/32 step) is 18.0013794815011963 
+the discete Energy (for No.23/32 step) is 18.3377797057608696 
+the discete Energy (for No.24/32 step) is 18.8184118747828641 
+the discete Energy (for No.25/32 step) is 19.4555321605226368 
+the discete Energy (for No.26/32 step) is 20.2553829843619297 
+the discete Energy (for No.27/32 step) is 21.2179531243537909 
+the discete Energy (for No.28/32 step) is 22.3369781464743546 
+the discete Energy (for No.29/32 step) is 23.6001811433086957 
+the discete Energy (for No.30/32 step) is 24.9897445287174484 
+the discete Energy (for No.31/32 step) is 26.4829947576799611 
+the discete Energy (for No.32/32 step) is 28.0532736579140476 
+the L2_L2 norm error is 0.0000040154036318 
+the L2_gr norm error is 0.0005643650621914 
+the L2_H1 norm error is 0.0005643793466177 
+the L_inf_L2 norm error is 0.0000096684624177 
+the L_inf_gr norm error is 0.0007979274520087 
+the L_inf_H1 norm error is 0.0007979372576792 
+the H1_L2 norm error is 0.0006115827524530 
+the H1_gr norm error is 0.0032439918524786 
+the H1_H1 norm error is 0.0033011386826435 
+the W_1_inf_L2 norm error is 0.0023915654929931 
+the W_1_inf_gr norm error is 0.0109151103255695 
+the W_1_inf_H1 norm error is 0.0111740421928069 
+the Final_t_L2_L2 norm error is 0.0000060646660277 
+the Final_t_L2_gr norm error is 0.0000269446030610 
+the Final_t_L2_H1 norm error is 0.0000276186858511 
+the Final_t_H1_L2 norm error is 0.0001211362531816 
+the Final_t_H1_gr norm error is 0.0025634844264884 
+the Final_t_H1_H1 norm error is 0.0025663449488881 
+the jump u semi norm error is 0.0000000000000098 
+the jump gradu semi norm error is 0.0000000000000555 
+the jump dotu semi norm error is 0.0088178566369799 
+Energynorm_err is 0.0094163428291373 
+1024 space elements, 32 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/32 step) is 4.0851019344564250 
+the discete Energy (for No.2/32 step) is 5.7187725601251351 
+the discete Energy (for No.3/32 step) is 7.3363586378170824 
+the discete Energy (for No.4/32 step) is 8.9064239481492606 
+the discete Energy (for No.5/32 step) is 10.3993584681506626 
+the discete Energy (for No.6/32 step) is 11.7885162678608815 
+the discete Energy (for No.7/32 step) is 13.0512394984828326 
+the discete Energy (for No.8/32 step) is 14.1697291208073626 
+the discete Energy (for No.9/32 step) is 15.1317289123080059 
+the discete Energy (for No.10/32 step) is 15.9309964668987636 
+the discete Energy (for No.11/32 step) is 16.5675430870983753 
+the discete Energy (for No.12/32 step) is 17.0476333496803854 
+the discete Energy (for No.13/32 step) is 17.3835443615004763 
+the discete Energy (for No.14/32 step) is 17.5930939571649319 
+the discete Energy (for No.15/32 step) is 17.6989559696388028 
+the discete Energy (for No.16/32 step) is 17.7277888875606209 
+the discete Energy (for No.17/32 step) is 17.7092113844742407 
+the discete Energy (for No.18/32 step) is 17.6746640898148719 
+the discete Energy (for No.19/32 step) is 17.6562013431519027 
+the discete Energy (for No.20/32 step) is 17.6852593638955007 
+the discete Energy (for No.21/32 step) is 17.7914481750144944 
+the discete Energy (for No.22/32 step) is 18.0014137064588766 
+the discete Energy (for No.23/32 step) is 18.3378138070153334 
+the discete Energy (for No.24/32 step) is 18.8184475158848201 
+the discete Energy (for No.25/32 step) is 19.4555710555879635 
+the discete Energy (for No.26/32 step) is 20.2554268322070072 
+the discete Energy (for No.27/32 step) is 21.2180035432207426 
+the discete Energy (for No.28/32 step) is 22.3370366118541703 
+the discete Energy (for No.29/32 step) is 23.6002489312506825 
+the discete Energy (for No.30/32 step) is 24.9898226668034944 
+the discete Energy (for No.31/32 step) is 26.4830839855472462 
+the discete Energy (for No.32/32 step) is 28.0533743988432107 
+the L2_L2 norm error is 0.0000000262692739 
+the L2_gr norm error is 0.0000046822131009 
+the L2_H1 norm error is 0.0000046822867914 
+the L_inf_L2 norm error is 0.0000000545482544 
+the L_inf_gr norm error is 0.0000066235292881 
+the L_inf_H1 norm error is 0.0000066237539011 
+the H1_L2 norm error is 0.0000049403041465 
+the H1_gr norm error is 0.0000264197874129 
+the H1_H1 norm error is 0.0000268777188765 
+the W_1_inf_L2 norm error is 0.0000231638207661 
+the W_1_inf_gr norm error is 0.0001029343346641 
+the W_1_inf_H1 norm error is 0.0001055084823378 
+the Final_t_L2_L2 norm error is 0.0000000005965289 
+the Final_t_L2_gr norm error is 0.0000000026595414 
+the Final_t_L2_H1 norm error is 0.0000000027256205 
+the Final_t_H1_L2 norm error is 0.0000000695178014 
+the Final_t_H1_gr norm error is 0.0000207983546462 
+the Final_t_H1_H1 norm error is 0.0000207984708263 
+the jump u semi norm error is 0.0000000000000093 
+the jump gradu semi norm error is 0.0000000000000657 
+the jump dotu semi norm error is 0.0000930586825184 
+Energynorm_err is 0.0000968624540463 
+1024 space elements, 32 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/32 step) is 4.0851019342179127 
+the discete Energy (for No.2/32 step) is 5.7187725590277552 
+the discete Energy (for No.3/32 step) is 7.3363586351842232 
+the discete Energy (for No.4/32 step) is 8.9064239433542163 
+the discete Energy (for No.5/32 step) is 10.3993584606686031 
+the discete Energy (for No.6/32 step) is 11.7885162572953490 
+the discete Energy (for No.7/32 step) is 13.0512394845797406 
+the discete Energy (for No.8/32 step) is 14.1697291034616271 
+the discete Energy (for No.9/32 step) is 15.1317288915645864 
+the discete Energy (for No.10/32 step) is 15.9309964429484694 
+the discete Energy (for No.11/32 step) is 16.5675430602690348 
+the discete Energy (for No.12/32 step) is 17.0476333204230883 
+the discete Energy (for No.13/32 step) is 17.3835443303715920 
+the discete Energy (for No.14/32 step) is 17.5930939248043252 
+the discete Energy (for No.15/32 step) is 17.6989559367449800 
+the discete Energy (for No.16/32 step) is 17.7277888548638245 
+the discete Energy (for No.17/32 step) is 17.7092113527081558 
+the discete Energy (for No.18/32 step) is 17.6746640596884177 
+the discete Energy (for No.19/32 step) is 17.6562013153220896 
+the discete Energy (for No.20/32 step) is 17.6852593389420711 
+the discete Energy (for No.21/32 step) is 17.7914481534175444 
+the discete Energy (for No.22/32 step) is 18.0014136885806337 
+the discete Energy (for No.23/32 step) is 18.3378137930860028 
+the discete Energy (for No.24/32 step) is 18.8184475059938130 
+the discete Energy (for No.25/32 step) is 19.4555710496806036 
+the discete Energy (for No.26/32 step) is 20.2554268300863924 
+the discete Energy (for No.27/32 step) is 21.2180035445555042 
+the discete Energy (for No.28/32 step) is 22.3370366161910994 
+the discete Energy (for No.29/32 step) is 23.6002489380322089 
+the discete Energy (for No.30/32 step) is 24.9898226753890853 
+the discete Energy (for No.31/32 step) is 26.4830839952380153 
+the discete Energy (for No.32/32 step) is 28.0533744089088195 
+the L2_L2 norm error is 0.0000000001163064 
+the L2_gr norm error is 0.0000000289535769 
+the L2_H1 norm error is 0.0000000289538105 
+the L_inf_L2 norm error is 0.0000000002177763 
+the L_inf_gr norm error is 0.0000000409425817 
+the L_inf_H1 norm error is 0.0000000409427115 
+the H1_L2 norm error is 0.0000000301653166 
+the H1_gr norm error is 0.0000001619653349 
+the H1_H1 norm error is 0.0000001647504660 
+the W_1_inf_L2 norm error is 0.0000001658366288 
+the W_1_inf_gr norm error is 0.0000007478506044 
+the W_1_inf_H1 norm error is 0.0000007660130287 
+the Final_t_L2_L2 norm error is 0.0000000000012223 
+the Final_t_L2_gr norm error is 0.0000000000054737 
+the Final_t_L2_H1 norm error is 0.0000000000056085 
+the Final_t_H1_L2 norm error is 0.0000000003247498 
+the Final_t_H1_gr norm error is 0.0000001286249570 
+the Final_t_H1_H1 norm error is 0.0000001286253670 
+the jump u semi norm error is 0.0000000000000127 
+the jump gradu semi norm error is 0.0000000000000847 
+the jump dotu semi norm error is 0.0000006430247116 
+Energynorm_err is 0.0000006637948488 
+4096 space elements, 64 time elements with space basis Q1 order, time basis 1 order 
+the discete Energy (for No.1/64 step) is 3.2721030643557882 
+the discete Energy (for No.2/64 step) is 4.0847420699642667 
+the discete Energy (for No.3/64 step) is 4.9013028838212627 
+the discete Energy (for No.4/64 step) is 5.7177366273884234 
+the discete Energy (for No.5/64 step) is 6.5299982764665208 
+the discete Energy (for No.6/64 step) is 7.3340846455169126 
+the discete Energy (for No.7/64 step) is 8.1260722938423342 
+the discete Energy (for No.8/64 step) is 8.9021548833455917 
+the discete Energy (for No.9/64 step) is 9.6586795571004043 
+the discete Energy (for No.10/64 step) is 10.3921819401898183 
+the discete Energy (for No.11/64 step) is 11.0994193928666558 
+the discete Energy (for No.12/64 step) is 11.7774021733249352 
+the discete Energy (for No.13/64 step) is 12.4234221946140408 
+the discete Energy (for No.14/64 step) is 13.0350790882823446 
+the discete Energy (for No.15/64 step) is 13.6103033166423888 
+the discete Energy (for No.16/64 step) is 14.1473761062977310 
+the discete Energy (for No.17/64 step) is 14.6449460077862508 
+the discete Energy (for No.18/64 step) is 15.1020419197891034 
+the discete Energy (for No.19/64 step) is 15.5180824511544877 
+the discete Energy (for No.20/64 step) is 15.8928815297638995 
+the discete Energy (for No.21/64 step) is 16.2266502037553195 
+the discete Energy (for No.22/64 step) is 16.5199946175105126 
+the discete Energy (for No.23/64 step) is 16.7739101817978415 
+the discete Energy (for No.24/64 step) is 16.9897719942030854 
+the discete Energy (for No.25/64 step) is 17.1693216021454305 
+the discete Energy (for No.26/64 step) is 17.3146502360265444 
+the discete Energy (for No.27/64 step) is 17.4281786740675031 
+the discete Energy (for No.28/64 step) is 17.5126339328300702 
+the discete Energy (for No.29/64 step) is 17.5710230079848557 
+the discete Energy (for No.30/64 step) is 17.6066039182908476 
+the discete Energy (for No.31/64 step) is 17.6228543317136896 
+the discete Energy (for No.32/64 step) is 17.6234380758870834 
+the discete Energy (for No.33/64 step) is 17.6121698554879522 
+the discete Energy (for No.34/64 step) is 17.5929785163575687 
+the discete Energy (for No.35/64 step) is 17.5698692101889762 
+the discete Energy (for No.36/64 step) is 17.5468848241826940 
+the discete Energy (for No.37/64 step) is 17.5280670471483937 
+the discete Energy (for No.38/64 step) is 17.5174174470245063 
+the discete Energy (for No.39/64 step) is 17.5188589346763912 
+the discete Energy (for No.40/64 step) is 17.5361979851094176 
+the discete Energy (for No.41/64 step) is 17.5730879799367479 
+the discete Energy (for No.42/64 step) is 17.6329940241423166 
+the discete Energy (for No.43/64 step) is 17.7191595759781180 
+the discete Energy (for No.44/64 step) is 17.8345752113738598 
+the discete Energy (for No.45/64 step) is 17.9819498236781037 
+the discete Energy (for No.46/64 step) is 18.1636845360967705 
+the discete Energy (for No.47/64 step) is 18.3818495780692466 
+the discete Energy (for No.48/64 step) is 18.6381643482769093 
+the discete Energy (for No.49/64 step) is 18.9339808562908800 
+the discete Energy (for No.50/64 step) is 19.2702707023260267 
+the discete Energy (for No.51/64 step) is 19.6476157204952102 
+the discete Energy (for No.52/64 step) is 20.0662023756756795 
+the discete Energy (for No.53/64 step) is 20.5258199679500954 
+the discete Energy (for No.54/64 step) is 21.0258626619158484 
+the discete Energy (for No.55/64 step) is 21.5653353213207097 
+the discete Energy (for No.56/64 step) is 22.1428630928350785 
+the discete Energy (for No.57/64 step) is 22.7567046466654617 
+the discete Energy (for No.58/64 step) is 23.4047689464962545 
+the discete Energy (for No.59/64 step) is 24.0846353872571370 
+the discete Energy (for No.60/64 step) is 24.7935771067802655 
+the discete Energy (for No.61/64 step) is 25.5285872468443458 
+the discete Energy (for No.62/64 step) is 26.2864079106991682 
+the discete Energy (for No.63/64 step) is 27.0635615381950814 
+the discete Energy (for No.64/64 step) is 27.8563843963594238 
+the L2_L2 norm error is 0.0010898317015866 
+the L2_gr norm error is 0.0227140727438515 
+the L2_H1 norm error is 0.0227402030279143 
+the L_inf_L2 norm error is 0.0016816928625143 
+the L_inf_gr norm error is 0.0322405572316487 
+the L_inf_H1 norm error is 0.0322843016707692 
+the H1_L2 norm error is 0.0162251453561206 
+the H1_gr norm error is 0.1002595786913563 
+the H1_H1 norm error is 0.1015639624138184 
+the W_1_inf_L2 norm error is 0.0393911541593586 
+the W_1_inf_gr norm error is 0.1758902746702763 
+the W_1_inf_H1 norm error is 0.1802252887947958 
+the Final_t_L2_L2 norm error is 0.0004890563159672 
+the Final_t_L2_gr norm error is 0.0021730381171088 
+the Final_t_L2_H1 norm error is 0.0022273910160983 
+the Final_t_H1_L2 norm error is 0.0064110285499091 
+the Final_t_H1_gr norm error is 0.1025290872069835 
+the Final_t_H1_H1 norm error is 0.1027293288723574 
+the jump u semi norm error is 0.0000000000000437 
+the jump gradu semi norm error is 0.0000000000003183 
+the jump dotu semi norm error is 0.4345873604204347 
+Energynorm_err is 0.4463487825458052 
+4096 space elements, 64 time elements with space basis Q2 order, time basis 2 order 
+the discete Energy (for No.1/64 step) is 3.2722606729681023 
+the discete Energy (for No.2/64 step) is 4.0851002590801553 
+the discete Energy (for No.3/64 step) is 4.9019419110314750 
+the discete Energy (for No.4/64 step) is 5.7187691237902012 
+the discete Energy (for No.5/64 step) is 6.5315655216098030 
+the discete Energy (for No.6/64 step) is 7.3363535416527501 
+the discete Energy (for No.7/64 step) is 8.1292327425436994 
+the discete Energy (for No.8/64 step) is 8.9064173693329103 
+the discete Energy (for No.9/64 step) is 9.6642728133845104 
+the discete Energy (for No.10/64 step) is 10.3993506162562781 
+the discete Energy (for No.11/64 step) is 11.1084216805990046 
+the discete Energy (for No.12/64 step) is 11.7885073683259289 
+the discete Energy (for No.13/64 step) is 12.4369081866211317 
+the discete Energy (for No.14/64 step) is 13.0512297855642920 
+the discete Energy (for No.15/64 step) is 13.6294060170269589 
+the discete Energy (for No.16/64 step) is 14.1697188327870425 
+the discete Energy (for No.17/64 step) is 14.6708148302420067 
+the discete Energy (for No.18/64 step) is 15.1317182863830002 
+the discete Energy (for No.19/64 step) is 15.5518405545090523 
+the discete Energy (for No.20/64 step) is 15.9309857331875921 
+the discete Energy (for No.21/64 step) is 16.2693525528669056 
+the discete Energy (for No.22/64 step) is 16.5675324619718793 
+the discete Energy (for No.23/64 step) is 16.8265039309143312 
+the discete Energy (for No.24/64 step) is 17.0476230288733284 
+the discete Energy (for No.25/64 step) is 17.2326103640955424 
+the discete Energy (for No.26/64 step) is 17.3835345134881187 
+the discete Energy (for No.27/64 step) is 17.5027921010844381 
+the discete Energy (for No.28/64 step) is 17.5930847172386535 
+the discete Energy (for No.29/64 step) is 17.6573929008291870 
+the discete Energy (for No.30/64 step) is 17.6989474350360929 
+the discete Energy (for No.31/64 step) is 17.7211982331304938 
+the discete Energy (for No.32/64 step) is 17.7277811139213561 
+the discete Energy (for No.33/64 step) is 17.7224827868314350 
+the discete Energy (for No.34/64 step) is 17.7092043838140114 
+the discete Energy (for No.35/64 step) is 17.6919238893187725 
+the discete Energy (for No.36/64 step) is 17.6746578301263995 
+the discete Energy (for No.37/64 step) is 17.6614225939990739 
+the discete Energy (for No.38/64 step) is 17.6561957496706015 
+the discete Energy (for No.39/64 step) is 17.6628777406849302 
+the discete Energy (for No.40/64 step) is 17.6852543219920690 
+the discete Energy (for No.41/64 step) is 17.7269601010583315 
+the discete Energy (for No.42/64 step) is 17.7914435346097548 
+the discete Energy (for No.43/64 step) is 17.8819337181081686 
+the discete Energy (for No.44/64 step) is 18.0014092877968679 
+the discete Energy (for No.45/64 step) is 18.1525697348051231 
+the discete Energy (for No.46/64 step) is 18.3378094075730012 
+the discete Energy (for No.47/64 step) is 18.5591944529668389 
+the discete Energy (for No.48/64 step) is 18.8184429181554655 
+the discete Energy (for No.49/64 step) is 19.1169082048768324 
+the discete Energy (for No.50/64 step) is 19.4555660354394071 
+the discete Energy (for No.51/64 step) is 19.8350050559828226 
+the discete Energy (for No.52/64 step) is 20.2554211674939424 
+the discete Energy (for No.53/64 step) is 20.7166156391731562 
+the discete Energy (for No.54/64 step) is 21.2179970223205636 
+the discete Energy (for No.55/64 step) is 21.7585868463104326 
+the discete Energy (for No.56/64 step) is 22.3370290417980222 
+the discete Energy (for No.57/64 step) is 22.9516030004088094 
+the discete Energy (for No.58/64 step) is 23.6002401451376329 
+the discete Energy (for No.59/64 step) is 24.2805438518761463 
+the discete Energy (for No.60/64 step) is 24.9898125302130012 
+the discete Energy (for No.61/64 step) is 25.7250656412264078 
+the discete Energy (for No.62/64 step) is 26.4830724017033177 
+the discete Energy (for No.63/64 step) is 27.2603828983477463 
+the discete Energy (for No.64/64 step) is 28.0533613123319405 
+the L2_L2 norm error is 0.0000005072051184 
+the L2_gr norm error is 0.0001410656722972 
+the L2_H1 norm error is 0.0001410665841285 
+the L_inf_L2 norm error is 0.0000013238097832 
+the L_inf_gr norm error is 0.0001994836673911 
+the L_inf_H1 norm error is 0.0001994842823056 
+the H1_L2 norm error is 0.0001576419764920 
+the H1_gr norm error is 0.0008287875789506 
+the H1_H1 norm error is 0.0008436467529571 
+the W_1_inf_L2 norm error is 0.0006139220103791 
+the W_1_inf_gr norm error is 0.0027985307578830 
+the W_1_inf_H1 norm error is 0.0028650784697187 
+the Final_t_L2_L2 norm error is 0.0000007962661459 
+the Final_t_L2_gr norm error is 0.0000035377172889 
+the Final_t_L2_H1 norm error is 0.0000036262216412 
+the Final_t_H1_L2 norm error is 0.0000158923833256 
+the Final_t_H1_gr norm error is 0.0006306300015883 
+the Final_t_H1_H1 norm error is 0.0006308302202265 
+the jump u semi norm error is 0.0000000000001879 
+the jump gradu semi norm error is 0.0000000000008425 
+the jump dotu semi norm error is 0.0033320033246934 
+Energynorm_err is 0.0034371865068445 
+4096 space elements, 64 time elements with space basis Q3 order, time basis 3 order 
+the discete Energy (for No.1/64 step) is 3.2722614806329582 
+the discete Energy (for No.2/64 step) is 4.0851019342244896 
+the discete Energy (for No.3/64 step) is 4.9019444710996254 
+the discete Energy (for No.4/64 step) is 5.7187725590608256 
+the discete Energy (for No.5/64 step) is 6.5315698050613342 
+the discete Energy (for No.6/64 step) is 7.3363586352657837 
+the discete Energy (for No.7/64 step) is 8.1292386012606919 
+the discete Energy (for No.8/64 step) is 8.9064239435048957 
+the discete Energy (for No.9/64 step) is 9.6642800502634891 
+the discete Energy (for No.10/64 step) is 10.3993584609057095 
+the discete Energy (for No.11/64 step) is 11.1084300764659680 
+the discete Energy (for No.12/64 step) is 11.7885162576320432 
+the discete Energy (for No.13/64 step) is 12.4369175106700034 
+the discete Energy (for No.14/64 step) is 13.0512394850246025 
+the discete Energy (for No.15/64 step) is 13.6294160322238316 
+the discete Energy (for No.16/64 step) is 14.1697291040184332 
+the discete Energy (for No.17/64 step) is 14.6708252981254432 
+the discete Energy (for No.18/64 step) is 15.1317288922322710 
+the discete Energy (for No.19/64 step) is 15.5518512407357541 
+the discete Energy (for No.20/64 step) is 15.9309964437212095 
+the discete Energy (for No.21/64 step) is 16.2693632335857608 
+the discete Energy (for No.22/64 step) is 16.5675430611366252 
+the discete Energy (for No.23/64 step) is 16.8265143995963413 
+the discete Energy (for No.24/64 step) is 17.0476333213711548 
+the discete Energy (for No.25/64 step) is 17.2326204383321482 
+the discete Energy (for No.26/64 step) is 17.3835443313824065 
+the discete Energy (for No.27/64 step) is 17.5028016288922643 
+the discete Energy (for No.28/64 step) is 17.5930939258575592 
+the discete Energy (for No.29/64 step) is 17.6574017660633942 
+the discete Energy (for No.30/64 step) is 17.6989559378180736 
+the discete Energy (for No.31/64 step) is 17.7212063596954614 
+the discete Energy (for No.32/64 step) is 17.7277888559332126 
+the discete Energy (for No.33/64 step) is 17.7224901414579215 
+the discete Energy (for No.34/64 step) is 17.7092113537501419 
+the discete Energy (for No.35/64 step) is 17.6919304827581279 
+the discete Energy (for No.36/64 step) is 17.6746640606799517 
+the discete Energy (for No.37/64 step) is 17.6614284805626340 
+the discete Energy (for No.38/64 step) is 17.6562013162416989 
+the discete Energy (for No.39/64 step) is 17.6628830161306887 
+the discete Energy (for No.40/64 step) is 17.6852593397707913 
+the discete Energy (for No.41/64 step) is 17.7269648988969699 
+the discete Energy (for No.42/64 step) is 17.7914481541398715 
+the discete Energy (for No.43/64 step) is 17.8819382044649764 
+the discete Energy (for No.44/64 step) is 18.0014136891843819 
+the discete Energy (for No.45/64 step) is 18.1525741020321298 
+the discete Energy (for No.46/64 step) is 18.3378137935634307 
+the discete Energy (for No.47/64 step) is 18.5591989122501850 
+the discete Energy (for No.48/64 step) is 18.8184475063417587 
+the discete Energy (for No.49/64 step) is 19.1169129781209683 
+the discete Energy (for No.50/64 step) is 19.4555710499003851 
+the discete Energy (for No.51/64 step) is 19.8350103672832354 
+the discete Energy (for No.52/64 step) is 20.2554268301840779 
+the discete Energy (for No.53/64 step) is 20.7166217062058919 
+the discete Energy (for No.54/64 step) is 21.2180035445414674 
+the discete Energy (for No.55/64 step) is 21.7585938719681309 
+the discete Energy (for No.56/64 step) is 22.3370366160797325 
+the discete Energy (for No.57/64 step) is 22.9516111650051506 
+the discete Energy (for No.58/64 step) is 23.6002489378413074 
+the discete Energy (for No.59/64 step) is 24.2805533062179819 
+the discete Energy (for No.60/64 step) is 24.9898226751391626 
+the discete Energy (for No.61/64 step) is 25.7250765008197746 
+the discete Energy (for No.62/64 step) is 26.4830839949515706 
+the discete Energy (for No.63/64 step) is 27.2603952389606761 
+the discete Energy (for No.64/64 step) is 28.0533744086094003 
+the L2_L2 norm error is 0.0000000016557132 
+the L2_gr norm error is 0.0000005852148647 
+the L2_H1 norm error is 0.0000005852172069 
+the L_inf_L2 norm error is 0.0000000034398818 
+the L_inf_gr norm error is 0.0000008276789503 
+the L_inf_H1 norm error is 0.0000008276860984 
+the H1_L2 norm error is 0.0000006290962132 
+the H1_gr norm error is 0.0000033453852642 
+the H1_H1 norm error is 0.0000034040218289 
+the W_1_inf_L2 norm error is 0.0000029959413682 
+the W_1_inf_gr norm error is 0.0000133112281223 
+the W_1_inf_H1 norm error is 0.0000136442097171 
+the Final_t_L2_L2 norm error is 0.0000000000204174 
+the Final_t_L2_gr norm error is 0.0000000000909943 
+the Final_t_L2_H1 norm error is 0.0000000000932568 
+the Final_t_H1_L2 norm error is 0.0000000042991059 
+the Final_t_H1_gr norm error is 0.0000025999058832 
+the Final_t_H1_H1 norm error is 0.0000025999094376 
+the jump u semi norm error is 0.0000000000002532 
+the jump gradu semi norm error is 0.0000000000011369 
+the jump dotu semi norm error is 0.0000169663014522 
+Energynorm_err is 0.0000173044146989 
+4096 space elements, 64 time elements with space basis Q4 order, time basis 4 order 
+the discete Energy (for No.1/64 step) is 3.2722614806311463 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+the discete Energy (for No.2/64 step) is 4.0851019342164934 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.3/64 step) is 4.9019444710803262 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.4/64 step) is 5.7187725590247549 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.5/64 step) is 6.5315698050029649 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.6/64 step) is 7.3363586351797121 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.7/64 step) is 8.1292386011417967 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.8/64 step) is 8.9064239433484538 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.9/64 step) is 9.6642800500651997 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.10/64 step) is 10.3993584606617784 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.11/64 step) is 11.1084300761731463 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+the discete Energy (for No.12/64 step) is 11.7885162572876485 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+the discete Energy (for No.13/64 step) is 12.4369175102719769 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+IdleTimeout has been reached.
+Parallel pool using the 'local' profile is shutting down.
+the discete Energy (for No.14/64 step) is 13.0512394845713953 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).

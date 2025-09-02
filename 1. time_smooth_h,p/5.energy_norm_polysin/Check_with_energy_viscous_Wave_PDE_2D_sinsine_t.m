@@ -1,0 +1,1355 @@
+%%%%%% The parabolic PDE, we use hp-DGFEM in time and hp-FEM in 2D space  %%%%%%%%%%%
+%parpool('local',40)
+%matlabpool open local;
+
+clear all;
+
+time_starting = 0;   
+time_end = 1;   %% 
+
+No_of_elements = 4;
+space_order_of_Basis = 2;
+
+NO_time_step_vec = [5,10]; %% 时间步和阶数可以是向量，看loop
+time_order_of_Basis_vec = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
+Basis_Type  = 'Q';     % Q,Se
+
+Static_Condensation = 'on'; % on, off
+
+for OA = 1:length(NO_time_step_vec)
+for OB = 1 : length(time_order_of_Basis_vec)
+
+%% space elements
+
+load([num2str(No_of_elements) ' rectangle Elements.mat'])
+
+NO_space_element = NT; 
+
+
+%% time elements, time grids t0,t1,t2....tn,  (x,t)
+NO_time_step = NO_time_step_vec(OA);
+t_grids =linspace(time_starting,time_end,NO_time_step+1);
+
+
+%% Define PDE struct
+
+a = @(x)diffusive(x); %the diffusion tensor in 1D space 
+
+b = @(x)adv(x); % the convection cooefficient
+
+c = @(x)reac(x);% the reaction cooefficient
+
+c0 = @(x)reac(x)-0.5.*gradient_b(x); % the auxilary function which is positive!
+ 
+f = @(x)AA_forcing(x); % the forcing founction in 2D space * time
+
+u = @(x)AA_u_true(x); % the analytic solution in 2D space * time
+
+g_D = @(x)AA_u_true(x); % the Dirichelet boundary condition in 2D space * time
+
+grad_u = @(x)AA_grad_u_true(x); % the spatial gradient of analytic solution in 1D space * time
+
+grad_ut = @(x)AA_grad_ut_true(x); % the spatial gradient of analytic solution in 1D space * time
+
+zeta = @(x)A_zeta(x);
+eta = @(x)A_eta(x);
+gamma = @(x)A_gamma(x);
+
+
+%% Set up different boundary condition
+
+% Neumann boudary condition is empty now! But can be defined
+
+% Dirichele boundary condtion at the nodes
+
+Diribd_index = unique(bdEdge(:)); 
+Diribdnode = Node(Diribd_index,:);  
+
+DiribdEdge=bdEdge;   
+Diribd_edge2elem=bd_edge2elem;  
+
+TotalEdge = [bdEdge;intEdge]; 
+
+%% data for FEM space
+
+Dimension = 3; % 2D space  * 1D time
+
+S_Polydegree = space_order_of_Basis ;  % polynomial degree of DGFEM    
+T_Polydegree = time_order_of_Basis_vec(OB)  ;  % polynomial degree of DGFEM 
+
+S_Po = S_Polydegree*2+3;         % quadrature order 
+T_Po = T_Polydegree*2+3;         % quadrature order 
+
+disp([num2str(No_of_elements) ' space elements, ' num2str(NO_time_step) ' time elements with space basis ' Basis_Type num2str(S_Polydegree)...
+    ' order, time basis ' num2str(T_Polydegree) ' order '])
+
+
+%% Q basis for 2D space and 1D time
+
+Space_FEM_index = FEM_Basis_index2D(S_Polydegree,Basis_Type);
+
+time_FEM_index = 0:T_Polydegree;  
+time_FEM_index=time_FEM_index';
+
+FEM_index = [kron(Space_FEM_index,ones(T_Polydegree+1,1)),...
+            kron(ones(size(Space_FEM_index,1),1),time_FEM_index)];
+
+
+%% iteration start k=1, end at  NO_time_step
+
+
+%L_2_L_2,L_2_H_1, L_inf_L2 and L_inf_H1 norm error in different time step 
+
+L2_L2_err_vector = NaN(NO_time_step,1);
+L2_grad_err_vector = NaN(NO_time_step,1);
+L2_H1_err_vector = NaN(NO_time_step,1);
+
+L_inf_L2_err_vector = NaN(NO_time_step,1);
+L_inf_grad_err_vector = NaN(NO_time_step,1);
+L_inf_H1_err_vector = NaN(NO_time_step,1);
+
+H1_L2_err_vector = NaN(NO_time_step,1);
+H1_grad_err_vector = NaN(NO_time_step,1);
+H1_H1_err_vector = NaN(NO_time_step,1);
+
+W_1_inf_L2_err_vector = NaN(NO_time_step,1);
+W_1_inf_grad_err_vector = NaN(NO_time_step,1);
+W_1_inf_H1_err_vector = NaN(NO_time_step,1);
+
+Final_t_L2_L2_err_vector = NaN(NO_time_step,1);
+Final_t_L2_grad_err_vector = NaN(NO_time_step,1);
+Final_t_L2_H1_err_vector = NaN(NO_time_step,1);
+Final_t_H1_L2_err_vector = NaN(NO_time_step,1);
+Final_t_H1_grad_err_vector = NaN(NO_time_step,1);
+Final_t_H1_H1_err_vector = NaN(NO_time_step,1);
+Energynorm_err_vector = NaN(NO_time_step,1);
+energynorm_err_vector = NaN(NO_time_step,1);
+energynorm_err_vector(1) = 0; 
+
+Time_jump_u_err_vector = NaN(NO_time_step,1);
+Time_jump_gradu_err_vector = NaN(NO_time_step,1);
+Time_jump_dotu_err_vector = NaN(NO_time_step,1);
+
+%%%需要前一步的信息，为此定义一个矩阵包含全局信息，从而需要global_ind。
+dim_elem = size(FEM_index,1);  
+NO_NodalBasis = size(Node,1);   
+NO_EdgeBasis = size(TotalEdge,1).*(S_Polydegree-1);
+NO_ModalBasis = (size(Space_FEM_index,1)-4*S_Polydegree).*NT;
+No_timeBasis = size(time_FEM_index,1);
+step_space_dim_FEM = (NO_NodalBasis+ NO_EdgeBasis +NO_ModalBasis);
+step_dim_FEM =step_space_dim_FEM*No_timeBasis;
+
+     [elem, ~] = Elem{1,:};   Space_Node = Node(Elem{1,1},:);
+     Time_Node = [t_grids(1),t_grids(2) ]';
+     Space_BDbox = Bounding_box(Space_Node);
+     BDbox  =  [Space_BDbox,Time_Node];
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   if S_Polydegree == 1
+       global_ind = global_nodal_index;     
+   else
+       local_edge = [elem, elem([2:end, 1])]; 
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       modal_index = 1  : 1*NO_local_modalbasis;
+       global_modal_index = modal_index'; 
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];    
+   end
+coef_vector = NaN(length(global_ind),NO_time_step,NO_space_element);
+
+
+%%L_2_L_2,L_2_H_1, L_inf_L2 and L_inf_H1 norm 能量 in different time step 
+
+L2_L2_ene_vector = NaN(NO_time_step,1);
+L2_grad_ene_vector = NaN(NO_time_step,1);
+L2_H1_ene_vector = NaN(NO_time_step,1);
+
+L_inf_L2_ene_vector = NaN(NO_time_step,1);
+L_inf_grad_ene_vector = NaN(NO_time_step,1);
+L_inf_H1_ene_vector = NaN(NO_time_step,1);
+
+H1_L2_ene_vector = NaN(NO_time_step,1);
+H1_grad_ene_vector = NaN(NO_time_step,1);
+H1_H1_ene_vector = NaN(NO_time_step,1);
+
+W_1_inf_L2_ene_vector = NaN(NO_time_step,1);
+W_1_inf_grad_ene_vector = NaN(NO_time_step,1);
+W_1_inf_H1_ene_vector = NaN(NO_time_step,1);
+
+Final_t_L2_L2_ene_vector = NaN(NO_time_step,1);
+Final_t_L2_grad_ene_vector = NaN(NO_time_step,1);
+Final_t_L2_H1_ene_vector = NaN(NO_time_step,1);
+Final_t_H1_L2_ene_vector = NaN(NO_time_step,1);
+Final_t_H1_grad_ene_vector = NaN(NO_time_step,1);
+Final_t_H1_H1_ene_vector = NaN(NO_time_step,1);
+DG_ene_vector = NaN(NO_time_step,1);
+dg_ene_vector = NaN(NO_time_step,1);
+dg_ene_vector(1) = 0; 
+%%%
+
+for k= 1 : NO_time_step
+
+% 3D time space elements
+    
+dim_elem = size(FEM_index,1);   
+
+% We are buliding C0 continuity space FEM space: nodal + edge mode + internal mode
+
+NO_NodalBasis = size(Node,1);  
+
+NO_EdgeBasis = size(TotalEdge,1).*(S_Polydegree-1);
+
+NO_ModalBasis = (size(Space_FEM_index,1)-4*S_Polydegree).*NT;
+
+
+No_timeBasis = size(time_FEM_index,1);
+
+step_space_dim_FEM = (NO_NodalBasis+ NO_EdgeBasis +NO_ModalBasis);
+
+step_dim_FEM =step_space_dim_FEM*No_timeBasis;
+    
+
+
+%% Begin to calculate
+
+% the stiffness matrix is fixed for each time!
+
+if k==1 
+
+
+
+%% Part 1
+
+% contribution from element for the bilinear form
+
+i =zeros(dim_elem.^2, NO_space_element ); j =zeros(dim_elem.^2,NO_space_element); s =zeros(dim_elem.^2,NO_space_element ); 
+
+
+parfor t =1:NO_space_element
+   
+    % get the space 2D elements and build up to the local 3D prism elements   
+        
+     [elem, ~] = Elem{t,:};   Space_Node = Node(Elem{t,1},:);
+    
+     Time_Node = [t_grids(k),t_grids(k+1) ]';
+      
+    % generating the bounding box
+    
+     Space_BDbox = Bounding_box(Space_Node);
+     
+     BDbox  =  [Space_BDbox,Time_Node];
+   
+    diffusion_local = diffusion_localstiff(Space_Node,Time_Node,BDbox,S_Po,T_Po,FEM_index,@(x)a(x),@(x)zeta(x),@(x)eta(x),@(x)gamma(x));
+    
+    CR_local = CR_localmass(Space_Node,Time_Node ,BDbox,S_Po,T_Po,FEM_index,@(x)b(x), @(x)c(x));
+    
+ 
+    local = diffusion_local + CR_local ;
+    
+    
+    %% Assembling procedure  
+    
+    % nodal index always exists
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end
+                  
+   
+   
+   i(:,t) = kron(ones(dim_elem,1),global_ind )  ;
+   
+   j(:,t) = kron(global_ind , ones(dim_elem,1)) ;
+   
+   s(:,t) = local(:);
+    
+end
+
+B1 = sparse(i(:),j(:) ,s(:) ,step_dim_FEM, step_dim_FEM );
+
+%disp('Bilinear form part 1 Element face is ready');
+
+
+
+
+
+
+%% part 2 is the comtribution from union of inflow  boundary, which is the starting time for each step
+ 
+
+
+i = zeros(dim_elem.^2,size(NO_space_element,1) ); j = zeros(dim_elem.^2,size(NO_space_element,1) );
+s = zeros(dim_elem.^2,size(NO_space_element,1) );  
+
+parfor t =1:NO_space_element
+    
+% get the space 2D elements and build up to the local 3D prism elements   
+        
+    elem_inflowface = t;
+
+    Space_Node = Node(Elem{elem_inflowface,1},:);    
+
+    Space_BDbox = Bounding_box(Node(Elem{elem_inflowface,1},:));            
+
+    Space_norvec = [0,0];
+
+% 3D bounding box and vertices
+   
+    BDbox = [Space_BDbox ,[t_grids(k),t_grids(k+1)]' ];    
+
+     Time_Node = [t_grids(k),t_grids(k+1) ]';
+
+    % % space and time are orthorgonal!! And inflow boundary should use the
+    % outward normal vector [0,0,-1]!
+
+    norvec = [Space_norvec,-1]; 
+
+   
+    CR_BDface = CR_localbdface(Space_Node,Time_Node, BDbox, norvec ,S_Po,T_Po,FEM_index,@(x)a(x),@(x)zeta(x), @(x)b(x));
+    
+
+
+   %% Assembling procedure  
+    
+    % nodal index always exists
+    
+    [elem, ~] = Elem{elem_inflowface,:};
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end
+   
+   i(:,t) = kron(ones(dim_elem,1),global_ind )  ;
+   
+   j(:,t) = kron(global_ind , ones(dim_elem,1)) ;
+   
+   s(:,t) = CR_BDface(:);
+    
+    
+end
+
+B2 = sparse(i(:),j(:) ,s(:) ,step_dim_FEM,step_dim_FEM );
+
+%disp('Bilinear form Part 4 union of inflow  boundary is over');
+
+
+
+end
+
+
+
+% the forcing term is fixed for each time
+
+
+
+
+%% The right handside of the matrix, the linear functional;   
+
+%%Part 1
+
+% contribution from element
+
+i =zeros(dim_elem,NO_space_element  ); j =ones(dim_elem,NO_space_element  ); s =zeros(dim_elem,NO_space_element  ); 
+
+
+parfor t =1:NO_space_element
+   
+    % get the space 2D elements and build up to the local 3D prism elements   
+        
+     [elem, ~] = Elem{t,:};   Space_Node = Node(Elem{t,1},:);
+    
+     Time_Node = [t_grids(k),t_grids(k+1) ]';
+      
+    % generating the bounding box
+    
+     Space_BDbox = Bounding_box(Space_Node);
+     
+     BDbox  =  [Space_BDbox,Time_Node];
+    
+   
+    localvec = CR_vect_forcing(Space_Node,Time_Node,BDbox,S_Po,T_Po,FEM_index, @(x)f(x));
+    
+    %% Assembling procedure  
+    
+    % nodal index always exists
+    
+    
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end
+    
+   i(:,t) = global_ind ;
+   
+   s(:,t) = localvec;
+    
+end
+
+L1 = sparse(i(:),j(:) ,s(:),step_dim_FEM,1 );
+
+
+
+
+
+
+
+
+%% The most important part!
+
+%Part 2
+
+% contribution from inflow boundary over each element who share one face 
+% with inflow boundary, which is the starting time for each step
+
+i =zeros(dim_elem,NO_space_element  ); j =ones(dim_elem,NO_space_element  ); s =zeros(dim_elem,NO_space_element  ); 
+
+% k = 1
+
+if k==1
+
+parfor t =1:NO_space_element
+
+% get the space 2D elements and build up to the local 3D prism elements 
+    
+    elem_inflowface = t;
+
+    Space_Node = Node(Elem{elem_inflowface,1},:);    
+
+    Space_BDbox = Bounding_box(Node(Elem{elem_inflowface,1},:));            
+
+    Space_norvec = [0,0];
+
+% 3D bounding box and vertices
+   
+    BDbox = [Space_BDbox ,[t_grids(k),t_grids(k+1)]' ];    
+
+    Time_Node = [t_grids(k),t_grids(k+1) ]';
+
+    % % space and time are orthorgonal!! And inflow boundary should use the
+    % outward normal vector [0,0,-1]!
+
+    norvec = [Space_norvec,-1]; 
+    
+    
+   inflowface = CR_vect_inflowface(Space_Node,Time_Node, BDbox, norvec ,S_Po,T_Po,FEM_index, @(x)a(x),@(x)zeta(x),@(x)b(x), @(x)grad_u(x));
+    
+   %% Assembling procedure  
+    
+    % nodal index always exists
+    
+    [elem, ~] = Elem{elem_inflowface,:};
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end 
+    
+   i(:,t) = global_ind;
+   
+   s(:,t) = inflowface;
+    
+end
+
+
+% k>=2 we need to recall the solution of the previous time steps
+
+
+else
+    
+    
+    parfor t =1:NO_space_element
+
+   % get the space 2D elements and build up to the local 3D prism elements 
+    
+    elem_inflowface = t;       
+
+    Space_Node = Node(Elem{elem_inflowface,1},:);    
+
+    Space_BDbox = Bounding_box(Node(Elem{elem_inflowface,1},:));            
+
+    Space_norvec = [0,0];
+
+    % 3D bounding box and vertices
+   
+    BDbox = [Space_BDbox ,[t_grids(k),t_grids(k+1)]' ];    
+
+    previous_BDbox = [Space_BDbox ,[t_grids(k-1),t_grids(k)]' ]; 
+
+    Time_Node = [t_grids(k),t_grids(k+1) ]';
+
+    % % space and time are orthorgonal!! And inflow boundary should use the
+    % outward normal vector [0,0,-1]!
+
+    norvec = [Space_norvec,-1]; 
+    
+    
+    %% Assembling procedure  
+    
+    % nodal index always exists
+    
+    [elem, ~] = Elem{elem_inflowface,:};
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end 
+    
+    % the previous time step is used to impose inflow boundary condition       
+    
+    previous_coef = U_previous(global_ind); % c is coefficeint
+        
+    
+    % use the   previous time step 
+    
+    %BDbox = Elem{elem_inflowface,2};   previous_BDbox = Elem{previous_elem_inflowface,2}; 
+        
+    
+    inflowface = CR_vect_inflowface_previous_step(Space_Node,Time_Node, BDbox, previous_BDbox, previous_coef,  norvec ,S_Po,T_Po ,FEM_index,@(x)a(x),@(x)zeta(x), @(x)b(x));
+        
+  
+    
+    i(:,t) = global_ind;
+   
+    s(:,t) = inflowface;
+    
+    end
+    
+    
+end
+
+
+L2 = sparse(i(:),j(:) ,s(:) ,step_dim_FEM,1 );
+
+%disp('Convection Reaction Linear form Part 2 union of inflow and Dirichelt boundary is over');
+
+
+
+
+%% The coefficient of global basis is U
+
+U = zeros(size(L1));
+
+%% the Dilichelet boundary is fixed in each time step
+
+% pick up the nodal contribution, each spatial nodal basis
+% will generate a set of edge fucntions (P_t+1), the value should be 
+% determined by L_2 projection
+
+
+% %  先给出节点基其实也就是k=1的Dirichlet边界的时间投影。
+% %  后面再给出edgebasis的时间投影
+
+i = zeros(T_Polydegree+1,size(Diribd_index,1) );  s = zeros(T_Polydegree+1,size(Diribd_index,1) ); 
+
+
+parfor t =1:size(Diribd_index,1)
+    
+   % nodal basis is determined, then we just need to compute the projection 
+   
+   nodal_Diribd = Diribd_index(t); 
+   
+   Space_Node = Node(nodal_Diribd,:);   Time_Node = [t_grids(k),t_grids(k+1) ]';
+   
+   
+   Diri_Nodal = DiriBC_projecton_nodal(Space_Node,Time_Node,S_Po,T_Po, S_Polydegree,T_Polydegree,@(x)g_D(x)); 
+                      
+   % Assembling    
+     
+      
+   global_nodal_index = get_space_tensor_time_index(nodal_Diribd,No_timeBasis);      
+    
+   i(:,t) = global_nodal_index;
+   
+   s(:,t) = Diri_Nodal;
+    
+end
+
+% put the nodal contribution into the global solution
+
+U(i(:)) = s(:);
+
+Nodal_solution_intex = i(:);
+
+
+
+
+
+
+
+% pick up the edge contribution, each spatial edge
+% will generate a set of edge fucntions (P_x-1)(P_t+1), the value should be 
+% determined by collocation projection
+
+
+if S_Polydegree >= 2
+
+%% the NO of the edge function along each drection     
+    
+
+i = zeros((S_Polydegree-1)*No_timeBasis,size(DiribdEdge,1) );  
+
+s = zeros((S_Polydegree-1)*No_timeBasis,size(DiribdEdge,1) );
+
+parfor t =1:size(DiribdEdge,1)
+    
+   Dirielem_Diric = Diribd_edge2elem(t,:);   Diriedge_node = Node(DiribdEdge(t,:),:); 
+   
+    % nodal index  and bounding box
+   
+  [elem , Space_BDbox] = Elem{Dirielem_Diric,:}; 
+    
+  % Edge index
+  
+  local_edge = [elem, elem([2:end, 1])];
+       
+   
+  EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);
+  
+    
+  % local index for nodal and edge;  
+    
+  local_ind = [elem ; EdgeBasis_ind + NO_NodalBasis ];  
+  
+  
+  global_ind = get_space_tensor_time_index(local_ind,No_timeBasis);   
+  
+  % find the correct index for nodal basis and pick up the correc basis for
+  % computing the projection
+  
+  [Dirinodal_id, Diriedge_id] = findnodal_edge_time_index(Diriedge_node,Space_BDbox,FEM_index,No_timeBasis);
+   
+   edge_nodalbasis_index = FEM_index(Dirinodal_id,:);
+   
+   edge_function_index = FEM_index(Diriedge_id,:);
+      
+   %% calculating the projection of boundary condtion
+   
+   gloabl_Nodal_ind = global_ind(Dirinodal_id);
+   
+   % The coefficients for the nodal basis are calculated from the previous
+   % step
+   
+   Nodal_coe = U(gloabl_Nodal_ind);     Time_Node = [t_grids(k),t_grids(k+1) ]';
+   
+   BDbox = [Space_BDbox,Time_Node];
+      
+   Diri_Modal = DiriBC_projecton_edge(Diriedge_node,Time_Node ,BDbox,S_Po,T_Po ,edge_nodalbasis_index , Nodal_coe ,edge_function_index, S_Polydegree,T_Polydegree ,@(x)g_D(x));
+   
+   % Assembling
+   
+   gloabl_edge_ind = global_ind(Diriedge_id);      
+    
+   i(:,t) = gloabl_edge_ind;
+   
+   s(:,t) = Diri_Modal;
+    
+end
+
+U(i(:)) = s(:);
+
+Edge_solution_intex = i(:);
+
+totalbd_index = [Nodal_solution_intex ; Edge_solution_intex];
+
+end
+
+
+
+
+
+%% Solving the linear system
+
+
+B = B1-B2; 
+
+L = L1 -L2;
+
+
+
+% The coefficient of global basis is U
+
+% all the nodes except the Dirichele boundary Nodes
+
+int_index = 1:step_dim_FEM;   int_index = int_index';
+
+if  S_Polydegree == 1
+
+int_index(Nodal_solution_intex) = [];
+
+else
+   
+int_index(totalbd_index) = [];    
+    
+end
+
+
+L = L - B*U;
+
+
+switch Static_Condensation
+
+    case 'off'   
+    
+
+U(int_index) = B(int_index,int_index)\L(int_index);
+
+
+  case 'on'
+       
+U(int_index) = StaticCondensation_FEM(B(int_index,int_index),L(int_index),NT,(size(Space_FEM_index,1)-4*S_Polydegree)*No_timeBasis);        
+
+end
+
+
+U_previous = U;
+
+
+%% L_2_L_2, L_2_H_1, L_inf_L2 and L_inf_H1 norm 
+
+
+L2_L2_err = NaN(NO_space_element,1); 
+L2_grad_err = NaN(NO_space_element,1); 
+L2_H1_err = NaN(NO_space_element,1); 
+
+L_inf_L2_err = NaN(T_Po,NO_space_element); 
+L_inf_grad_err = NaN(T_Po,NO_space_element); 
+L_inf_H1_err = NaN(T_Po,NO_space_element);
+  
+H1_L2_err = NaN(NO_space_element,1); 
+H1_grad_err = NaN(NO_space_element,1); 
+H1_H1_err = NaN(NO_space_element,1); 
+
+W_1_inf_L2_err = NaN(T_Po,NO_space_element); 
+W_1_inf_grad_err = NaN(T_Po,NO_space_element); 
+W_1_inf_H1_err = NaN(T_Po,NO_space_element);
+
+Final_t_L2_L2_err = NaN(NO_space_element,1); 
+Final_t_L2_grad_err = NaN(NO_space_element,1); 
+Final_t_L2_H1_err = NaN(NO_space_element,1); 
+Final_t_H1_L2_err = NaN(NO_space_element,1); 
+Final_t_H1_grad_err = NaN(NO_space_element,1); 
+Final_t_H1_H1_err = NaN(NO_space_element,1); 
+
+Time_jump_u_err = NaN(NO_space_element,1); 
+Time_jump_gradu_err = NaN(NO_space_element,1); 
+Time_jump_dotu_err = NaN(NO_space_element,1); 
+
+
+
+% %存放能量 
+L2_L2_ene = NaN(NO_space_element,1); 
+L2_grad_ene = NaN(NO_space_element,1); 
+L2_H1_ene = NaN(NO_space_element,1); 
+
+L_inf_L2_ene = NaN(T_Po,NO_space_element); 
+L_inf_grad_ene = NaN(T_Po,NO_space_element); 
+L_inf_H1_ene = NaN(T_Po,NO_space_element);
+  
+H1_L2_ene = NaN(NO_space_element,1); 
+H1_grad_ene = NaN(NO_space_element,1); 
+H1_H1_ene = NaN(NO_space_element,1); 
+
+W_1_inf_L2_ene = NaN(T_Po,NO_space_element); 
+W_1_inf_grad_ene = NaN(T_Po,NO_space_element); 
+W_1_inf_H1_ene = NaN(T_Po,NO_space_element);
+
+Final_t_L2_L2_ene = NaN(NO_space_element,1); 
+Final_t_L2_grad_ene = NaN(NO_space_element,1); 
+Final_t_L2_H1_ene = NaN(NO_space_element,1); 
+Final_t_H1_L2_ene = NaN(NO_space_element,1); 
+Final_t_H1_grad_ene = NaN(NO_space_element,1); 
+Final_t_H1_H1_ene = NaN(NO_space_element,1); 
+ 
+
+for t =1:NO_space_element
+   
+     % get the space 2D elements and build up to the local 3D prism elements   
+        
+     [elem, ~] = Elem{t,:};   Space_Node = Node(Elem{t,1},:);
+    
+     Time_Node = [t_grids(k),t_grids(k+1) ]';
+     if k==1
+         Time_Node1 = Time_Node;
+     else
+     Time_Node1 = [t_grids(k-1),t_grids(k) ]';
+     end 
+    % generating the bounding box
+    
+     Space_BDbox = Bounding_box(Space_Node);
+     
+     BDbox  =  [Space_BDbox,Time_Node];
+      BDbox1  = [Space_BDbox,Time_Node1];
+     
+     %% Assembling procedure  
+    
+    % nodal index always exists
+       
+    
+    global_nodal_index = get_space_tensor_time_index(elem,No_timeBasis); 
+   
+   
+   
+   if S_Polydegree == 1
+   
+       global_ind = global_nodal_index;
+       
+   else
+       
+        % edge and  modal basis only exists for p>=2
+       % find all the edge index
+       
+       local_edge = [elem, elem([2:end, 1])];
+       
+       space_EdgeBasis_ind = get_EdgeBasisindex(local_edge,TotalEdge,S_Polydegree);  
+       
+       % changle the index set from space to space-time
+       
+       global_EdgeBasis_ind = get_space_tensor_time_index(space_EdgeBasis_ind,No_timeBasis); 
+       % find all the modal basis 
+       
+       NO_local_modalbasis = dim_elem - size(global_nodal_index,1) - size(global_EdgeBasis_ind,1);
+       
+       
+       modal_index = (t-1)*NO_local_modalbasis +1  : t*NO_local_modalbasis;
+       
+       global_modal_index = modal_index'; 
+       
+       
+       
+       % consturct the global indices
+       
+       global_ind = [global_nodal_index ;...
+              (global_EdgeBasis_ind + NO_NodalBasis*No_timeBasis);...
+              (global_modal_index + (NO_NodalBasis+NO_EdgeBasis)*No_timeBasis)];
+       
+   end 
+    
+
+
+     coef =  U(global_ind ,1); % c is coefficeint
+        coef_vector(:,k,t)= coef;      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if k==1
+    coef1=coef;
+else
+coef1=coef_vector(:,k-1,t);
+end 
+
+    [L_2_L2_part,L_2_grad_part,L_2_H1_part] = Err_timeL2_norm(Space_Node,Time_Node,BDbox,...
+                                     coef,S_Po,T_Po,FEM_index,@(x)u(x) ,@(x)grad_u(x) ,@(x)a(x));
+                                    
+    L2_L2_err(t) = L_2_L2_part;  
+    L2_grad_err(t) = L_2_grad_part; 
+    L2_H1_err(t) = L_2_H1_part;
+     
+    %% time grad = H1
+    [H_1_L2_part,H_1_grad_part,H_1_H1_part] = Err_timeH1_norm(Space_Node,Time_Node,BDbox,...
+                                     coef,S_Po,T_Po, FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x),@(x)gamma(x), @(x)eta(x));
+                                    
+    H1_L2_err(t) = H_1_L2_part;  
+    H1_grad_err(t) = H_1_grad_part; 
+    H1_H1_err(t) = H_1_H1_part;
+    
+    %% time L_inf
+    [L_inf_L2_part,L_inf_grad_part,L_inf_H1_part ] = Err_timeL_inf_norm(Space_Node,Time_Node,BDbox ,...
+                                     coef,S_Po,T_Po,FEM_index,@(x)u(x), @(x)grad_u(x), @(x)a(x), @(x)zeta(x));
+
+    L_inf_L2_err(:,t) = L_inf_L2_part; 
+    L_inf_grad_err(:,t) = L_inf_grad_part; 
+    L_inf_H1_err(:,t) = L_inf_H1_part; 
+
+    %% time W1,infty
+    [W_1_inf_L2_part,W_1_inf_grad_part,W_1_inf_H1_part] = Err_timeW_1_inf_norm(Space_Node,Time_Node,BDbox,...
+                                     coef, S_Po,T_Po , FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x));
+                                    
+    W_1_inf_L2_err(:,t) = W_1_inf_L2_part;  
+    W_1_inf_grad_err(:,t) = W_1_inf_grad_part; 
+    W_1_inf_H1_err(:,t) = W_1_inf_H1_part;    
+       
+    %% final time 
+    [Final_t_L2_L2_part, Final_t_L2_grad_part,Final_t_L2_H1_part,...
+     Final_t_H1_L2_part,Final_t_H1_grad_part, Final_t_H1_H1_part] = Err_final_time_norm(Space_Node,Time_Node,BDbox,...
+                                     coef, S_Po,T_Po , FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x),@(x)zeta(x));
+    
+     Final_t_L2_L2_err(t)  = Final_t_L2_L2_part; 
+     Final_t_L2_grad_err(t)  = Final_t_L2_grad_part;
+     Final_t_L2_H1_err(t)  = Final_t_L2_H1_part; 
+     
+     Final_t_H1_L2_err(t)  = Final_t_H1_L2_part; 
+     Final_t_H1_grad_err(t)  = Final_t_H1_grad_part;
+     Final_t_H1_H1_err(t)  = Final_t_H1_H1_part; 
+     
+         [Time_jump_u_part, Time_jump_gradu_part, Time_jump_dotu_part] ...
+        = Err_Jump_time_norm(Space_Node,Time_Node,Time_Node1,BDbox,BDbox1,...
+                                     coef,coef1, S_Po,T_Po , FEM_index, @(x)a(x));
+    
+     Time_jump_u_err(t)  = Time_jump_u_part; 
+     Time_jump_gradu_err(t)  = Time_jump_gradu_part; 
+     Time_jump_dotu_err(t)  = Time_jump_dotu_part; 
+  
+%%     
+%%  每个空间单元上的能量
+
+    [L_2_L2_part,L_2_grad_part,L_2_H1_part] = Energy_timeL2_norm(Space_Node,Time_Node,BDbox,...
+                                     coef,S_Po,T_Po,FEM_index,@(x)u(x) ,@(x)grad_u(x) ,@(x)a(x));
+                                    
+    L2_L2_ene(t) = L_2_L2_part;  
+    L2_grad_ene(t) = L_2_grad_part; 
+    L2_H1_ene(t) = L_2_H1_part;
+     
+    %% time grad = H1
+    [H_1_L2_part,H_1_grad_part,H_1_H1_part] = Energy_timeH1_norm(Space_Node,Time_Node,BDbox,...
+                                     coef,S_Po,T_Po, FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x),@(x)gamma(x),@(x)eta(x));
+                                    
+    H1_L2_ene(t) = H_1_L2_part;  
+    H1_grad_ene(t) = H_1_grad_part; 
+    H1_H1_ene(t) = H_1_H1_part;
+    
+    %% time L_inf
+    [L_inf_L2_part,L_inf_grad_part,L_inf_H1_part ] = Energy_timeL_inf_norm(Space_Node,Time_Node,BDbox ,...
+                                     coef,S_Po,T_Po,FEM_index,@(x)u(x), @(x)grad_u(x), @(x)a(x), @(x)zeta(x));
+
+    L_inf_L2_ene(:,t) = L_inf_L2_part; 
+    L_inf_grad_ene(:,t) = L_inf_grad_part; 
+    L_inf_H1_ene(:,t) = L_inf_H1_part; 
+
+    %% time W1,infty
+    [W_1_inf_L2_part,W_1_inf_grad_part,W_1_inf_H1_part] = Energy_timeW_1_inf_norm(Space_Node,Time_Node,BDbox,...
+                                     coef, S_Po,T_Po , FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x));
+                                    
+    W_1_inf_L2_ene(:,t) = W_1_inf_L2_part;  
+    W_1_inf_grad_ene(:,t) = W_1_inf_grad_part; 
+    W_1_inf_H1_ene(:,t) = W_1_inf_H1_part;    
+       
+    %% final time 
+    [Final_t_L2_L2_part, Final_t_L2_grad_part,Final_t_L2_H1_part,...
+     Final_t_H1_L2_part,Final_t_H1_grad_part, Final_t_H1_H1_part] = Energy_final_time_norm(Space_Node,Time_Node,BDbox,...
+                                     coef, S_Po,T_Po , FEM_index, @(x)u(x), @(x)grad_u(x), @(x)grad_ut(x) ,@(x)a(x),@(x)zeta(x));
+    
+     Final_t_L2_L2_ene(t)  = Final_t_L2_L2_part; 
+     Final_t_L2_grad_ene(t)  = Final_t_L2_grad_part;
+     Final_t_L2_H1_ene(t)  = Final_t_L2_H1_part; 
+     
+     Final_t_H1_L2_ene(t)  = Final_t_H1_L2_part; 
+     Final_t_H1_grad_ene(t)  = Final_t_H1_grad_part;
+     Final_t_H1_H1_ene(t)  = Final_t_H1_H1_part;    
+   
+end
+
+Time_jump_u_err = sqrt(sum(Time_jump_u_err));
+Time_jump_gradu_err = sqrt(sum(Time_jump_gradu_err));
+Time_jump_dotu_err = sqrt(sum(Time_jump_dotu_err));
+
+
+% L_2 type of norm sum over all the spatial and time element
+L2_L2_err = sqrt(sum(L2_L2_err));
+L2_grad_err = sqrt(sum(L2_grad_err)); 
+L2_H1_err = sqrt(sum(L2_H1_err)); 
+
+ % L_inf type norm over each time points ,L_2 type of norm sum over all the spatial element
+L_inf_L2_err= norm(sqrt(sum(L_inf_L2_err,2)),inf);
+L_inf_grad_err= norm(sqrt(sum(L_inf_grad_err,2)),inf);
+L_inf_H1_err= norm(sqrt(sum(L_inf_H1_err,2)),inf); 
+
+% H_1 type of norm sum over all the spatial and time element
+H1_L2_err = sqrt(sum(H1_L2_err));
+H1_grad_err = sqrt(sum(H1_grad_err)); 
+H1_H1_err = sqrt(sum(H1_H1_err)); 
+
+ % L_inf type norm over each time points ,L_2 type of norm sum over all the spatial element
+W_1_inf_L2_err= norm(sqrt(sum(W_1_inf_L2_err,2)),inf);
+W_1_inf_grad_err= norm(sqrt(sum(W_1_inf_grad_err,2)),inf);
+W_1_inf_H1_err= norm(sqrt(sum(W_1_inf_H1_err,2)),inf); 
+
+% 
+Final_t_L2_L2_err  =  sqrt(sum(Final_t_L2_L2_err));  
+Final_t_L2_grad_err  =  sqrt(sum(Final_t_L2_grad_err)); 
+Final_t_L2_H1_err  =  sqrt(sum(Final_t_L2_H1_err));  
+Final_t_H1_L2_err  =  sqrt(sum(Final_t_H1_L2_err));  
+Final_t_H1_grad_err  =  sqrt(sum(Final_t_H1_grad_err)); 
+Final_t_H1_H1_err  =  sqrt(sum(Final_t_H1_H1_err));    
+
+%% 每个时间步上的能量  
+
+% L_2 type of norm sum over all the spatial and time element
+L2_L2_ene = sqrt(sum(L2_L2_ene));
+L2_grad_ene = sqrt(sum(L2_grad_ene)); 
+L2_H1_ene = sqrt(sum(L2_H1_ene)); 
+
+ % L_inf type norm over each time points ,L_2 type of norm sum over all the spatial element
+L_inf_L2_ene= norm(sqrt(sum(L_inf_L2_ene,2)),inf);
+L_inf_grad_ene= norm(sqrt(sum(L_inf_grad_ene,2)),inf);
+L_inf_H1_ene= norm(sqrt(sum(L_inf_H1_ene,2)),inf); 
+
+% H_1 type of norm sum over all the spatial and time element
+H1_L2_ene = sqrt(sum(H1_L2_ene));
+H1_grad_ene = sqrt(sum(H1_grad_ene)); 
+H1_H1_ene = sqrt(sum(H1_H1_ene)); 
+
+ % L_inf type norm over each time points ,L_2 type of norm sum over all the spatial element
+W_1_inf_L2_ene= norm(sqrt(sum(W_1_inf_L2_ene,2)),inf);
+W_1_inf_grad_ene= norm(sqrt(sum(W_1_inf_grad_ene,2)),inf);
+W_1_inf_H1_ene= norm(sqrt(sum(W_1_inf_H1_ene,2)),inf); 
+
+% 
+Final_t_L2_L2_ene  =  sqrt(sum(Final_t_L2_L2_ene));  
+Final_t_L2_grad_ene  =  sqrt(sum(Final_t_L2_grad_ene)); 
+Final_t_L2_H1_ene  =  sqrt(sum(Final_t_L2_H1_ene));  
+Final_t_H1_L2_ene  =  sqrt(sum(Final_t_H1_L2_ene));  
+Final_t_H1_grad_ene  =  sqrt(sum(Final_t_H1_grad_ene)); 
+Final_t_H1_H1_ene  =  sqrt(sum(Final_t_H1_H1_ene));  
+
+
+
+%% 上面是每个时间步上的误差，以下给出所有时间点上的误差，并列成一个数组，使得每个单元上误差信息都可查询
+
+Time_jump_u_err_vector(k) = Time_jump_u_err;
+Time_jump_gradu_err_vector(k) = Time_jump_gradu_err;
+Time_jump_dotu_err_vector(k) = Time_jump_dotu_err;
+
+Time_jump_u_err_vector(1) = 0;  %%注意跳跃项的添加方式，这里需要第一个区间误差重置为零。
+Time_jump_gradu_err_vector(1) = 0;
+Time_jump_dotu_err_vector(1) = 0;
+
+L2_L2_err_vector(k) =  L2_L2_err;
+L2_grad_err_vector(k) =  L2_grad_err;
+L2_H1_err_vector(k) =  L2_H1_err;
+
+L_inf_L2_err_vector(k) =  L_inf_L2_err;
+L_inf_grad_err_vector(k) =  L_inf_grad_err;
+L_inf_H1_err_vector(k) =  L_inf_H1_err;
+
+H1_L2_err_vector(k) =  H1_L2_err;
+H1_grad_err_vector(k) =  H1_grad_err;
+H1_H1_err_vector(k) =  H1_H1_err;
+
+W_1_inf_L2_err_vector(k) =  W_1_inf_L2_err;
+W_1_inf_grad_err_vector(k) =  W_1_inf_grad_err;
+W_1_inf_H1_err_vector(k) =  W_1_inf_H1_err;
+
+Final_t_L2_L2_err_vector(k) = Final_t_L2_L2_err;
+Final_t_L2_grad_err_vector(k) = Final_t_L2_grad_err;
+Final_t_L2_H1_err_vector(k) = Final_t_L2_H1_err;
+Final_t_H1_L2_err_vector(k) = Final_t_H1_L2_err;
+Final_t_H1_grad_err_vector(k) = Final_t_H1_grad_err;
+Final_t_H1_H1_err_vector(k) = Final_t_H1_H1_err;
+
+
+energynorm_err_vector(k) = sqrt( energynorm_err_vector(k)^2+H1_L2_err_vector(k)^2+H1_grad_err_vector(k)^2 ...
+                                 +Time_jump_dotu_err_vector(k)^2+Time_jump_gradu_err_vector(k)^2);%%前面所有区间
+Energynorm_err_vector(k) = sqrt( energynorm_err_vector(k)^2+Final_t_L2_grad_err_vector(k)^2 +Final_t_H1_L2_err_vector(k)^2 );%%加上当前区间末端以及跳跃项
+energynorm_err_vector(k+1) = energynorm_err_vector(k);
+
+%fprintf('the discete Energy norm error (for No.%d/%d step) is %.16f \n',k,NO_time_step,Energynorm_err_vector(k));
+
+
+%% 上面部分是每个时间步上的能量(开根号)，以下给出所有时间点上的能量，并列成一个数组，使得每个单元上误差信息都可查询
+%% 注意能量是范数的平方！！
+
+L2_L2_ene_vector(k) =  L2_L2_ene^2;
+L2_grad_ene_vector(k) =  L2_grad_ene^2;
+L2_H1_ene_vector(k) =  L2_H1_ene^2;
+
+L_inf_L2_ene_vector(k) =  L_inf_L2_ene^2;
+L_inf_grad_ene_vector(k) =  L_inf_grad_ene^2;
+L_inf_H1_ene_vector(k) =  L_inf_H1_ene^2;
+
+H1_L2_ene_vector(k) =  H1_L2_ene^2;
+H1_grad_ene_vector(k) =  H1_grad_ene^2;
+H1_H1_ene_vector(k) =  H1_H1_ene^2;
+
+W_1_inf_L2_ene_vector(k) =  W_1_inf_L2_ene^2;
+W_1_inf_grad_ene_vector(k) =  W_1_inf_grad_ene^2;
+W_1_inf_H1_ene_vector(k) =  W_1_inf_H1_ene^2;
+
+Final_t_L2_L2_ene_vector(k) = Final_t_L2_L2_ene^2;
+Final_t_L2_grad_ene_vector(k) = Final_t_L2_grad_ene^2;
+Final_t_L2_H1_ene_vector(k) = Final_t_L2_H1_ene^2;
+Final_t_H1_L2_ene_vector(k) = Final_t_H1_L2_ene^2;
+Final_t_H1_grad_ene_vector(k) = Final_t_H1_grad_ene^2;
+Final_t_H1_H1_ene_vector(k) = Final_t_H1_H1_ene^2;
+
+dg_ene_vector(k) = dg_ene_vector(k)+H1_L2_ene_vector(k) + H1_grad_ene_vector(k) ;
+DG_ene_vector(k) = dg_ene_vector(k)+Final_t_L2_grad_ene_vector(k)+ Final_t_H1_L2_ene_vector(k);
+dg_ene_vector(k+1) = dg_ene_vector(k);
+
+fprintf('the discete Energy (for No.%d/%d step) is %.16f \n',k,NO_time_step,DG_ene_vector(k));
+
+end
+
+savefile = ['Energy of ' num2str(NT) ' rectangle space Elements combine ' num2str(NO_time_step) ' time elements with space basis '...
+            Basis_Type num2str(S_Polydegree) ' and time basis ' num2str(T_Polydegree) ' basis.mat'];
+save(savefile, 'DG_ene_vector','-v7.3');
+
+
+% calculate all the dof based on the information about dof in each time
+% step
+
+
+dim_FEM = step_dim_FEM.*NO_time_step;
+% % because of tensor
+S_dim=step_space_dim_FEM;
+T_dim=NO_time_step.*(T_Polydegree+1);
+
+
+
+%% 已经拿到每个时间步上的误差和能量，现在合计误差,注意能量需要再循环里面计算
+
+L2_L2_err = norm(L2_L2_err_vector);  % L2 type norm
+L2_grad_err = norm(L2_grad_err_vector);  % L2 type norm
+L2_H1_err = norm(L2_H1_err_vector);  % L2 type norm
+
+% L_inf type norm take maximum from different sampling points on T
+
+L_inf_L2_err = norm(L_inf_L2_err_vector,inf); 
+L_inf_grad_err = norm(L_inf_grad_err_vector,inf);
+L_inf_H1_err = norm(L_inf_H1_err_vector,inf);  
+
+H1_L2_err = norm(H1_L2_err_vector);  % L2 type norm
+H1_grad_err = norm(H1_grad_err_vector);  % L2 type norm
+H1_H1_err = norm(H1_H1_err_vector);  % L2 type norm
+
+% L_inf type norm take maximum from different sampling points on T
+
+W_1_inf_L2_err = norm(W_1_inf_L2_err_vector,inf); 
+W_1_inf_grad_err = norm(W_1_inf_grad_err_vector,inf);
+W_1_inf_H1_err = norm(W_1_inf_H1_err_vector,inf); 
+
+Final_t_L2_L2_err  = Final_t_L2_L2_err_vector(NO_time_step);
+Final_t_L2_grad_err  = Final_t_L2_grad_err_vector(NO_time_step);
+Final_t_L2_H1_err  = Final_t_L2_H1_err_vector(NO_time_step);
+Final_t_H1_L2_err  = Final_t_H1_L2_err_vector(NO_time_step);
+Final_t_H1_grad_err  = Final_t_H1_grad_err_vector(NO_time_step);
+Final_t_H1_H1_err  = Final_t_H1_H1_err_vector(NO_time_step);
+
+Time_jump_u_err = norm(Time_jump_u_err_vector);
+Time_jump_gradu_err = norm(Time_jump_gradu_err_vector);
+Time_jump_dotu_err = norm(Time_jump_dotu_err_vector);
+
+Energynorm_err= Energynorm_err_vector(NO_time_step);
+
+
+%%
+
+fprintf('the L2_L2 norm error is %.16f \n',L2_L2_err);
+fprintf('the L2_gr norm error is %.16f \n',L2_grad_err);
+fprintf('the L2_H1 norm error is %.16f \n',L2_H1_err);
+
+fprintf('the L_inf_L2 norm error is %.16f \n',L_inf_L2_err);
+fprintf('the L_inf_gr norm error is %.16f \n',L_inf_grad_err);
+fprintf('the L_inf_H1 norm error is %.16f \n',L_inf_H1_err);
+
+fprintf('the H1_L2 norm error is %.16f \n',H1_L2_err);
+fprintf('the H1_gr norm error is %.16f \n',H1_grad_err);
+fprintf('the H1_H1 norm error is %.16f \n',H1_H1_err);
+
+fprintf('the W_1_inf_L2 norm error is %.16f \n',W_1_inf_L2_err);
+fprintf('the W_1_inf_gr norm error is %.16f \n',W_1_inf_grad_err);
+fprintf('the W_1_inf_H1 norm error is %.16f \n',W_1_inf_H1_err);
+
+fprintf('the Final_t_L2_L2 norm error is %.16f \n',Final_t_L2_L2_err);
+fprintf('the Final_t_L2_gr norm error is %.16f \n',Final_t_L2_grad_err);
+fprintf('the Final_t_L2_H1 norm error is %.16f \n',Final_t_L2_H1_err);
+fprintf('the Final_t_H1_L2 norm error is %.16f \n',Final_t_H1_L2_err);
+fprintf('the Final_t_H1_gr norm error is %.16f \n',Final_t_H1_grad_err);
+fprintf('the Final_t_H1_H1 norm error is %.16f \n',Final_t_H1_H1_err);
+
+fprintf('the jump u semi norm error is %.16f \n',Time_jump_u_err);
+fprintf('the jump gradu semi norm error is %.16f \n',Time_jump_gradu_err);
+fprintf('the jump dotu semi norm error is %.16f \n',Time_jump_dotu_err);
+fprintf('Energynorm_err is %.16f \n',Energynorm_err);
+
+% save the result
+
+savefile = ['Error of ' num2str(NT) ' rectangle space Elements combine ' num2str(NO_time_step) ' time elements with space basis '...
+            Basis_Type num2str(S_Polydegree) ' and time basis ' num2str(T_Polydegree) ' basis.mat'];
+
+
+save(savefile, 'L2_L2_err','L2_grad_err','L2_H1_err',...
+               'L_inf_L2_err','L_inf_grad_err','L_inf_H1_err',...
+               'H1_L2_err','H1_grad_err','H1_H1_err',...
+               'W_1_inf_L2_err','W_1_inf_grad_err','W_1_inf_H1_err',...
+               'Final_t_L2_L2_err','Final_t_L2_grad_err','Final_t_L2_H1_err',...
+               'Final_t_H1_L2_err','Final_t_H1_grad_err','Final_t_H1_H1_err',...
+               'Time_jump_u_err','Time_jump_gradu_err','Time_jump_dotu_err',...
+               'Energynorm_err',...
+               'dim_FEM','S_dim','T_dim','S_Polydegree','T_Polydegree','-v7.3');
+
+%matlabpool close;
+end
+end
