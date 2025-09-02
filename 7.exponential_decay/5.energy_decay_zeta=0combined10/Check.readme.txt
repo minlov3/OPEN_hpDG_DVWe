@@ -1,0 +1,6 @@
+由于忘记push了，
+这里怕丢失所以存在check和check with energy两个主文件
+
+check添加了作图，
+check_with_energy添加了每个nodal时间点的能量，
+由于是耗散方程，波动性需要很后面才看得到。
